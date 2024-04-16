@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img#kblogo {
+    filter: invert(10%) sepia(9%) saturate(0%) hue-rotate(201deg) brightness(96%) contrast(79%);
+	filter: invert(95%) sepia(5%) saturate(18%) hue-rotate(165deg) brightness(106%) contrast(104%);
+	height: 60px;
+}
+body {
+	background: #f2f2f2;
+	margin: 0px;
+	font-family: helvetica;
+}
+#menu-icon > div{
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 6px 0;
+  margin-left: 8px;
+  margin-right:	8px;
+
+}
+
+#menu-icon {
+    display: inline-block;
+    padding: 5px;
+    vertical-align: super;
+    margin-left: 10px;
+    margin-right: 10px;
+	cursor: pointer;
+}
+#menu-icon:hover {
+	border-radius: 3px;
+	background-color: #333333;
+}
+#top-nav {
+	background: black;
+}
+#menu-div {
+    background: #e6e6e6;
+    color: black;
+    padding: 10px;
+    height: -webkit-fill-available;
+    min-width: 310px;
+    display: none;
+    z-index: 10;
+    /* width: fit-content; */
+    width: -moz-fit-content;
+    /* height: 100vh; */
+    position: absolute;
+}
+.menu-header {
+    font-variant: small-caps;
+    font-size: 24px;
+}
+.menu-item {
+	margin: 10px;
+	margin-left: 20px;
+	cursor: pointer
+}
+.menu-item:hover {
+	color: gray;
+}
+span#searchBar {
+    float: right;
+    height: 35px;
+    background: white;
+    margin: 14px;
+    border-radius: 3px;
+	margin-right: 20px;
+}
+img#searchIcon {
+    height: 25px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+input#searchInput {
+    height: 20px;
+    margin: 4px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    top: -5px;
+    position: relative;
+    margin-left: 10px;
+}
+div#body-content {
+    width: 70vw;
+    margin: auto;
+	line-height: 1.5;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="ChordsJS/Chords.js"></script>
+</head>
+<body>
+<div id="top-nav">
+<div id="menu-icon">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<img id="kblogo" src="images/KnifeboltLabsLogo.svg" />
+<span id="searchBar">
+<input id="searchInput" placeholder="knifebolt labs" type="text"/>
+<img id="searchIcon" src="images/MagnifyingGlass.svg" />
+</span>
+</div>
+<div id="menu-div">
+	<div class="menu-header">experiments</div>
+		<div class="menu-item">Chords.js</div>
+		<div class="menu-item">JSON to HTML</div>
+		<div class="menu-item">Recipe Manager</div>
+		<div class="menu-item">Speakeasy</div>
+	<div class="menu-header">assets</div>
+		<div class="menu-item">Sounds</div>
+		<div class="menu-item">Icons</div>
+</div>
+<div id="body-content-container">
+<div id="body-content">
+<p>
+Knifebolt Labs is an eclectic collection of bits of code and assets I've created over the years. Some of these bits might be useful to you. You may notice that these projects don't utilize frameworks like Angular or React, and that's deliberate. Wherever possible, I try to stick to Vanilla.js and patterns that don't require a local server to test. I do not consider myself a software developer--code is simply one of the many tools we can use to solve problems.
+</p>
+<h2>Chords.js</h2>
+<p>
+Chords.js is a library to leverage the Mozilla Web Audio API to do things like play notes and chords with JavaScript. It can render chord diagrams for guitar, keyboard, and ukulele, and if you click on a key or a fret position the appropriate note will play.
+</p>
+<div id="chordOutput"></div>
+</div>
+</div>
+<script>
+$("#menu-icon").on("click",function(){
+	$("#menu-div").toggle("slide", { direction: "left" }, 400);
+});
+Chords.RenderChord("#chordOutput","A","keyboard")
+</script>
+</body>
+</html>
