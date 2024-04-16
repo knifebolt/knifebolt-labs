@@ -90,6 +90,15 @@ div#body-content {
     margin: auto;
 	line-height: 1.5;
 }
+.example-code {
+    font-family: consolas;
+    color: white;
+    background: black;
+    padding: 10px;
+}
+.example-code-comment {
+	color: lime;
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -127,6 +136,11 @@ Knifebolt Labs is an eclectic collection of bits of code and assets I've created
 <p>
 Chords.js is a library to leverage the Mozilla Web Audio API to do things like play notes and chords with JavaScript. It can render chord diagrams for guitar, keyboard, and ukulele, and if you click on a key or a fret position the appropriate note will play.
 </p>
+<div class="example-code">
+<span class="example-code-comment">//params: target div, chord name, target instrument</span><br>
+Chords.RenderChord("#chordOutput","Am","keyboard");<br>
+Chords.RenderChord("#chordOutput","Ebm7","guitar");
+</div>
 <div id="chordOutput"></div>
 </div>
 </div>
@@ -134,8 +148,8 @@ Chords.js is a library to leverage the Mozilla Web Audio API to do things like p
 $("#menu-icon").on("click",function(){
 	$("#menu-div").toggle("slide", { direction: "left" }, 400);
 });
-Chords.RenderChord("#chordOutput","A","keyboard");
-Chords.RenderChord("#chordOutput","E","guitar");
+Chords.RenderChord("#chordOutput","Am","keyboard");
+Chords.RenderChord("#chordOutput","Ebm7","guitar");
 </script>
 </body>
 </html>
