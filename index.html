@@ -95,9 +95,27 @@ div#body-content {
     color: white;
     background: black;
     padding: 10px;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
 }
 .example-code-comment {
 	color: lime;
+}
+.submit-button {
+    background: gray;
+    color: white;
+    outline: none;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 3px;
+    float: right;
+    margin-right: -20px;
+	cursor: pointer;
+}
+.submit-button:hover {
+	background: lightgray;
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -136,11 +154,11 @@ Knifebolt Labs is an eclectic collection of bits of code and assets I've created
 <p>
 Chords.js is a library to leverage the Mozilla Web Audio API to do things like play notes and chords with JavaScript. It can render chord diagrams for guitar, keyboard, and ukulele, and if you click on a key or a fret position the appropriate note will play.
 </p>
-<div class="example-code">
-<span class="example-code-comment">//params: target div, chord name, target instrument, options</span><br>
-Chords.RenderChord("#chordOutput","D","keyboard",{"Size":"400px"})<br>
+<textarea id="run-code-1" class="example-code">
+Chords.RenderChord("#chordOutput","D","keyboard",{"Size":"400px"});
 Chords.RenderChord("#chordOutput","Ebm7","guitar");
-</div>
+</textarea>
+<input type="submit" class="submit-button run-code" target="#run-code-1" id="run-code-1-button" value="Run" />
 <div id="chordOutput"></div>
 </div>
 </div>
@@ -150,6 +168,11 @@ $("#menu-icon").on("click",function(){
 });
 Chords.RenderChord("#chordOutput","D","keyboard",{"Size":"400px"})
 Chords.RenderChord("#chordOutput","Ebm7","guitar");
+$(".run-code").click(function(){
+	var target = $(this).attr("target");
+	var targetVal = $(target).val();
+	eval(targetVal);
+});
 </script>
 </body>
 </html>
