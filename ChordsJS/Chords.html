@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=10" /> 
+    <title>Chords JS</title>
+	<script src="Chords.js"></script>
+<style>
+
+</style>
+</head>
+<body>
+<div id="inputsDiv">
+
+Instrument <select id="instrumentSelect">
+	<option value="guitar">Guitar</option>
+	<option value="keyboard">Keyboard</option>
+	<option value="baritone ukulele">Baritone Ukulele</option>
+	<option value="ukulele">Ukulele</option>
+</select> &nbsp; &nbsp;
+Chord <input type="text" id="chordInput" /> &nbsp; &nbsp;
+
+Capo <select id="capoSelect">
+	<option value="0">0</option>
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+	<option value="5">5</option>
+	<option value="6">6</option>
+	<option value="7">7</option>
+	<option value="8">8</option>
+	<option value="9">9</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+</select> &nbsp; &nbsp;
+
+
+
+
+<input type="submit" value="Get Chord" onclick="GetChord()"/>
+</div>
+<div id="testDiv"></div>
+<script>
+function GetChord(){
+	var chordName = document.querySelector("#chordInput").value;
+	var instrument = document.querySelector("#instrumentSelect").value;
+
+	var options = {
+		Capo: document.querySelector("#capoSelect").value,
+		Size: "200px"
+	}
+	Chords.RenderChord("#testDiv",chordName,instrument,options);
+}
+
+
+</script>
+</body>
+</html>
