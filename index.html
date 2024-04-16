@@ -154,9 +154,10 @@ Knifebolt Labs is an eclectic collection of bits of code and assets I've created
 <p>
 Chords.js is a library to leverage the Mozilla Web Audio API to do things like play notes and chords with JavaScript. It can render chord diagrams for guitar, keyboard, and ukulele, and if you click on a key or a fret position the appropriate note will play.
 </p>
-<textarea id="run-code-1" class="example-code">
+<textarea id="run-code-1" rows="3" class="example-code">
 Chords.RenderChord("#chordOutput","D","keyboard",{"Size":"400px"});
 Chords.RenderChord("#chordOutput","Ebm7","guitar");
+Chords.PlayNote("D");
 </textarea>
 <input type="submit" class="submit-button run-code" target="#run-code-1" id="run-code-1-button" value="Run" />
 <div id="chordOutput"></div>
