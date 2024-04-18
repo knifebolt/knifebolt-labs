@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+/*
+html {
+	font: 10pt Segoe UI;
+}
+table {
+	font-family: 'SegoeUI', 'Segoe UI';
+	font-size: 13px;
+	color: rgb(51, 51, 51);
+	border-right: 1px solid rgb(216, 216, 216);
+	border-left: 1px solid rgb(216, 216, 216);
+	border-bottom: 1px solid rgb(216, 216, 216);
+	white-space: nowrap;
+	color: rgb(51, 51, 51);
+	cursor: pointer;
+	font-weight: normal;
+	font-size: 14px;
+	border-collapse: collapse;
+	margin: 10px;
+}
+th,.key-td {
+	color: black;
+	cursor: pointer;
+	text-align: left;
+	padding: 5px;
+	font-weight: bold;
+	
+	border: 1px solid rgb(216, 216, 216);
+	background-color: #f2f2f2;
+}
+td {
+	border: 1px solid rgb(216, 216, 216);
+	padding: 5px;
+}
+th {
+	top: -2px;
+	position: sticky;
+}
+*/
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="JSONtoHTML.js"></script>
+</head>
+<body>
+<textarea id="jsonObj-input" rows="20" cols="100"></textarea>
+<input type="submit" value="Convert" onclick="GetHTML()">
+
+<div id="sample-output">
+</div>
+<script>
+
+function GetHTML(){
+	var jsonObj = JSON.parse($("#jsonObj-input").val());
+	
+	var html = JSONtoHTML.GetHTML(jsonObj);
+	
+	$("#sample-output").empty();
+	$("#sample-output").append(html);
+}
+
+</script>
+</body>
+</html>
