@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/Recipes.js"></script>
+<script src="js/Ingredients.js"></script>
+<script src="js/Glasses.js"></script>
+<script src="js/RecipeManager.js"></script>
+
+<style>
+body {
+	background: black;
+	color: white;
+	font-size: 25px;
+	font-family: Arial;
+}
+#recipeDiv {
+	width: 50vw;
+}
+#Glass {
+	fill: white !important;
+	stroke: black !important;
+	stroke-width: 3 !important;
+}
+#glassDiv,#recipeMenu,#recipeDiv {
+	display: inline-block;
+}
+#ingredientsDiv {
+	display: inline-block;
+	vertical-align: top;
+}
+span.ingredient-key-color {
+    min-width: 50px !important;
+    display: inline-block;
+}
+.ingredient {
+    padding: 5px;
+
+}
+span.ingredient-name {
+    padding-left: 10px;
+}
+span#ingredientsSpan {
+    margin-top: 50px;
+    display: inline-block;
+}
+#recipeDiv {
+    margin: 20px;
+}
+[id*='Liquid-']{
+	stroke-width: 1 !important;
+}
+#recipeMenu{
+    vertical-align: top;
+	padding-right: 50px;
+	float: right;
+	overflow-y: scroll;
+	height: 90vh;
+}
+span#ingredientsSpan {
+    font-size: 20px;
+}
+
+#recipeMenu > [id*='glassDiv'] > svg:hover{
+	background: #404040;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#recipeMenu > [id*='glassDiv'] > svg:active{
+	background: gray;
+
+}
+#Ice-cube-1,#Ice-cube-2{
+	stroke-width: 2 !important;
+	opacity: 0.8 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+</style
+</head>
+<body>
+<div id="recipeDiv">
+<div id="titleDiv"><span id="titleSpan"></span></div>
+<div id="glassDiv"></div>
+<div id="ingredientsDiv"><span id="ingredientsSpan"></span></div>
+<div id="directionsDiv"><span id="directionsSpan"></span></div>
+</div>
+<div id="recipeMenu"></div>
+
+<script>
+RecipeManager.RenderMenu();
+$("#recipeMenu").find("svg").css("zoom",0.25)
+RecipeManager.RenderCocktail(Recipes[2],"#glassDiv");
+
+$("#recipeMenu").on("click","[id*='glassDiv']",function(){
+
+			//get this index
+			var index = $(this).attr("id").replace("glassDiv","");
+			index = Number(index);
+			console.log(index);
+			RecipeManager.RenderCocktail(Recipes[index],"#glassDiv");
+			
+});
+</script>
+</body>
