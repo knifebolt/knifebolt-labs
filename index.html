@@ -98,6 +98,10 @@ div#body-content {
     width: 100%;
     overflow: hidden;
     resize: none;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+	overflow: auto;
 }
 .example-code-comment {
 	color: lime;
@@ -117,10 +121,29 @@ div#body-content {
 .submit-button:hover {
 	background: lightgray;
 }
+.submit-button:active {
+	background: darkgray;
+}
+h2 {
+    line-height: 0;
+    margin-top: 30px;
+}
+textarea,
+pre {
+    -moz-tab-size : 4;
+      -o-tab-size : 4;
+         tab-size : 4;
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <script src="ChordsJS/Chords.js"></script>
+<script src="JSONtoHTML/JSONtoHTML.js"></script>
+
+
+<script src="../ChordsJS/Chords.js"></script>
+<script src="../JSONtoHTML/JSONtoHTML.js"></script>
 </head>
 <body>
 <div id="top-nav">
@@ -152,26 +175,95 @@ Knifebolt Labs is an eclectic collection of bits of code and assets I've created
 </p>
 <h2>Chords.js</h2>
 <p>
-Chords.js is a library to leverage the Mozilla Web Audio API to do things like play notes and chords with JavaScript. It can render chord diagrams for guitar, keyboard, and ukulele, and if you click on a key or a fret position the appropriate note will play.
+Chords.js is a library to leverage the Mozilla Web Audio API to do things like play notes and chords with JavaScript. It can render chord diagrams for guitar, keyboard, and ukulele, and if you click on a key or a fret position the appropriate note will play. Try changing the chords in the editable code below to F and Bm respectively, then click Run.
 </p>
-<textarea id="run-code-1" rows="3" class="example-code">
+<textarea id="run-code-1" rows="2" class="example-code">
 Chords.RenderChord("#chordOutput","D","keyboard",{"Size":"400px"});
-Chords.RenderChord("#chordOutput","Ebm7","guitar");
-Chords.PlayNote("D");
-</textarea>
+Chords.RenderChord("#chordOutput","Ebm7","guitar");</textarea>
 <input type="submit" class="submit-button run-code" target="#run-code-1" id="run-code-1-button" value="Run" />
+<p>Example output:</p>
 <div id="chordOutput"></div>
+
+<h2>JSONtoHTML.js</h2>
+<p>
+JSONtoHTML.js is a library that will turn valid JSON into an HTML table, regardless of complexity or nesting. This was created to deal with the situation of needing to render a variety of dynamic JSON objects in the UI despite not knowing how they would be structured beforehand.
+</p>
+<p>Example JSON input:</p>
+<textarea id="json-input" rows="20" class="example-code">
+[
+	{
+		"firstname":"Edgar",
+		"lastname":"Tester",
+		"address1": "101 Test Street",
+		"previous addresses":[
+			{
+				"addressLine1": "1 Test Lane",
+				"state": "FL"
+			},
+			{
+				"addressLine1": "20 Test Drive",
+				"state": "TN"
+			},
+			{
+				"addressLine1": "45 Test Avenue",
+				"state": "MD"
+			}
+		]
+	},
+	{
+		"firstname":"Edna",
+		"lastname":"Testarosa",
+		"address1": "202 Test Boulevard",
+		"previous addresses":[
+			{
+				"addressLine1": "23 Test Annex",
+				"state": "PA"
+			},
+			{
+				"addressLine1": "14 Test Junction",
+				"state": "CA"
+			},
+			{
+				"addressLine1": "11 Test Roundabout",
+				"state": "MI"
+			}
+		]
+	}
+]</textarea>
+<p>Example code using JSONtoHTML.js:</p>
+<textarea id="run-code-2" rows="4" class="example-code">
+var jsonObj = JSON.parse($("#json-input").val());
+var html = JSONtoHTML.GetHTML(jsonObj);
+$("#jsonToHtmlOutput").empty();
+$("#jsonToHtmlOutput").append(html);</textarea>
+<input type="submit" class="submit-button run-code" target="#run-code-2" id="run-code-2-button" value="Run" />
+<p>Example output:</p>
+<div id="jsonToHtmlOutput"></div>
+
+
 </div>
 </div>
 <script>
 $("#menu-icon").on("click",function(){
 	$("#menu-div").toggle("slide", { direction: "left" }, 400);
 });
-$(".run-code").click(function(){
+
+$("#run-code-1-button").click(function(){
+	
+	$("#chordOutput").empty();
+	
 	var target = $(this).attr("target");
 	var targetVal = $(target).val();
 	eval(targetVal);
 });
+
+
+$("#run-code-2-button").click(function(){
+	var target = $(this).attr("target");
+	var targetVal = $(target).val();
+	eval(targetVal);
+});
+$("#run-code-1-button,#run-code-2-button").trigger("click");
 </script>
 </body>
 </html>
