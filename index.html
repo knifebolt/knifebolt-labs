@@ -134,16 +134,29 @@ pre {
       -o-tab-size : 4;
          tab-size : 4;
 }
+#recipeManagerDiv {
+    background: black;
+    height: 650px;
+    border-radius: 5px;
+}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 <script src="ChordsJS/Chords.js"></script>
 <script src="JSONtoHTML/JSONtoHTML.js"></script>
+<script src="RecipeManager/js/Recipes.js"></script>
+<script src="RecipeManager/js/Ingredients.js"></script>
+<script src="RecipeManager/js/Glasses.js"></script>
+<script src="RecipeManager/js/RecipeManager.js"></script>
 
 
 <script src="../ChordsJS/Chords.js"></script>
 <script src="../JSONtoHTML/JSONtoHTML.js"></script>
+<script src="../RecipeManager/js/Recipes.js"></script>
+<script src="../RecipeManager/js/Ingredients.js"></script>
+<script src="../RecipeManager/js/Glasses.js"></script>
+<script src="../RecipeManager/js/RecipeManager.js"></script>
 </head>
 <body>
 <div id="top-nav">
@@ -183,6 +196,21 @@ Chords.RenderChord("#chordOutput","Ebm7","guitar");</textarea>
 <input type="submit" class="submit-button run-code" target="#run-code-1" id="run-code-1-button" value="Run" />
 <p>Example output:</p>
 <div id="chordOutput"></div>
+
+
+<h2>Recipe Manager</h2>
+<p>
+This is an app that renders drink recipes using dynamic SVGs. The design was an attempt to make something that would look good on a transparent OLED screen or a smart mirror. While the other .js libraries are meant to be brought into a project via a script tag this one is intended to be a standalone app.
+</p>
+<div id="recipeManagerDiv">
+<div id="recipeDiv">
+<div id="titleDiv"><span id="titleSpan"></span></div>
+<div id="glassDiv"></div>
+<div id="ingredientsDiv"><span id="ingredientsSpan"></span></div>
+<div id="directionsDiv"><span id="directionsSpan"></span></div>
+</div>
+<div id="recipeMenu"></div>
+</div>
 
 <h2>JSONtoHTML.js</h2>
 <p>
@@ -232,10 +260,10 @@ JSONtoHTML.js is a library that will turn valid JSON into an HTML table, regardl
 ]</textarea>
 <p>Example code using JSONtoHTML.js:</p>
 <textarea id="run-code-2" rows="4" class="example-code">
-var jsonObj = JSON.parse($("#json-input").val());
+var jsonString = document.getElementById('json-input').value
+var jsonObj = JSON.parse(jsonString);
 var html = JSONtoHTML.GetHTML(jsonObj);
-$("#jsonToHtmlOutput").empty();
-$("#jsonToHtmlOutput").append(html);</textarea>
+document.getElementById('jsonToHtmlOutput').innerHTML = html;</textarea>
 <input type="submit" class="submit-button run-code" target="#run-code-2" id="run-code-2-button" value="Run" />
 <p>Example output:</p>
 <div id="jsonToHtmlOutput"></div>
@@ -264,6 +292,20 @@ $("#run-code-2-button").click(function(){
 	eval(targetVal);
 });
 $("#run-code-1-button,#run-code-2-button").trigger("click");
+
+RecipeManager.RenderMenu();
+$("#recipeMenu").find("svg").css("zoom",0.25)
+RecipeManager.RenderCocktail(Recipes[2],"#glassDiv");
+
+$("#recipeMenu").on("click","[id*='glassDiv']",function(){
+
+	//get this index
+	var index = $(this).attr("id").replace("glassDiv","");
+	index = Number(index);
+	console.log(index);
+	RecipeManager.RenderCocktail(Recipes[index],"#glassDiv");
+			
+});
 </script>
 </body>
 </html>
