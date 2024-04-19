@@ -476,7 +476,7 @@ function ProcessText(text){
 			});
 		  }
 		  },2000);
-	} else if (gptToken != "") {
+	} else if (gptToken != null) {
 		
 		var data = JSON.stringify({
 		  "model": "gpt-3.5-turbo",
