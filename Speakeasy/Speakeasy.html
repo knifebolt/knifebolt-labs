@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+	background: black;
+	color: white;
+	font-size: 20px;
+	font-family: arial;
+}
+#transcript {
+	width : 30vw;
+	height: 90vh;
+	overflow-y: scroll;
+	margin: 15px;
+}
+#transcript,#output {
+	display: inline-block;
+}
+#output {
+	width : 60vw;
+	height: 90vh;
+	overflow-y: scroll;
+	margin: 15px;
+}
+.spoken-input {
+	background-color: #262626;
+	border-radius: 4px;
+	width: 80%;
+	margin: 5px;
+	padding: 10px;
+	clear: both;
+}
+.machine-response {
+	background-color: #003311;
+	color: #ccffdd;
+	border-radius: 4px;
+	float: right;
+	width: 80%;
+	margin: 5px;
+	padding: 10px;
+	clear: both;
+	margin-bottom: 10px;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333333;
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+iframe#ytplayer {
+    border: transparent;
+	border-radius: 8px;
+	width: 50vw;
+	height: 60vh;
+}
+
+
+#recipeDiv {
+	width: 50vw;
+}
+#Glass {
+	fill: white !important;
+	stroke: black !important;
+	stroke-width: 3 !important;
+}
+#glassDiv,#recipeMenu,#recipeDiv {
+	display: inline-block;
+}
+#ingredientsDiv {
+	display: inline-block;
+	vertical-align: top;
+}
+span.ingredient-key-color {
+    min-width: 50px !important;
+    display: inline-block;
+}
+.ingredient {
+    padding: 5px;
+
+}
+span.ingredient-name {
+    padding-left: 10px;
+}
+span#ingredientsSpan {
+    margin-top: 50px;
+    display: inline-block;
+}
+#recipeDiv {
+    margin: 20px;
+}
+[id*='Liquid-']{
+	stroke-width: 1 !important;
+}
+#recipeMenu{
+    vertical-align: top;
+	padding-right: 50px;
+	float: right;
+	overflow-y: scroll;
+	height: 90vh;
+}
+span#ingredientsSpan {
+    font-size: 20px;
+}
+
+#recipeMenu > [id*='glassDiv'] > svg:hover{
+	background: #404040;
+	border-radius: 10px;
+	cursor: pointer;
+}
+#recipeMenu > [id*='glassDiv'] > svg:active{
+	background: gray;
+
+}
+#Ice-cube-1,#Ice-cube-2{
+	stroke-width: 2 !important;
+	opacity: 0.8 !important;
+}
+#inputMic {
+    width: 25px;
+    height: 30px;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#inputMic > g > path, #inputMic > g > ellipse, #inputMic > g > rect{
+	fill: #737373 !Important;
+}
+#inputSpan {
+	color: gray;
+	border-radius: 3px;
+}
+#micButton {
+    background: #b3b3b3;
+    border-radius: 3px;
+    display: inline-block;
+}
+#micButton:hover{
+	background: #d9d9d9;
+}
+#inputDiv {
+    background-color: #262626;
+    border-radius: 4px;
+    width: 80%;
+    margin: 5px;
+    padding: 10px;
+    clear: both;
+	display: none;
+}
+#promptInput {
+    width: 80%;
+    outline: none;
+    background: #262626;
+    color: white;
+    border: none;
+    height: 50px;
+	font-size: 20px;
+    font-family: arial;
+	resize: none;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="../ChordsJS/Chords.js"></script>
+<script src="../ChordsJS/RecipeManager.js"></script>
+<script src="../JokesJS/Jokes.js"></script>
+<script src="../ChordsJS/Chords.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+
+</head>
+<body>
+<div id="mainDiv">
+<div id="transcript">
+<div id="inputDiv"><textarea id="promptInput" placeholder="Type or speak a command or question"></textarea>
+<span id="micButton">
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="inputMic"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="Microphone.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35"
+     inkscape:cx="213.14187"
+     inkscape:cy="560"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="2389"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.43120247;stroke-opacity:1"
+       d="m 106.09383,33.94118 a 50.512291,50.512291 0 0 0 -50.512175,50.512153 50.512291,50.512291 0 0 0 0.0548,1.548791 v 73.639626 a 50.512291,50.512291 0 0 0 -0.41604,6.12441 50.512291,50.512291 0 0 0 50.512165,50.51218 50.512291,50.512291 0 0 0 50.42458,-48.74442 h 0.53479 V 85.644213 h -0.14578 a 50.512291,50.512291 0 0 0 0.0598,-1.19088 50.512291,50.512291 0 0 0 -50.51218,-50.512153 z"
+       id="path815"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.13118999;stroke-opacity:1"
+       id="path815-6"
+       cx="26.209354"
+       cy="159.17171"
+       rx="15.843325"
+       ry="14.906881" />
+    <path
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.64526957;stroke-opacity:1"
+       d="m 11.082406,160.50106 a 94.839906,94.839906 0 0 0 -0.273486,5.47471 94.839906,94.839906 0 0 0 94.84077,94.84077 94.839906,94.839906 0 0 0 94.83948,-94.84077 94.839906,94.839906 0 0 0 -0.19413,-5.47471 h -30.56839 a 63.91084,63.91084 0 0 1 0.15877,4.49797 63.91084,63.91084 0 0 1 -63.91067,63.91069 63.91084,63.91084 0 0 1 -63.910682,-63.91069 63.91084,63.91084 0 0 1 0.224345,-4.49797 z"
+       id="path857"
+       inkscape:connector-curvature="0" />
+    <ellipse
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.13118999;stroke-opacity:1"
+       id="path815-6-3"
+       cx="185.29402"
+       cy="159.99832"
+       rx="15.843325"
+       ry="14.906882" />
+    <rect
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.43316385;stroke-opacity:1"
+       id="rect891"
+       width="39.737038"
+       height="41.243607"
+       x="85.860619"
+       y="234.29054" />
+  </g>
+</svg>
+</span>
+</div>
+</div>
+<div id="output">
+Commands:
+<ul>
+<li>How do I play a [chord] on [instrument]?</li>
+<li>How do I make a [drink name]?</li>
+<li>Play Youtube Lofi</li>
+<li>Tell me a joke</li>
+<li>Can you find me a link to the wikipedia article about [topic]?</li>
+<li>No match with the above asks ChatGPT a question</li>
+</span>
+</div>
+</div>
+<script>
+var tag = document.createElement('script');
+
+
+const urlParams = new URLSearchParams(window.location.search);
+var gptToken = urlParams.get("gptToken");
+
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+var SpeechGrammarList = SpeechGrammarList || window.webkitSpeechGrammarList;
+var SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+
+var recognition = new SpeechRecognition();
+if (SpeechGrammarList) {
+
+  var SpeechGrammarList = SpeechGrammarList || window.webkitSpeechGrammarList
+  var speechRecognitionList = new SpeechGrammarList();
+  recognition.grammars = speechRecognitionList;
+}
+recognition.continuous = true;
+recognition.lang = 'en-US';
+recognition.interimResults = false;
+recognition.maxAlternatives = 1;
+
+var commands = [
+	"create task",
+	"complete task",
+	"show birthdays",
+	"show recipe",
+	"show weather"
+	]
+
+var diagnostic = document.querySelector('.output');
+
+document.querySelector("#micButton").onclick = function() {
+  recognition.start();
+  recognitionActive = true;
+  console.log('Ready to receive a command.');
+}
+
+recognition.onresult = function(event) {
+
+	if (window.speechSynthesis.speaking == true)
+	{
+		return;
+	}
+
+  var tscript = event.results[event.results.length -1][0].transcript;
+
+
+  var responseId = new Date().valueOf();
+  var inputDiv = "<div class='spoken-input'>" + tscript + "</div>";
+  $("#transcript").append(inputDiv);
+
+  ProcessText(tscript);
+}
+
+recognition.onspeechend = function() {
+	
+}
+
+recognition.addEventListener('end', () => {
+    window.recognitionActive = false;
+	//recognition.start();
+});
+
+setInterval(function(){
+	if (window.speechSynthesis.speaking == true)
+	{
+		recognitionActive = false;
+		recognition.stop();
+		return;
+	} else {
+		if (!window.recognitionActive){
+			recognitionActive = true;
+			recognition.start();
+		}
+	}
+
+},200);
+
+recognition.onnomatch = function(event) {
+  diagnostic.textContent = "I didn't recognise that color.";
+}
+
+recognition.onerror = function(event) {
+  diagnostic.textContent = 'Error occurred in recognition: ' + event.error;
+}
+
+function ProcessText(text){
+
+	if (window.speechSynthesis.speaking == true)
+	{
+		return;
+	}
+
+	var response = "Sorry, I don't recognize this command or question."
+	var responseId = new Date().valueOf();
+	var respDiv = "<div class='machine-response' id='" + responseId + "'>...</div>";
+	$("#transcript").append(respDiv);
+	
+	//tell a joke
+	if (text.includesAll(["tell", "joke"])){
+		
+		
+		//get a joke
+		var jokeInt = GetRandomInt(0,Jokes.length);
+		response = Jokes[jokeInt].Setup;
+		SpeakText(response);
+		document.getElementById(responseId).innerHTML = response;
+
+		setTimeout(function(){
+			var responseId = new Date().valueOf();
+			var respDiv = "<div class='machine-response' id='" + responseId + "'>...</div>";
+			$("#transcript").append(respDiv);
+			response = Jokes[jokeInt].Punchline;
+			SpeakText(response);
+			document.getElementById(responseId).innerHTML = response;
+		
+		},800);
+
+	} else
+	//show chord diagram
+	if (text.includesAll(["how", "play"])){
+		response = "Let me try to find that chord for you.";
+		SpeakText(response);
+		document.getElementById(responseId).innerHTML = response;
+		setTimeout(function(){
+			FindAndDisplayChord(text);
+		},2000);
+	} else
+	
+	
+	//show recipe
+	if (text.includesAll(["how", "make"])){
+		response = "Let me try to find that recipe for you.";
+		SpeakText(response);
+		document.getElementById(responseId).innerHTML = response;
+		var drinkRecipeHTML = '<div id="recipeDiv"><div id="titleDiv"><span id="titleSpan"></span></div><div id="glassDiv"></div>' +
+			'<div id="ingredientsDiv"><span id="ingredientsSpan"></span></div>' +
+			'<div id="directionsDiv"><span id="directionsSpan"></span></div></div>';
+
+
+		setTimeout(function(){
+			$("#output").empty();
+			$("#output").append(drinkRecipeHTML);
+			FindAndDisplayRecipe(text);
+		},2000);
+	} else
+	
+	
+	//embed youtube video
+	if (text.includesAll(["play", "youtube"])){
+		response = "I will embed that video.";
+		
+		var embedCode = "9xl62Ev76GA";
+		var cutman = "9xl62Ev76GA"
+		var lofi = "jfKfPfyJRdk";
+		
+		if (text.includesAll(["cut","man"])){
+			embedCode = cutman;
+		} else if (text.includesAll(["lofi"])){
+			embedCode = lofi;
+		}
+
+			
+		var ytFrame = '<iframe id="ytplayer" src="https://www.youtube.com/embed/' + embedCode + '?autoplay=1&enablejsapi=1" allow="autoplay"></iframe>';
+		$("#output").empty();
+		$("#output").append(ytFrame);
+		setTimeout(function(){
+		  var player;
+		  console.log("did this");
+		  function onYouTubeIframeAPIReady() {
+			player = new YT.Player('ytplayer', {
+			  events: {
+				'onStateChange': function(){
+					onsole.log("did this, too");
+					player.unMute();
+					player.setVolume(80);
+				}
+			  }
+			});
+		  }
+		  },2000);
+	} else if (gptToken != "") {
+		
+		var data = JSON.stringify({
+		  "model": "gpt-3.5-turbo",
+		  "messages": [
+			{
+			  "role": "user",
+			  "content": text + " Please produce an answer of less than 50 words."
+			}
+		  ],
+		  "temperature": 0.5
+		});
+
+		var xhr = new XMLHttpRequest();
+
+
+		xhr.addEventListener("readystatechange", function() {
+		  if(this.readyState === 4) {
+			response = JSON.parse(this.responseText).choices[0].message.content;
+			console.log(this.responseText);
+			
+			SpeakText(response);
+			setTimeout(function(){
+				document.getElementById(responseId).innerHTML = response;
+			},1000);
+			
+			//$('#' +responseId).stop().animate({scrollTop: $("#transcript").height()}, 800);
+			document.getElementById(responseId).scrollIntoView({ behavior: 'smooth', block: 'end' });
+			if (response.indexOf("https") > -1){
+				var url = "https" + response.split("https")[1].split(" ")[0];
+				var linkFrame = '<iframe id="framedPage" src="' + url +'"></iframe>';
+				
+				
+				$("#output").empty();
+				$("#output").append(linkFrame);
+				$("#framedPage").css("height","90vh").css("width","80%");
+			}
+			
+    
+		  }
+		});
+
+		xhr.open("POST", "https://api.openai.com/v1/chat/completions");
+		xhr.setRequestHeader("Bearer", gptToken);
+		xhr.setRequestHeader("Content-Type", "application/json");
+
+		xhr.setRequestHeader("Authorization", "Bearer " + gptToken);
+		
+		xhr.send(data);
+		
+	} else {
+		response = "I'm sorry, I'm not sure how to help you.";
+		SpeakText(response);
+		document.getElementById(responseId).innerHTML = response;
+	}
+}
+
+function GetRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function SpeakText (text,speakerName){
+	var msg = new SpeechSynthesisUtterance();
+	msg.text = text;
+	var voices = window.speechSynthesis.getVoices();
+	var voiceIndex = 0;
+	if (speakerName != undefined){
+	} else {
+		speakerName = "Clara";
+	}
+	
+	for (let i = 0; i < voices.length; i++) {
+	  if (voices[i].name.toLowerCase().indexOf(speakerName.toLowerCase()) > -1){
+		voiceIndex = i;
+	  }
+	}
+	msg.voice = voices[voiceIndex]; 
+	window.top.msg = msg;
+
+	window.speechSynthesis.speak(msg);
+}
+
+function FindAndDisplayRecipe(text){
+	text = text.toLowerCase();
+	
+	//strip out drink name
+	var drinkName = text.split("make")[1];
+	
+	drinkName = drinkName.replace(" an ","").replace(" a ","").replace("-","").trim().replace("?","").replace(".","");
+	
+	var numberOfMatches = 0;
+	
+	var indexWithHighestMatch = -1;
+	
+	for (var a = 0; a < Recipes.length; a++) {
+		if (Recipes[a].Name.toLowerCase() == drinkName){
+			indexWithHighestMatch = a;
+		}
+	}
+	if (indexWithHighestMatch != -1){
+		RecipeManager.RenderCocktail(Recipes[indexWithHighestMatch],"#glassDiv");
+	} else {
+		$("#output").text("Could not find matching drink");
+	}
+}
+
+function FindAndDisplayChord(text){
+	$("#output").empty();
+	text = text.replace(/an /g,"");
+	
+	var chord = text.firstMatch(["B","C","D","E","F","G","A"],true);
+	var chordFlatSharp = text.firstMatch(["flat","sharp","#","♭"]).replace("flat","♭").replace("sharp","#");
+	var chordMajMin = text.firstMatch(["major","minor"]).replace("minor","m").replace("major","maj");
+	var chordSus = text.firstMatch(["suspended"]).replace("suspended","sus");
+	var chordModCount = text.firstMatch(["second","third","fourth","fifth","sixth","seventh","ninth"])
+								.replace("second","2")
+								.replace("fourth","4")
+								.replace("fifth","5")
+								.replace("sixth","6")
+								.replace("seventh","7")
+								.replace("ninth","9");
+	var chordModNumber = text.firstMatch(["two","three","four","five","six","seven","eight","nine","2","3","4","5","6","7","9"])
+								.replace("two","2")
+								.replace("three","3")
+								.replace("four","4")
+								.replace("five","5")
+								.replace("six","6")
+								.replace("seven","7")
+								.replace("nine","9");
+
+
+
+
+	
+	if (chord != ""){
+		chord = chord.toUpperCase() + chordFlatSharp + chordMajMin + chordSus + chordModCount + chordModNumber;
+	}
+	
+	
+	var options = {
+		OutlineColor: "white",
+		//FingerPlacementColor: "#33cccc",
+		LabelTextColor: "white",
+		LabelFontSize: "38px",
+		Size: "300px"
+	}
+	
+	
+	var instrument = "";
+	
+	if (text.toLowerCase().includes("piano") || text.toLowerCase().includes("keyboard")){
+		instrument = "keyboard";
+		options.OutlineColor = "black";
+	} else if (text.toLowerCase().includes("baritone uke") || text.toLowerCase().includes("baritone ukulele")){
+		instrument = "baritone ukulele";
+	} else if (text.toLowerCase().includes("uke") || text.toLowerCase().includes("ukulele")) {
+		instrument = "ukulele"
+	} else {
+		instrument = "guitar";
+	}
+	
+
+	Chords.RenderChord("#output",chord,instrument,options);
+	//$(".chord-name").click()
+	
+}
+
+String.prototype.includesAll = function (compareTo) {
+	var result = true;
+	for (var v = 0; v < compareTo.length; v++) {
+        if (this.toLowerCase().indexOf(compareTo[v].toLowerCase()) == -1){
+			result = false;
+		}
+    }
+	return result;
+}
+
+String.prototype.firstMatch = function (compareTo,caseSensitive) {
+	var result = "";
+	if (caseSensitive != undefined && caseSensitive != null && caseSensitive){
+		for (var v = 0; v < compareTo.length; v++) {
+			if (this.indexOf(compareTo[v]) != -1){
+				result = compareTo[v];
+				break;
+			}
+		}
+	} else {
+		for (var v = 0; v < compareTo.length; v++) {
+			if (this.toLowerCase().indexOf(compareTo[v].toLowerCase()) != -1){
+				result = compareTo[v];
+				break;
+			}
+		}
+	}
+	return result;
+}
+
+
+</script>
+</body>
