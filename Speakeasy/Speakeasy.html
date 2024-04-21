@@ -399,20 +399,22 @@ function ProcessText(text){
 		
 		
 		//get a joke
-		var jokeInt = GetRandomInt(0,Jokes.length);
-		response = Jokes[jokeInt].Setup;
+		var joke = Jokes.GetRandomJoke();
+		response = joke.Setup;
 		SpeakText(response);
 		document.getElementById(responseId).innerHTML = response;
-
-		setTimeout(function(){
-			var responseId = new Date().valueOf();
-			var respDiv = "<div class='machine-response' id='" + responseId + "'>...</div>";
-			$("#transcript").append(respDiv);
-			response = Jokes[jokeInt].Punchline;
-			SpeakText(response);
-			document.getElementById(responseId).innerHTML = response;
 		
-		},800);
+		if (joke.Punchline != ""){
+			setTimeout(function(){
+				var responseId = new Date().valueOf();
+				var respDiv = "<div class='machine-response' id='" + responseId + "'>...</div>";
+				$("#transcript").append(respDiv);
+				response = joke.Punchline;
+				SpeakText(response);
+				document.getElementById(responseId).innerHTML = response;
+			
+			},2800);
+		}
 
 	} else
 	//show chord diagram
