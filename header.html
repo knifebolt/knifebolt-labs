@@ -40,31 +40,6 @@ body {
 #top-nav {
 	background: #0d0d0d;
 }
-#menu-div {
-    background: #e6e6e6;
-    color: black;
-    padding: 10px;
-    height: -webkit-fill-available;
-    min-width: 310px;
-    display: none;
-    z-index: 10;
-    /* width: fit-content; */
-    width: -moz-fit-content;
-    /* height: 100vh; */
-    position: absolute;
-}
-.menu-header {
-    font-variant: small-caps;
-    font-size: 24px;
-}
-.menu-item {
-	margin: 10px;
-	margin-left: 20px;
-	cursor: pointer
-}
-.menu-item:hover {
-	color: gray;
-}
 span#searchBar {
     float: right;
     height: 35px;
@@ -112,16 +87,6 @@ a:visited {
 <input id="searchInput" placeholder="knifebolt labs" type="text"/>
 <img id="searchIcon" src="images/MagnifyingGlass.svg" />
 </span>
-</div>
-<div id="menu-div">
-	<div class="menu-header">experiments</div>
-		<div class="menu-item">Chords.js</div>
-		<div class="menu-item">JSON to HTML</div>
-		<div class="menu-item">Recipe Manager</div>
-		<div class="menu-item"><a href="Speakeasy/Speakeasy.html" target="_top">Speakeasy</a></div>
-	<div class="menu-header">assets</div>
-		<div class="menu-item">Sounds</div>
-		<div class="menu-item">Icons</div>
 </div>
 <script>
 $("#menu-icon").on("click",function(){
