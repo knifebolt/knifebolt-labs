@@ -411,14 +411,7 @@ setInterval(function(){
 	).then(function(permissionStatus){
 		console.log(permissionStatus.state); // granted, denied, prompt
 		$("#microphone-permission-status").text("Microphone:" + permissionStatus.state);
-	})
-	//check if speaker allowed
-	navigator.permissions.query(
-    { name: 'speaker' }  
-	).then(function(permissionStatus){
-		console.log(permissionStatus.state); // granted, denied, prompt
-		$("#speaker-permission-status").text("Speaker:" + permissionStatus.state);
-	})
+	});
 
 },1000);
 
@@ -610,6 +603,9 @@ function SpeakText (text,speakerName){
 	window.top.msg = msg;
 
 	window.speechSynthesis.speak(msg);
+	const worked = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+	console.log(worked);
+	$("#speaker-permission-status").text("Speaker:" + worked);
 }
 
 function FindAndDisplayRecipe(text){
