@@ -216,7 +216,22 @@ span#ingredientsSpan {
 <div id="mainDiv">
 <div id="transcript">
 <div id="inputDiv"><textarea id="promptInput" placeholder="Type or speak a command or question"></textarea>
-<span id="micButton">
+
+</div>
+</div>
+<div id="output">
+Commands:
+<ul>
+<li>How do I play a [chord] on [instrument]?</li>
+<li>How do I make a [drink name]?</li>
+<li>Play Youtube Lofi</li>
+<li>Tell me a joke</li>
+</span>
+</div>
+</div>
+<div id="permissions-status">
+	<div id="microphone-permission-status">Microphone:</div>
+	<span id="micButton">
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -302,20 +317,6 @@ span#ingredientsSpan {
   </g>
 </svg>
 </span>
-</div>
-</div>
-<div id="output">
-Commands:
-<ul>
-<li>How do I play a [chord] on [instrument]?</li>
-<li>How do I make a [drink name]?</li>
-<li>Play Youtube Lofi</li>
-<li>Tell me a joke</li>
-</span>
-</div>
-</div>
-<div id="permissions-status">
-	<div id="microphone-permission-status">Microphone:</div>
 	<div id="speaker-permission-status">Speaker:</div>
 </div>
 <script>
@@ -606,6 +607,7 @@ function SpeakText (text,speakerName){
 	const worked = window.speechSynthesis.speaking || window.speechSynthesis.pending;
 	console.log(worked);
 	$("#speaker-permission-status").text("Speaker:" + worked);
+
 }
 
 function FindAndDisplayRecipe(text){
