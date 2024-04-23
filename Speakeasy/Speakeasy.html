@@ -314,6 +314,10 @@ Commands:
 </span>
 </div>
 </div>
+<div id="permissions-status">
+	<div id="microphone-permission-status">Microphone:</div>
+	<div id="speaker-permission-status">Speaker:</div>
+</div>
 <script>
 var tag = document.createElement('script');
 
@@ -384,6 +388,7 @@ recognition.addEventListener('end', () => {
 	//recognition.start();
 });
 
+//check if response voice is talking, if not turn on recognition
 setInterval(function(){
 	if (window.speechSynthesis.speaking == true)
 	{
@@ -398,6 +403,25 @@ setInterval(function(){
 	}
 
 },200);
+
+setInterval(function(){
+	//check if microphone allowed
+	navigator.permissions.query(
+    { name: 'microphone' }  
+	).then(function(permissionStatus){
+		console.log(permissionStatus.state); // granted, denied, prompt
+		$("#microphone-permission-status").text("Microphone:" + permissionStatus.state);
+	})
+	//check if speaker allowed
+	navigator.permissions.query(
+    { name: 'speaker' }  
+	).then(function(permissionStatus){
+		console.log(permissionStatus.state); // granted, denied, prompt
+		$("#speaker-permission-status").text("Speaker:" + permissionStatus.state);
+	})
+
+},1000);
+
 
 recognition.onnomatch = function(event) {
   diagnostic.textContent = "I didn't recognise that color.";
