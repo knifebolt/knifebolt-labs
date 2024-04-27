@@ -18,7 +18,7 @@
 
         function init() {
             scene = new THREE.Scene();
-            //scene.background = new THREE.Color(0xdddddd);
+            scene.background = null;
 
             camera = new THREE.PerspectiveCamera(5, window.innerWidth/window.innerHeight, 1, 5000);
             camera.position.z = 4000;
@@ -33,7 +33,7 @@
             scene.add(light);
 
             renderer = new THREE.WebGLRenderer({antialias:true});
-            renderer.setSize(window.innerWidth*.75, window.innerWidth*.75);
+            renderer.setSize(window.innerWidth*.33, window.innerWidth*.22);
             document.body.appendChild(renderer.domElement);
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
