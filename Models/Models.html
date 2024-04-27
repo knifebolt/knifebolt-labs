@@ -18,7 +18,7 @@
 
         function init() {
             scene = new THREE.Scene();
-            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
             scene.background = null;
 
             camera = new THREE.PerspectiveCamera(5, window.innerWidth/window.innerHeight, 1, 5000);
