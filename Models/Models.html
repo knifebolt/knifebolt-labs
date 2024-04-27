@@ -33,7 +33,7 @@
             scene.add(light);
 
             renderer = new THREE.WebGLRenderer({antialias:true});
-            renderer.setSize(1000px, 700px);
+            renderer.setSize(1000, 700);
             document.body.appendChild(renderer.domElement);
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
