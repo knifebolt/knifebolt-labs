@@ -24,11 +24,11 @@
             camera.position.z = 2000;
 
             light = new THREE.HemisphereLight(0xffffff, 0x444444, 1.0);
-            light.position.set(0, 1, 0);
+            light.position.set(0, 2, 0);
             scene.add(light);
 
             light = new THREE.DirectionalLight(0xffffff, 1.0);
-            light.position.set(0, 1, 0);
+            light.position.set(0, 2, 0);
             scene.add(light);
 
             renderer = new THREE.WebGLRenderer({antialias:true});
