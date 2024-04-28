@@ -148,13 +148,16 @@ span#ingredientsSpan {
 	color: gray;
 	border-radius: 3px;
 }
-#micButton {
+#micButton,#speaker-span {
     background: #b3b3b3;
     border-radius: 50px;
     display: inline-block;
+    width: 60px;
+    height: 60px;
 }
-#micButton:hover{
+#micButton:hover,#speaker-span:hover{
 	background: #d9d9d9;
+	cursor: pointer;
 }
 #inputDiv {
     background-color: #262626;
@@ -178,6 +181,10 @@ span#ingredientsSpan {
 }
 #mainDiv {
     margin-top: 64px;
+}
+#microphone-svg,#microphone-x-svg,#speaker-svg,#speaker-x-svg {
+	width: 50px;
+	margin: 5px;
 }
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -232,94 +239,20 @@ Commands:
 <div id="permissions-status">
 	<div id="microphone-permission-status">Microphone:</div>
 	<span id="micButton">
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
-   version="1.1"
-   id="inputMic"
-   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
-   sodipodi:docname="Microphone.svg">
-  <defs
-     id="defs2" />
-  <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="0.35"
-     inkscape:cx="213.14187"
-     inkscape:cy="560"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="986"
-     inkscape:window-x="2389"
-     inkscape:window-y="-11"
-     inkscape:window-maximized="1" />
-  <metadata
-     id="metadata5">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-     inkscape:label="Layer 1"
-     inkscape:groupmode="layer"
-     id="layer1">
-    <path
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.43120247;stroke-opacity:1"
-       d="m 106.09383,33.94118 a 50.512291,50.512291 0 0 0 -50.512175,50.512153 50.512291,50.512291 0 0 0 0.0548,1.548791 v 73.639626 a 50.512291,50.512291 0 0 0 -0.41604,6.12441 50.512291,50.512291 0 0 0 50.512165,50.51218 50.512291,50.512291 0 0 0 50.42458,-48.74442 h 0.53479 V 85.644213 h -0.14578 a 50.512291,50.512291 0 0 0 0.0598,-1.19088 50.512291,50.512291 0 0 0 -50.51218,-50.512153 z"
-       id="path815"
-       inkscape:connector-curvature="0" />
-    <ellipse
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.13118999;stroke-opacity:1"
-       id="path815-6"
-       cx="26.209354"
-       cy="159.17171"
-       rx="15.843325"
-       ry="14.906881" />
-    <path
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.64526957;stroke-opacity:1"
-       d="m 11.082406,160.50106 a 94.839906,94.839906 0 0 0 -0.273486,5.47471 94.839906,94.839906 0 0 0 94.84077,94.84077 94.839906,94.839906 0 0 0 94.83948,-94.84077 94.839906,94.839906 0 0 0 -0.19413,-5.47471 h -30.56839 a 63.91084,63.91084 0 0 1 0.15877,4.49797 63.91084,63.91084 0 0 1 -63.91067,63.91069 63.91084,63.91084 0 0 1 -63.910682,-63.91069 63.91084,63.91084 0 0 1 0.224345,-4.49797 z"
-       id="path857"
-       inkscape:connector-curvature="0" />
-    <ellipse
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.13118999;stroke-opacity:1"
-       id="path815-6-3"
-       cx="185.29402"
-       cy="159.99832"
-       rx="15.843325"
-       ry="14.906882" />
-    <rect
-       style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.43316385;stroke-opacity:1"
-       id="rect891"
-       width="39.737038"
-       height="41.243607"
-       x="85.860619"
-       y="234.29054" />
-  </g>
-</svg>
+		<img id="microphone-svg" src="Microphone.svg" />
+		<img id="microphone-x-svg" src="Microphone-X.svg" />
 </span>
 	<div id="speaker-permission-status">Speaker:</div>
+	<span id="speaker-span">
+		<img id="speaker-svg" src="Speaker.svg" />
+		<img id="speaker-x-svg" src="Speaker-X.svg" />
+
+	</span>
 </div>
 <script>
+
+$("#microphone-svg,#microphone-x-svg,#speaker-svg,#speaker-x-svg").hide();
+$("#speaker-svg,#speaker-x-svg").hide();
 var tag = document.createElement('script');
 
 
@@ -412,6 +345,13 @@ setInterval(function(){
 	).then(function(permissionStatus){
 		console.log(permissionStatus.state); // granted, denied, prompt
 		$("#microphone-permission-status").text("Microphone:" + permissionStatus.state);
+		
+		$("#microphone-svg,#microphone-x-svg").hide();
+		if (permission-status.state == "granted"){
+			$("#microphone-svg").show();
+		} else {
+			$("#microphone-x-svg").show();
+		}
 	});
 
 },1000);
@@ -607,8 +547,16 @@ function SpeakText (text,speakerName){
 	const worked = window.speechSynthesis.speaking || window.speechSynthesis.pending;
 	console.log(worked);
 	$("#speaker-permission-status").text("Speaker:" + worked);
-
+	$("#speaker-svg,#speaker-x-svg").hide();
+	if (worked){
+		$("#speaker-svg").show();
+	} else {
+		$("#speaker-x-svg").show();
+	}
 }
+$("#speaker-span").click(function(){
+	SpeakText("");
+});
 
 function FindAndDisplayRecipe(text){
 	text = text.toLowerCase();
