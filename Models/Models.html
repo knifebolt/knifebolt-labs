@@ -39,7 +39,7 @@
             renderer.setSize(width, height);
             document.body.appendChild(renderer.domElement);
 
-            controls = new THREE.OrbitControls(camera,  window);
+            controls = new THREE.OrbitControls(camera,  renderer.domElement);
             controls.addEventListener('change', renderer);
 
 
