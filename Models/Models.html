@@ -41,6 +41,7 @@
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
             controls.addEventListener('change', renderer);
+            controls.addEventListener('keydown', renderer);
 
             const fbxLoader = new THREE.FBXLoader();
 
