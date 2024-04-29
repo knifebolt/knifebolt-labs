@@ -362,8 +362,10 @@ setInterval(function(){
 		$("#microphone-svg,#microphone-x-svg").hide();
 		if (permissionStatus.state == "granted"){
 			$("#microphone-svg").show();
+			window.micEnabled = true;
 		} else {
 			$("#microphone-x-svg").show();
+			window.micEnabled = false;
 		}
 	});
 
@@ -539,38 +541,62 @@ function GetRandomInt(min, max) {
 }
 
 function SpeakText (text,speakerName){
-	var msg = new SpeechSynthesisUtterance();
-	msg.text = text;
-	var voices = window.speechSynthesis.getVoices();
-	var voiceIndex = 0;
-	if (speakerName != undefined){
-	} else {
-		speakerName = "Clara";
-	}
-	
-	for (let i = 0; i < voices.length; i++) {
-	  if (voices[i].name.toLowerCase().indexOf(speakerName.toLowerCase()) > -1){
-		voiceIndex = i;
-	  }
-	}
-	msg.voice = voices[voiceIndex]; 
-	window.top.msg = msg;
+	if (speakerEnabled == true){
+		var msg = new SpeechSynthesisUtterance();
+		msg.text = text;
+		var voices = window.speechSynthesis.getVoices();
+		var voiceIndex = 0;
+		if (speakerName != undefined){
+		} else {
+			speakerName = "Clara";
+		}
+		
+		for (let i = 0; i < voices.length; i++) {
+		  if (voices[i].name.toLowerCase().indexOf(speakerName.toLowerCase()) > -1){
+			voiceIndex = i;
+		  }
+		}
+		msg.voice = voices[voiceIndex]; 
+		window.top.msg = msg;
 
-	window.speechSynthesis.speak(msg);
-	const worked = window.speechSynthesis.speaking || window.speechSynthesis.pending;
-	console.log(worked);
-	$("#speaker-permission-status").text("Speaker:" + worked);
-	$("#speaker-svg,#speaker-x-svg").hide();
-	if (worked){
-		$("#speaker-svg").show();
-	} else {
-		$("#speaker-x-svg").show();
+		window.speechSynthesis.speak(msg);
+		const worked = window.speechSynthesis.speaking || window.speechSynthesis.pending;
+		console.log(worked);
+		$("#speaker-permission-status").text("Speaker:" + worked);
+		$("#speaker-svg,#speaker-x-svg").hide();
+		if (worked){
+			$("#speaker-svg").show();
+			window.speakerEnabled = true;
+		} else {
+			$("#speaker-x-svg").show();
+			window.speakerEnabled = false;
+		}
 	}
 }
 $("#speaker-span").click(function(){
-	SpeakText("");
+	$("#speaker-svg,#speaker-x-svg").hide();
+	if (speakerEnabled == false){
+		window.speakerEnabled = true;
+		SpeakText("");
+	} else {
+		window.speakerEnabled = false;
+		$("#speaker-x-svg").show();
+	}
+	
 });
-
+/*
+$("#micButton").click(function(){
+	$("#microphone-svg,#microphone-x-svg").hide();
+	if (speakerEnabled == false){
+		window.micEnabled = true;
+		$("#microphone-svg").show();
+	} else {
+		window.micEnabled = false;
+		$("#microphone-x-svg").show();
+	}
+	
+});
+*/
 function FindAndDisplayRecipe(text){
 	text = text.toLowerCase();
 	
