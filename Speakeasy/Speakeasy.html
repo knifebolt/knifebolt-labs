@@ -575,7 +575,7 @@ function SpeakText (text,speakerName){
 }
 $("#speaker-span").click(function(){
 	$("#speaker-svg,#speaker-x-svg").hide();
-	if (speakerEnabled == false){
+	if (window.speakerEnabled == false){
 		window.speakerEnabled = true;
 		SpeakText("");
 	} else {
