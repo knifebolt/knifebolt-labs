@@ -541,7 +541,7 @@ function GetRandomInt(min, max) {
 }
 
 function SpeakText (text,speakerName){
-	if (speakerEnabled != undefined && speakerEnabled == true){
+	if (window.speakerEnabled != undefined && window.speakerEnabled == true){
 		var msg = new SpeechSynthesisUtterance();
 		msg.text = text;
 		var voices = window.speechSynthesis.getVoices();
