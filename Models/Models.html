@@ -14,9 +14,21 @@
 
 <body>
     <script>
-        let scene, camera, renderer;
+        
+		var modelList = ["Sports_Car.fbx","Record_Player.fbx","Round_Piano.fbx","Satellite_One.fbx"];
+		
+		let scene, camera, renderer;
 
-        function LoadModel(fileName) {
+        function LoadModel(fileName,selector,canvasWidth) {
+			
+			var selectedElement;
+			
+			if (selector != undefined && document.querySelectorAll(selector)[0] != undefined){
+				seletcedElement = document.querySelectorAll(selector)[0]; 
+			} else {
+				selectedElement = document.body;
+			}
+		
             scene = new THREE.Scene();
             renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
             scene.background = null;
@@ -34,10 +46,13 @@
             scene.add(light);
 
             //renderer = new THREE.WebGLRenderer({antialias:true});
-            var width = window.innerWidth*.33;
-            var height = width * .66;
-            renderer.setSize(width, height);
-            document.body.appendChild(renderer.domElement);
+            if (canvasWidth != undefined){
+				canvasWidth = window.innerWidth*.33;
+			} 
+			
+            var height = canvasWidth * .55;
+            renderer.setSize(canvasWidth, height);
+            document.selectedElement.appendChild(renderer.domElement);
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
             controls.addEventListener('change', renderer);
@@ -55,7 +70,15 @@
             renderer.render(scene,camera);
             requestAnimationFrame(animate);
         }
-        LoadModel("Sports_Car.fbx");
+        LoadModel("Sports_Car.fbx","#modelViewer");
+		
+		modelList.forEach((element) => 
+			LoadModel("Sports_Car.fbx","#modelGallery",300);
+		);
+		
+		
     </script>
+	<div id="modelViewer"></div>
+	<div id="modelGallery"></div>
 </body>
 </html>
