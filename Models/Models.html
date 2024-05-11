@@ -24,13 +24,13 @@
 
         function LoadModel(fileName,selector,canvasWidth) {
 			
-	var selectedElement;
-	
-	if (selector != undefined && document.querySelectorAll(selector) != undefined){
-		selectedElement = document.querySelectorAll(selector)[0]; 
-	} else {
-		selectedElement = document.body;
-	}
+			var selectedElement;
+			
+			if (selector != undefined && document.querySelectorAll(selector) != undefined){
+				seletcedElement = document.querySelectorAll(selector)[0]; 
+			} else {
+				selectedElement = document.body;
+			}
 		
             scene = new THREE.Scene();
             renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
@@ -73,13 +73,13 @@
             renderer.render(scene,camera);
             requestAnimationFrame(animate);
         }
-        LoadModel("Sports_Car.fbx","#modelViewer");
+        LoadModel("Sports_Car.fbx","#modelViewer",);
 		
-		/*
-		modelList.forEach((s) => 
+		
+		modelList.forEach(function(s){
 			LoadModel(s,"#modelGallery",300);
-		);
-		*/
+		});
+		
 		
     </script>
 	
