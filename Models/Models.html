@@ -89,7 +89,7 @@ canvas {
         }
         function animate(renderer,scene,camera){
             renderer.render(scene,camera);
-            requestAnimationFrame(animate);
+            requestAnimationFrame(animate(renderer,scene,camera));
         }
         LoadModel("Sports_Car.fbx","#modelViewer");
 
