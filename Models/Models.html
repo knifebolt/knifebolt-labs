@@ -20,9 +20,11 @@
         
 		var modelList = ["Sports_Car.fbx","Record_Player.fbx","Satellite_One.fbx"];
 		
-		let scene, camera, renderer;
+		
 
         function LoadModel(fileName,selector,canvasWidth) {
+			
+			let scene, camera, renderer;
 			
 			var selectedElement;
 			
@@ -66,18 +68,18 @@
 
             fbxLoader.load(fileName, (object) => {
               scene.add(object);
-              animate();
+              //animate();
             });
         }
-        function animate(){
-            renderer.render(scene,camera);
-            requestAnimationFrame(animate);
-        }
+        //function animate(){
+        //    renderer.render(scene,camera);
+        //    requestAnimationFrame(animate);
+        //}
         LoadModel("Sports_Car.fbx","#modelViewer");
 
 		
 		modelList.forEach(function(s){
-			setTimeout(function(){LoadModel(s,"#modelGallery",300);},500);
+			LoadModel(s,"#modelGallery",300);;
 		});
 		
 		
