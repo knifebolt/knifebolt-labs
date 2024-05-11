@@ -54,7 +54,7 @@ canvas {
             renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
             scene.background = null;
 
-            camera = new THREE.PerspectiveCamera(5, window.innerWidth/window.innerHeight, 1, 5000);
+            camera = new THREE.PerspectiveCamera(5, 2, 1, 5000);
             camera.position.z = 4000;
             camera.position.y = 1000;
 
