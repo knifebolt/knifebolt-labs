@@ -13,7 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/fflate.min.js"></script></head>
 
 <body>
-    <script>
+    <div id="modelViewer"></div>
+	<div id="modelGallery"></div>
+	
+	<script>
         
 		var modelList = ["Sports_Car.fbx","Record_Player.fbx","Round_Piano.fbx","Satellite_One.fbx"];
 		
@@ -52,7 +55,7 @@
 			
             var height = canvasWidth * .55;
             renderer.setSize(canvasWidth, height);
-            document.selectedElement.appendChild(renderer.domElement);
+            selectedElement.appendChild(renderer.domElement);
 
             controls = new THREE.OrbitControls(camera,  renderer.domElement);
             controls.addEventListener('change', renderer);
@@ -78,7 +81,6 @@
 		*/
 		
     </script>
-	<div id="modelViewer"></div>
-	<div id="modelGallery"></div>
+	
 </body>
 </html>
