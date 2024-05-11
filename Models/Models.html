@@ -16,7 +16,7 @@
     <script>
         let scene, camera, renderer;
 
-        function init() {
+        function LoadModel(fileName) {
             scene = new THREE.Scene();
             renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
             scene.background = null;
@@ -46,7 +46,7 @@
 
             const fbxLoader = new THREE.FBXLoader();
 
-            fbxLoader.load('Sports_Car.fbx', (object) => {
+            fbxLoader.load(fileName, (object) => {
               scene.add(object);
               animate();
             });
@@ -55,7 +55,7 @@
             renderer.render(scene,camera);
             requestAnimationFrame(animate);
         }
-        init();
+        LoadModel("Sports_Car.fbx");
     </script>
 </body>
 </html>
