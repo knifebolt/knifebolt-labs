@@ -18,6 +18,12 @@
 body {
     background: black;
 }
+
+canvas {
+    background: #1a1a1a;
+    margin: 10px;
+    border-radius: 5px;
+}
 </style>	
 	
 </head>
@@ -62,7 +68,7 @@ body {
 
             //renderer = new THREE.WebGLRenderer({antialias:true});
             if (canvasWidth == undefined){
-				canvasWidth = window.innerWidth*.33;
+				canvasWidth = window.innerWidth*.5;
 			} 
 			
             var height = canvasWidth * .55;
