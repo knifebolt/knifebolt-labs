@@ -10,7 +10,17 @@
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/MTLLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/OBJLoader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/fflate.min.js"></script></head>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/libs/fflate.min.js"></script>
+<style>
+#modelGallery > canvas {
+    display: inline-block !important;
+}
+body {
+    background: black;
+}
+</style>	
+	
+</head>
 
 <body>
     <div id="modelViewer"></div>
@@ -79,7 +89,7 @@
 
 		
 		modelList.forEach(function(s){
-			LoadModel(s,"#modelGallery",300);;
+			LoadModel(s,"#modelGallery",200);;
 		});
 		
 		
