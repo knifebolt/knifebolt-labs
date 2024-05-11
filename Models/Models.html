@@ -68,13 +68,13 @@
 
             fbxLoader.load(fileName, (object) => {
               scene.add(object);
-              //animate();
+              animate(renderer,scene,camera);
             });
         }
-        //function animate(){
-        //    renderer.render(scene,camera);
-        //    requestAnimationFrame(animate);
-        //}
+        function animate(renderer,scene,camera){
+            renderer.render(scene,camera);
+            requestAnimationFrame(animate);
+        }
         LoadModel("Sports_Car.fbx","#modelViewer");
 
 		
