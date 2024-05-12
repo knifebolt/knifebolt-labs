@@ -23,6 +23,10 @@ canvas {
     background: #1a1a1a;
     margin: 10px;
     border-radius: 5px;
+	cursor:pointer;
+}
+canvas:hover {
+	background:#333333;
 }
 </style>	
 	
@@ -84,14 +88,14 @@ canvas {
 
             fbxLoader.load(fileName, (object) => {
               scene.add(object);
-              animate(renderer,scene,camera);
+              //animate(renderer,scene,camera);
             });
         }
         function animate(renderer,scene,camera){
             renderer.render(scene,camera);
-            //requestAnimationFrame(animate(renderer,scene,camera));
+            requestAnimationFrame(animate(renderer,scene,camera));
         }
-        LoadModel("Sports_Car.fbx","#modelViewer");
+        LoadModel("Goat.fbx","#modelViewer");
 
 		
 		modelList.forEach(function(s){
