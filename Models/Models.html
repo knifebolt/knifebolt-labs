@@ -99,7 +99,7 @@ canvas:hover {
 
 		
 		modelList.forEach(function(s){
-			document.getElementById("#modelViewer").insertAdjacentHTML("beforeend", "<span id='"+ s +"'></span>");
+			document.getElementById("modelGallery").insertAdjacentHTML("beforeend", "<span id='"+ s +"'></span>");
 			LoadModel(s,"#"+s,200);
 		});
 		
@@ -107,7 +107,7 @@ canvas:hover {
 			const target = e.target.closest("#modelGallery > span");
 
 			if(target){
-				document.getElementById("#modelViewer").innerHTML = '';
+				document.getElementById("modelViewer").innerHTML = '';
 				LoadModel(target.id,"#"+ target.id);
 			}
 		});
