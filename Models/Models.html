@@ -100,7 +100,7 @@ canvas:hover {
 		
 		modelList.forEach(function(s){
 			document.getElementById("modelGallery").insertAdjacentHTML("beforeend", "<span id='"+ s +"'></span>");
-			LoadModel(s,"#"+s,200);
+			setTimeout(function(){LoadModel(s,"#"+s,200)},100);
 		});
 		
 		document.addEventListener("click", function(e){
