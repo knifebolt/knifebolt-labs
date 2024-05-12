@@ -99,7 +99,7 @@ canvas:hover {
 
 		
 		modelList.forEach(function(s){
-			document.getElementById("modelGallery").insertAdjacentHTML("beforeend", "<span id='"+ s +"'></span>");
+			document.getElementById("modelGallery").insertAdjacentHTML("beforeend", "<span id='"+ s.replace(".fbx","") +"'></span>");
 			setTimeout(function(){LoadModel(s,"#"+s.replace(".fbx",""),200)},100);
 		});
 		
