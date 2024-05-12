@@ -88,14 +88,14 @@ canvas:hover {
 
             fbxLoader.load(fileName, (object) => {
               scene.add(object);
-              //animate(renderer,scene,camera);
+              animate(renderer,scene,camera);
             });
         }
         function animate(renderer,scene,camera){
             renderer.render(scene,camera);
-            requestAnimationFrame(animate(renderer,scene,camera));
+            //requestAnimationFrame(animate(renderer,scene,camera));
         }
-        LoadModel("Sports_Car.fbx","#modelViewer");
+        LoadModel("Goat.fbx","#modelViewer");
 
 		
 		modelList.forEach(function(s){
