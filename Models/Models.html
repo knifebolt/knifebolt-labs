@@ -123,8 +123,9 @@ canvas:hover {
 		});
 		
 		document.addEventListener("click", function(e){
+			console.log(e.target.id);
 			const target = e.target.closest("#modelGalleryImg > span");
-
+			
 			if(target){
 				document.getElementById("modelViewer").innerHTML = '';
 				LoadModel(target.id.replace("-img-span","") + ".fbx","#modelViewer");
