@@ -55,7 +55,7 @@ canvas:hover {
 			}
 		
             scene = new THREE.Scene();
-            renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true });
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias:true, preserveDrawingBuffer:true });
             scene.background = null;
 
             camera = new THREE.PerspectiveCamera(5, 2, 1, 5000);
