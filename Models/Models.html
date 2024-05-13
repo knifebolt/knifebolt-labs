@@ -25,6 +25,15 @@ canvas {
     border-radius: 5px;
 	cursor:pointer;
 }
+#modelGalleryImg > span > img {
+	background: #1a1a1a;
+    margin: 10px;
+    border-radius: 5px;
+	pointer-events: none;
+}
+#modelGalleryImg > span {
+	cursor: pointer;
+}
 canvas:hover {
 	background:#333333;
 }
@@ -110,15 +119,15 @@ canvas:hover {
 				document.getElementById("modelGalleryImg").insertAdjacentHTML("beforeend", "<span id='"+ s.replace(".fbx","-img-span") + "'>" +
 					"<img id='"+ s.replace(".fbx","-img") + "' src='" + img +"'></span>");
 				
-			},1000);
+			},3000);
 		});
 		
 		document.addEventListener("click", function(e){
-			const target = e.target.closest("#modelGallery > span");
+			const target = e.target.closest("#modelGalleryImg > span");
 
 			if(target){
 				document.getElementById("modelViewer").innerHTML = '';
-				LoadModel(target.id + ".fbx","#modelViewer");
+				LoadModel(target.id.replace("-img","") + ".fbx","#modelViewer");
 			}
 		});
 		
