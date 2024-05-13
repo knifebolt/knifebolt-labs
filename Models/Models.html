@@ -105,7 +105,7 @@ canvas:hover {
 			
 			//turn the model into a png
 			setTimeout(function(){
-				const canvas = document.getElementById(s.replace(".fbx",""))
+				const canvas = document.querySelectorAll(s.replace(".fbx","") +" > canvas")[0];
 				const img    = canvas.toDataURL('image/png')
 				document.getElementById("modelGalleryImg").insertAdjacentHTML("beforeend", "<span id='"+ s.replace(".fbx","-img-span") + "'>" +
 					"<img id='"+ s.replace(".fbx","-img") + "' src='" + img +"'></span>");
