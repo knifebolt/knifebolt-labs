@@ -25,13 +25,13 @@ canvas {
     border-radius: 5px;
 	cursor:pointer;
 }
-#modelGalleryImg > span > img {
+#modelGalleryImg > div > img {
 	background: #1a1a1a;
     margin: 10px;
     border-radius: 5px;
 	pointer-events: none;
 }
-#modelGalleryImg > span {
+#modelGalleryImg > div {
 	cursor: pointer;
 }
 canvas:hover {
@@ -116,19 +116,19 @@ canvas:hover {
 			setTimeout(function(){
 				const canvas = document.querySelectorAll("#" + s.replace(".fbx","") +" > canvas")[0];
 				const img    = canvas.toDataURL('image/png')
-				document.getElementById("modelGalleryImg").insertAdjacentHTML("beforeend", "<span id='"+ s.replace(".fbx","-img-span") + "'>" +
-					"<img id='"+ s.replace(".fbx","-img") + "' src='" + img +"'></span>");
+				document.getElementById("modelGalleryImg").insertAdjacentHTML("beforeend", "<div id='"+ s.replace(".fbx","-img-span") + "'>" +
+					"<img id='"+ s.replace(".fbx","-img") + "' src='" + img +"'></div>");
 				
 			},3000);
 		});
 		
 		document.addEventListener("click", function(e){
 			console.log(e.target.id);
-			const target = e.target.closest("#modelGalleryImg > span");
+			const target = e.target.closest("#modelGalleryImg > div");
 			
 			if(target){
 				document.getElementById("modelViewer").innerHTML = '';
-				LoadModel(target.id.replace("-img-span","") + ".fbx","#modelViewer");
+				LoadModel(target.id.replace("-img-div","") + ".fbx","#modelViewer");
 			}
 		});
 		
