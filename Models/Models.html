@@ -27,8 +27,8 @@ canvas {
 }
 #modelGalleryImg > div > img {
 	background: #1a1a1a;
-    
 	pointer-events: none;
+	border-radius: 5px;
 }
 #modelGalleryImg > div {
 	cursor: pointer;
@@ -37,10 +37,13 @@ canvas {
     border-radius: 5px;
 }
 #modelGalleryImg > div:hover {
-	border: 2px solid yellow;
+	outline: 2px solid yellow;
 }
 canvas:hover {
 	background:#333333;
+}
+#modelGallery {
+	display: none;
 }
 </style>	
 	
@@ -124,7 +127,7 @@ canvas:hover {
 				document.getElementById("modelGalleryImg").insertAdjacentHTML("beforeend", "<div id='"+ s.replace(".fbx","-img-div") + "'>" +
 					"<img id='"+ s.replace(".fbx","-img") + "' src='" + img +"'></div>");
 				
-			},3000);
+			},500);
 		});
 		
 		document.addEventListener("click", function(e){
