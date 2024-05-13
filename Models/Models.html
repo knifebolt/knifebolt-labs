@@ -109,7 +109,7 @@ canvas:hover {
 				const img    = canvas.toDataURL('image/png')
 				document.getElementById("modelGalleryImg").insertAdjacentHTML("beforeend", "<span id='"+ s.replace(".fbx","-img-span") + "'>" +
 					"<img id='"+ s.replace(".fbx","-img") + "' src='" + img +"'></span>");
-				document.getElementById('existing-image-id').src = img
+				
 			},1000);
 		});
 		
