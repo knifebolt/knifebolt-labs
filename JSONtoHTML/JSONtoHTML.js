@@ -1,101 +1,102 @@
 var JSONtoHTML = {
-
-	Options: "",
-	
+ 
+	Options: "",  
 	SpanOpen: "",
 	SpanClose: "",
-	
+   
 	Init: function() {
-	
+   
 	},
-	
+   
+	GetHTML: function (jsonObj,options){
+		var htmlOutput = JSONtoHTML.BuildHTML(jsonObj,options);
+		return htmlOutput + JSONtoHTML.StaticStyle.replace(/[\r\n\t]/g, "");
+	},
+   
 	//get html for a jsonObj object
-	GetHTML: function(jsonObj, options) {
-		
+	BuildHTML: function(jsonObj, options) {
+				   
 		if (options != undefined) {
 			if (options.Spans != undefined && options.Spans){
 				JSONtoHTML.SpanOpen = "<span>";
 				JSONtoHTML.SpanClose = "</span>";
 			}
 		}
-	
+
 		var html = "";
-		
+	   
 		//check if this jsonObj is an array
-		if (Array.isArray(jsonObj)){
-			
+		if (Array.isArray(jsonObj)){   
 			if (jsonObj.length > 0 && (typeof jsonObj[0] === 'object' && !Array.isArray(jsonObj[0]) && jsonObj[0] !== null)){
 				html = JSONtoHTML.Get2DTable(jsonObj);
 			} else {
 				html = jsonObj.toString();
 			}
 		}
-		
+	   
 		//check if this jsonObj is an object
-		else if (typeof jsonObj === 'object' && !Array.isArray(jsonObj) && jsonObj !== null){ 
+		else if (typeof jsonObj === 'object' && !Array.isArray(jsonObj) && jsonObj !== null){
 			html = JSONtoHTML.GetKeyValueTable(jsonObj);
-		} 
-		
+		}
+	   
 		//if this jsonObj is not an object or an array it's just a value
-		else {
-			
+		else {			   
 			html = "";
 			if (jsonObj != null) {
-				html = jsonObj.toString();
+							html = jsonObj.toString();
 			}
 		}
-	
-		return html + JSONtoHTML.StaticStyle.replace(/[\r\n\t]/g, "");
+
+		return html;
 	},
-	
+   
 	//get table
 	Get2DTable: function(jsonObj) {
-		
+				   
 		var tableHead = "";
 		var tableBody = "";
-		
+	   
 		//get our columns
 		var columns = JSONtoHTML.GetDistinctKeys(jsonObj);
-		
+	   
 		for (var i = 0; i < columns.length; i++) {
 			tableHead += "<th>" + JSONtoHTML.SpanOpen + columns[i] + JSONtoHTML.SpanClose + "</th>"
 		}
-		
+	   
 		//get our rows and values
 		for (var i = 0; i < jsonObj.length; i++) {
 			var thisRow = "";
-			
+		   
 			//loop over our keys
-			for (var j = 0; j < columns.length; j++) {
-				
+			for (var j = 0; j < columns.length; j++) {								   
 				if (jsonObj[i][columns[j]] != undefined && jsonObj.length > 0) {
-					thisRow += "<td>" + JSONtoHTML.SpanOpen + JSONtoHTML.GetHTML(jsonObj[i][columns[j]]) + JSONtoHTML.SpanClose + "</td>";
+					thisRow += "<td>" + JSONtoHTML.SpanOpen + JSONtoHTML.BuildHTML(jsonObj[i][columns[j]]) + JSONtoHTML.SpanClose + "</td>";
 				} else {
 					thisRow += "<td>" + JSONtoHTML.SpanOpen +"--" + JSONtoHTML.SpanClose + "</td>";
 				}
-			}			
+			}                                              
 			tableBody += "<tr>" + thisRow + "</tr>";
-		}		
+		}                              
 		return "<table class='j2h-table'><thead><tr>" + tableHead + "</tr></thead><tbody>" + tableBody + "</tbody></table>";
 	},
-	
+   
 	//get key value list
 	GetKeyValueTable: function(jsonObj) {
-	
+   
 		var tableBody = "";
-		
+	   
 		for (const key in jsonObj) {
-		  if (jsonObj.hasOwnProperty(key)) {
-			tableBody += "<tr><td class='key-td label'>" + JSONtoHTML.SpanOpen + key +  JSONtoHTML.SpanClose + "</td><td class='value-td'>" + JSONtoHTML.SpanOpen + JSONtoHTML.GetHTML(jsonObj[key]) +  JSONtoHTML.SpanClose + "</td></tr>";
-		  }
+			if (jsonObj.hasOwnProperty(key)) {
+				tableBody += "<tr><td class='key-td label'>" + JSONtoHTML.SpanOpen + key +  JSONtoHTML.SpanClose + "</td><td class='value-td'>" + JSONtoHTML.SpanOpen + JSONtoHTML.BuildHTML(jsonObj[key]) +  JSONtoHTML.SpanClose + "</td></tr>";
+			}
 		}
 		return "<table><tbody>" + tableBody + "</tbody></table>";
 	},
-	
+   
 	//get distinct keys
 	GetDistinctKeys: function (jsonObj) {
 		var keys = [];
-		
+	   
 		for (var n = 0; n < jsonObj.length; n++) {
 			for (const key in jsonObj[n]) {
 				if (jsonObj[n].hasOwnProperty(key)) {
@@ -103,10 +104,9 @@ var JSONtoHTML = {
 				}
 			}
 		}
-		
 		return keys.filter((value, index, array) => array.indexOf(value) === index);
 	},
-	
+   
 	StaticStyle: `<style>
 		.j2h-table {
 		font-family: 'SegoeUI', 'Segoe UI';
@@ -128,7 +128,7 @@ var JSONtoHTML = {
 		text-align: left;
 		padding: 5px;
 		font-weight: bold;
-		
+	   
 		border: 1px solid rgb(216, 216, 216);
 		background-color: #f2f2f2;
 	}
@@ -145,3 +145,4 @@ var JSONtoHTML = {
 	`
 }
 JSONtoHTML.Init();
+
