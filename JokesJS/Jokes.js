@@ -1179,6 +1179,354 @@ var Jokes = {
 		{
 		 "Setup":"Two guys stole a calendar",
 		 "Punchline":"They each got six months"
-		}
+		},
+		{
+		 "Setup":"I used to know a skunk breeder",
+		 "Punchline":"He was a man of phew words"
+		},
+		{
+		 "Setup":"I trust undertakers",
+		 "Punchline":"They're the last ones to let you down"
+		},
+		{
+		 "Setup":"Watch out for candy salesmen",
+		 "Punchline":"They're always trying to sweet talk you"
+		},
+		{
+		 "Setup":"Libraries are always multi-story buildings",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I'm obsessed with monorails",
+		 "Punchline":"I've been told I have a one-track mind"
+		},
+		{
+		 "Setup":"If you're skilled with a chainsaw",
+		 "Punchline":"You might get promoted to branch manager"
+		},
+		{
+		 "Setup":"I hate it when food goes to waist",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I'm addicted to brake fluid",
+		 "Punchline":"But I can stop anytime I want"
+		},
+		{
+		 "Setup":"When bees finish building their hive",
+		 "Punchline":"They have a house-swarming party"
+		},
+		{
+		 "Setup":"Growing up, I used to think of my parents as all no-ing",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"She told me she doesn't like cocaine",
+		 "Punchline":"She just likes the way it smells"
+		},
+		{
+		 "Setup":"Prison walls should never be built to scale",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I tried to lie to an X-ray technician once",
+		 "Punchline":"He saw right through me"
+		},
+		{
+		 "Setup":"Be careful making offhand comments around Captain Hook",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I laundered some money recently",
+		 "Punchline":"It was a tidy sum"
+		},
+		{
+		 "Setup":"One time I saw a frustrated cannibal throw up his hands",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I went to the Grand Canyon once",
+		 "Punchline":"It was just gorges"
+		},
+		{
+		 "Setup":"Taller people sleep longer in bed",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Ships are more fuel-efficent than cars",
+		 "Punchline":"You used to be able to get thousands of miles to the galleon"
+		},
+		{
+		 "Setup":"I walked into a room where the curtains were drawn",
+		 "Punchline":"The rest of the furniture was real"
+		},
+		{
+		 "Setup":"I used to know a careless pyromaniac",
+		 "Punchline":"He made an ash of himself"
+		},
+		{
+		 "Setup":"Getting a lobotomy seems like a no-brainer",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I don't like needles",
+		 "Punchline":"They really get under my skin"
+		},
+		{
+		 "Setup":"I decide which beer to drink on a case-by-case basis",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Abstinence leaves a lot to be desired",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Did you hear about these new reversible jackets?",
+		 "Punchline":"I'm excited to see how they turn out"
+		},
+		{
+		 "Setup":"You can't trust ceiling fan installers",
+		 "Punchline":"They're always screwing up"
+		},
+		{
+		 "Setup":"Bugs have very diverse religious views",
+		 "Punchline":"They're all in sects"
+		},
+		{
+		 "Setup":"Calves don't mind bottles",
+		 "Punchline":"One nipple's as good as an udder"
+		},
+		{
+		 "Setup":"I bought a state-of-the-art weed whacker",
+		 "Punchline":"It's cutting-hedge technology"
+		},
+		{
+		 "Setup":"If you got rid of all the southpaws",
+		 "Punchline":"There would be no one left"
+		},
+		{
+		 "Setup":"My friend got fired from the hot dog stand for putting her hair in a bun",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Did you hear about the two cannonballs who got married?",
+		 "Punchline":"They had BBs"
+		},
+		{
+		 "Setup":"I like collecting candy canes",
+		 "Punchline":"They're always in mint condition"
+		},
+		{
+		 "Setup":"Where are average things made?",
+		 "Punchline":"In a satis-factory"
+		},
+		{
+		 "Setup":"I hate elevators",
+		 "Punchline":"They really drive me up a wall"
+		},
+		{
+		 "Setup":"I read somewhere that the least-spoken language in the world is sign language",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"How do they figure out the price of hammers?",
+		 "Punchline":"Per pound"
+		},
+		{
+		 "Setup":"A sleeping bag should be called a nap sack",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I had to flip my hourglass after 30 minutes",
+		 "Punchline":"Turns out it was full of quicksand"
+		},
+		{
+		 "Setup":"When she discovered I switched our bed with a trampoline",
+		 "Punchline":"She really hit the roof"
+		},
+		{
+		 "Setup":"I was fine until I got a sled",
+		 "Punchline":"After that, I went downhill fast"
+		},
+		{
+		 "Setup":"I'M GOING TO POST IN ALL CAPS FROM NOW ON",
+		 "Punchline":"BECAUSE I HATE SMALL TALK"
+		},
+		{
+		 "Setup":"They told me I'm not fit to be a mime",
+		 "Punchline":"I think it was because of something I said"
+		},
+		{
+		 "Setup":"How many of you believe in telekinesis?",
+		 "Punchline":"Raise my hand"
+		},
+		{
+		 "Setup":"I don't know if I just got hit by freezing rain",
+		 "Punchline":"But it hurt like hail"
+		},
+		{
+		 "Setup":"I wrote a book about religious women",
+		 "Punchline":"You can find it in the nun fiction section"
+		},
+		{
+		 "Setup":"A book just fell on my head",
+		 "Punchline":"I've only got my shelf to blame"
+		},
+		{
+		 "Setup":"In college, I was so poor I couldn't pay my electric bills",
+		 "Punchline":"Those were dark times"
+		},
+		{
+		 "Setup":"We all know Albert Einstein was a genius",
+		 "Punchline":"But his brother Frank was a monster"
+		},
+		{
+		 "Setup":"A pebble is tougher than a stick",
+		 "Punchline":"It's always a little boulder"
+		},
+		{
+		 "Setup":"I ordered 2000 pounds of Chinese soup",
+		 "Punchline":"It was won ton"
+		},
+		{
+		 "Setup":"I can't stop buying graphing paper",
+		 "Punchline":"I just don't know where to draw the line"
+		},
+		{
+		 "Setup":"As long as we use the imperial system",
+		 "Punchline":"A ruler will be afoot"
+		},
+		{
+		 "Setup":"I was having trouble understanding lightning",
+		 "Punchline":"Then it struck me"
+		},
+		{
+		 "Setup":"Someone gets stabbed in London every nine minutes",
+		 "Punchline":"Poor bastard"
+		},
+		{
+		 "Setup":"I wasn't sure about gluing a propeller to my face",
+		 "Punchline":"But now I'm a big fan"
+		},
+		{
+		 "Setup":"I didn't think that chiropractor would help me",
+		 "Punchline":"But I stand corrected"
+		},
+		{
+		 "Setup":"If a kangaroo can't jump, it's completely hopless",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"An optometrist fell into a lens grinder",
+		 "Punchline":"He made a spectacle of himself"
+		},
+		{
+		 "Setup":"I wanted to learn how to drive a stick shift",
+		 "Punchline":"But I couldn't find a manual"
+		},
+		{
+		 "Setup":"I sued the airline for misplacing my luggage",
+		 "Punchline":"They lost the case"
+		},
+		{
+		 "Setup":"I, for one, like Roman numerals",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I quit my job as a personal trainer because I wasn't fit enough",
+		 "Punchline":"I handed in my too weak notice"
+		},
+		{
+		 "Setup":"Working from home is great",
+		 "Punchline":"Unless you're a firefighter"
+		},
+		{
+		 "Setup":"I'm not sure how many trains I've derailed",
+		 "Punchline":"It's so hard to keep track"
+		},
+		{
+		 "Setup":"They don't have training for garbagemen",
+		 "Punchline":"You're supposed to pick things up as you go along"
+		},
+		{
+		 "Setup":"I'm getting rid of this calendar soon",
+		 "Punchline":"Its days are numbered"
+		},
+		{
+		 "Setup":"My friend tried to annoy me with bird puns",
+		 "Punchline":"Well, toucan play at that game"
+		},
+		{
+		 "Setup":"Pirates can't recite the alphabet",
+		 "Punchline":"They get lost at 'C'"
+		},
+		{
+		 "Setup":"I know a guy who married his ex-wife",
+		 "Punchline":"I think he's only with her for his money"
+		},
+		{
+		 "Setup":"Thinking about selling my vacuum cleaner",
+		 "Punchline":"All it does is collect dust"
+		},
+		{
+		 "Setup":"Parallel lines have so much in common",
+		 "Punchline":"It's a shame they'll never meet"
+		},
+		{
+		 "Setup":"My neighbors are listening to great music",
+		 "Punchline":"Whether they like it or not"
+		},
+		{
+		 "Setup":"How do you grow electricity?",
+		 "Punchline":"With a power plant"
+		},
+		{
+		 "Setup":"I had a cross-eyed teacher in high school",
+		 "Punchline":"She couldn't control her pupils"
+		},
+		{
+		 "Setup":"I'd forgotten what it's like to throw a boomerang",
+		 "Punchline":"but it's coming back to me"
+		},
+		{
+		 "Setup":"Six thirty is the best time of the day",
+		 "Punchline":"Hands down"
+		},
+		{
+		 "Setup":"I accidentally handed my girlfriend a glue stick instead of her lipstick",
+		 "Punchline":"She still isn't speaking to me"
+		},
+		{
+		 "Setup":"One time I saw four people beating a guy up so I stepped in to help",
+		 "Punchline":"He didn't stand a chance against the five of us"
+		},
+		{
+		 "Setup":"I've been at her grave all day",
+		 "Punchline":"She thinks I'm digging a fish pond"
+		},
+		{
+		 "Setup":"My porcupine committed suicide",
+		 "Punchline":"He quilled himself"
+		},
+		{
+		 "Setup":"Where do fish keep their money?",
+		 "Punchline":"In a river bank"
+		},
+		{
+		 "Setup":"I really wanted to buy a camouflage shirt",
+		 "Punchline":"But I couldn't find one"
+		},
+		{
+		 "Setup":"Why do .NET developers wear glasses?",
+		 "Punchline":"Because it's difficult to C#"
+		},
+		{
+		 "Setup":"What do you call a communist sniper?",
+		 "Punchline":"A Marxman"
+		},
+		{
+		 "Setup":"I have a black hole on my coffee table",
+		 "Punchline":"It really brings the room together"
+		},
 	]
 }
