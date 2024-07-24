@@ -113,7 +113,7 @@ var RecipeManager = {
 		
 	},
 	
-	FillLiquidParts(start,end,ingredientName,glassDivSelector){
+	FillLiquidParts: async function (start,end,ingredientName,glassDivSelector){
 		//get ingredient color
 		
 		var ingredientColor = RecipeManager.GetIngredientColor(ingredientName);
@@ -125,7 +125,7 @@ var RecipeManager = {
 		}
 	},
 	
-	GetIngredientColor(ingredientName){
+	GetIngredientColor: function(ingredientName){
 		var ingredientColor = "black";
 		for (let z = 0; z < IngredientColors.length; z++) {
 			if (IngredientColors[z].Name == ingredientName){
