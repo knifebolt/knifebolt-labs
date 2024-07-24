@@ -23,7 +23,7 @@ var RecipeManager = {
 		}
 	},
 	
-	RenderCocktail: function (recipe,glassDivSelector){
+	RenderCocktail: async function (recipe,glassDivSelector){
 		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
 		$(glassDivSelector).append(Glasses[recipe.Glass]);
@@ -84,7 +84,7 @@ var RecipeManager = {
 			//formula: (this ingredient oz * total number of parts in image)/total oz in drink, rounded to nearest whole number
 			var partsToFill = Math.round((Number(oz) * RecipeManager.LiquidParts)/totalOz);
 			
-			RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector);
+			await RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector);
 			currentPartToFill = currentPartToFill+partsToFill;
 		}
 		
@@ -119,7 +119,7 @@ var RecipeManager = {
 		var ingredientColor = RecipeManager.GetIngredientColor(ingredientName);
 		
 		for (let z = start; z < end; z++) {
-			await asyncTimeout(1000);
+			await asyncTimeout(50);
 			$(glassDivSelector).find("#Liquid-" + z).css("fill",ingredientColor);
 			$(glassDivSelector).find("#Liquid-" + z).css("stroke",ingredientColor);
 		}
