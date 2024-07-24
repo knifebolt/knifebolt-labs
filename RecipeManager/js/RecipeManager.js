@@ -1,3 +1,9 @@
+function asyncTimeout (ms) {
+  return new Promise(function(resolve){
+    setTimeout(resolve, ms);
+  });
+};
+
 var RecipeManager = {
 	
 	Init: function (){
@@ -113,6 +119,7 @@ var RecipeManager = {
 		var ingredientColor = RecipeManager.GetIngredientColor(ingredientName);
 		
 		for (let z = start; z < end; z++) {
+			await asyncTimeout(1000);
 			$(glassDivSelector).find("#Liquid-" + z).css("fill",ingredientColor);
 			$(glassDivSelector).find("#Liquid-" + z).css("stroke",ingredientColor);
 		}
@@ -228,3 +235,10 @@ var RecipeManager = {
 	
 }
 RecipeManager.Init();
+
+
+async function testAsync(){
+console.log("first");
+await asyncTimeout(1000);
+console.log("second");
+}
