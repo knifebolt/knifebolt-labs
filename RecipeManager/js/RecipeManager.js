@@ -74,7 +74,7 @@ var RecipeManager = {
 		
 		currentPartToFill = 1;
 		
-		for (let i = 0; i < ingredientsOz.length; i++) {
+		for (let i = ingredientsOz.length -1; i >=0; i--) {
 			
 			//get number of ounces for this ingredient
 			var ingredientName = ingredientsOz[i].split(" - ")[0];
@@ -119,7 +119,7 @@ var RecipeManager = {
 		var ingredientColor = RecipeManager.GetIngredientColor(ingredientName);
 		
 		for (let z = start; z < end; z++) {
-			await asyncTimeout(50);
+			await asyncTimeout(25);
 			$(glassDivSelector).find("#Liquid-" + z).css("fill",ingredientColor);
 			$(glassDivSelector).find("#Liquid-" + z).css("stroke",ingredientColor);
 		}
