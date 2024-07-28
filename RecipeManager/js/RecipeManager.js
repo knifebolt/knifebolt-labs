@@ -15,11 +15,11 @@ var RecipeManager = {
 	
 	LiquidParts: 32,
 	
-	RenderMenu: async function (){
+	RenderMenu: function (){
 		for (let m = 0; m < Recipes.length; m++) {
 			var thisGlass =  "<div id='glassDiv" + m + "'><div>";
 			$("#recipeMenu").append(thisGlass);
-			await RecipeManager.RenderCocktail(Recipes[m],"#glassDiv"+m)
+			RecipeManager.RenderCocktail(Recipes[m],"#glassDiv"+m)
 		}
 	},
 	
