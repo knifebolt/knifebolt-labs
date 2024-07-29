@@ -83,8 +83,12 @@ var RecipeManager = {
 			//get number of parts to fill 
 			//formula: (this ingredient oz * total number of parts in image)/total oz in drink, rounded to nearest whole number
 			var partsToFill = Math.round((Number(oz) * RecipeManager.LiquidParts)/totalOz);
+			if (pour){
+				await RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector,pour);
+			} else {
+				RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector,false);
+			}
 			
-			await RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector,pour);
 			currentPartToFill = currentPartToFill+partsToFill;
 		}
 		
