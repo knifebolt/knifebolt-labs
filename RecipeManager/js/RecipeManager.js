@@ -19,7 +19,7 @@ var RecipeManager = {
 		for (let m = 0; m < Recipes.length; m++) {
 			var thisGlass =  "<div id='glassDiv" + m + "'><div>";
 			$("#recipeMenu").append(thisGlass);
-			await RecipeManager.RenderCocktail(Recipes[m],"#glassDiv"+m,false)
+			RecipeManager.RenderCocktail(Recipes[m],"#glassDiv"+m,false)
 		}
 	},
 	
