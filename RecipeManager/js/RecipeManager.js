@@ -48,7 +48,7 @@ var RecipeManager = {
 			if (recipe[adders[i]]){
 				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
 				if (pour){
-					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),80);
+					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),40);
 				} 
 			}
 		}
@@ -114,7 +114,7 @@ var RecipeManager = {
 			if (recipe[adders[i]]){
 				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
 				if (pour){
-					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),80);
+					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),40);
 				} 
 			}
 		}
