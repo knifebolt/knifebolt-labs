@@ -24,7 +24,7 @@ var RecipeManager = {
 	},
 	
 	DropElement: async function (selector,intHeightInPx){
-		for (let z = 0; z < inHeightInPx; z++) {
+		for (let z = 0; z < intHeightInPx; z++) {
 			await asyncTimeout(10);
 			$(selector).css("transform","translateY(-"+ h +"px)");
 		}
