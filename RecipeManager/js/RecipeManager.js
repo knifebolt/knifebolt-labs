@@ -23,6 +23,13 @@ var RecipeManager = {
 		}
 	},
 	
+	DropElement: async function (selector,intHeightInPx){
+		for (let z = start; z < inHeightInPx; z++) {
+			await asyncTimeout(10);
+			$(selector).css("transform","translateY(-"+ h +"px)");
+		}
+	},
+	
 	RenderCocktail: async function (recipe,glassDivSelector,pour){
 		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
@@ -40,6 +47,9 @@ var RecipeManager = {
 		for (let i = 0; i < adders.length; i++) {
 			if (recipe[adders[i]]){
 				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
+				if (pour){
+					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),80);
+				} 
 			}
 		}
 		
@@ -103,6 +113,9 @@ var RecipeManager = {
 		for (let i = 0; i < adders.length; i++) {
 			if (recipe[adders[i]]){
 				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
+				if (pour){
+					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),80);
+				} 
 			}
 		}
 
