@@ -34,8 +34,15 @@ var RecipeManager = {
 		$("#titleSpan").text(recipe.Name);
 		$("#directionsSpan").text(recipe.Directions);
 		
-		
 		$(glassDivSelector).find("#Ice-cube-1,#Ice-cube-2,#Mint-leaf1,#Mint-leaf2,#Half-wedge,#Full-wedge,#Strawberry-body,#Strawberry-Leaf,#Olive-body,#Olive-eye,#Olive-pick,#Cherry").hide();
+		
+		var adders = ["Ice"]
+		for (let i = 0; i < adders.length; i++) {
+			if (recipe[adders[i]]){
+				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
+			}
+		}
+		
 		
 		//get ingredients with oz
 		var ingredientsOz = [];
@@ -92,8 +99,7 @@ var RecipeManager = {
 			currentPartToFill = currentPartToFill+partsToFill;
 		}
 		
-		var adders = ["Cherry","Ice","Olive","Mint","Strawberry"]
-		
+		var adders = ["Cherry","Olive","Mint","Strawberry"]
 		for (let i = 0; i < adders.length; i++) {
 			if (recipe[adders[i]]){
 				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
