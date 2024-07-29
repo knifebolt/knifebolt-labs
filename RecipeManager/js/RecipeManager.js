@@ -19,11 +19,11 @@ var RecipeManager = {
 		for (let m = 0; m < Recipes.length; m++) {
 			var thisGlass =  "<div id='glassDiv" + m + "'><div>";
 			$("#recipeMenu").append(thisGlass);
-			RecipeManager.RenderCocktail(Recipes[m],"#glassDiv"+m)
+			RecipeManager.RenderCocktail(Recipes[m],"#glassDiv"+m,false)
 		}
 	},
 	
-	RenderCocktail: async function (recipe,glassDivSelector){
+	RenderCocktail: async function (recipe,glassDivSelector,pour){
 		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
 		$(glassDivSelector).append(Glasses[recipe.Glass]);
@@ -84,7 +84,7 @@ var RecipeManager = {
 			//formula: (this ingredient oz * total number of parts in image)/total oz in drink, rounded to nearest whole number
 			var partsToFill = Math.round((Number(oz) * RecipeManager.LiquidParts)/totalOz);
 			
-			await RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector);
+			await RecipeManager.FillLiquidParts(currentPartToFill,(currentPartToFill+partsToFill),ingredientName,glassDivSelector,pour);
 			currentPartToFill = currentPartToFill+partsToFill;
 		}
 		
@@ -113,13 +113,15 @@ var RecipeManager = {
 		
 	},
 	
-	FillLiquidParts: async function (start,end,ingredientName,glassDivSelector){
+	FillLiquidParts: async function (start,end,ingredientName,glassDivSelector,pour){
 		//get ingredient color
 		
 		var ingredientColor = RecipeManager.GetIngredientColor(ingredientName);
 		
 		for (let z = start; z < end; z++) {
-			await asyncTimeout(25);
+			if (pour){
+				await asyncTimeout(25);
+			}
 			$(glassDivSelector).find("#Liquid-" + z).css("fill",ingredientColor);
 			$(glassDivSelector).find("#Liquid-" + z).css("stroke",ingredientColor);
 		}
