@@ -145,7 +145,7 @@ span#ingredientsSpan {
 <script>
 RecipeManager.RenderMenu();
 $("#recipeMenu").find("svg").css("zoom",0.25)
-RecipeManager.RenderCocktail(Recipes[2],"#glassDiv");
+RecipeManager.RenderCocktail(Recipes[2],"#glassDiv",true);
 
 $("#recipeMenu").on("click","[id*='glassDiv']",function(){
 
@@ -153,7 +153,7 @@ $("#recipeMenu").on("click","[id*='glassDiv']",function(){
 			var index = $(this).attr("id").replace("glassDiv","");
 			index = Number(index);
 			console.log(index);
-			RecipeManager.RenderCocktail(Recipes[index],"#glassDiv");
+			RecipeManager.RenderCocktail(Recipes[index],"#glassDiv",true);
 			
 });
 </script>
