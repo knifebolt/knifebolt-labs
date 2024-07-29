@@ -122,14 +122,23 @@ var RecipeManager = {
 		
 		if (recipe.Garnish.toLowerCase().indexOf("lemon") > -1){
 			$(glassDivSelector).find("#Full-wedge").show().css("fill","yellow").css("stroke","yellow");
+			if (pour){
+				await RecipeManager.DropElement($(glassDivSelector).find("#Full-wedge"),40);
+			} 
 		}
 		
 		if (recipe.Garnish.toLowerCase().indexOf("lime") > -1){
 			$(glassDivSelector).find("#Full-wedge").show().css("fill","green").css("stroke","green");
+			if (pour){
+				await RecipeManager.DropElement($(glassDivSelector).find("#Full-wedge"),40);
+			} 
 		}
 		
 		if (recipe.Garnish.toLowerCase().indexOf("orange") > -1){
 			$(glassDivSelector).find("#Half-wedge").show().css("fill","orange").css("stroke","orange");
+			if (pour){
+				await RecipeManager.DropElement($(glassDivSelector).find("#Half-wedge"),40);
+			} 
 		}
 		
 		
