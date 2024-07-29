@@ -15,7 +15,7 @@ var RecipeManager = {
 	
 	LiquidParts: 32,
 	
-	RenderMenu: function (){
+	RenderMenu: async function (){
 		for (let m = 0; m < Recipes.length; m++) {
 			var thisGlass =  "<div id='glassDiv" + m + "'><div>";
 			$("#recipeMenu").append(thisGlass);
