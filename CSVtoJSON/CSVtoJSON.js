@@ -45,7 +45,7 @@ var CSVtoJSON = {
 			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell, 
 			//also advance i to skip the next character
 			if (!betweenDoubleQuotes && (csv[i] == "\n" || csv[i] == "\r")){
-				thisRow.push(thisCell);
+				thisRow.push(CSVtoJSON.FixCellDoubleQuotes(thisCell));
 				rows.push(thisRow);
 				
 				thisCell = "";
@@ -54,7 +54,7 @@ var CSVtoJSON = {
 			
 			//if we are not between quotes and the current character is a comma, add cell to this row and clear this cell
 			else if (!betweenDoubleQuotes && csv[i] == ','){
-				thisRow.push(thisCell);
+				thisRow.push(CSVtoJSON.FixCellDoubleQuotes(thisCell));
 				thisCell = "";
 			}
 			
@@ -68,6 +68,17 @@ var CSVtoJSON = {
 		JSON = rows;
 		
 		return JSON;
+	},
+	
+	FixCellDoubleQuotes: function (cell){
+		
+		if (cell[0] !== undefined && cell[0] == '"' && cell[cell.length-1] == '"'){
+			cell = cell.slice(1,-1);
+		}
+		
+		cell.replace(/[|[doublequote]|]/g,'"');
+		
+		return cell;
 	}
 }
 CSVtoJSON.Init();
