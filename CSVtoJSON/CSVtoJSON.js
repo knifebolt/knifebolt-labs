@@ -10,8 +10,11 @@ var CSVtoJSON = {
 		//replace all instances of ,""""" and """"", """""/n
 		csv = csv.replace(/,"""""/g, ",\"[[doublequote]][[doublequote]]").replace(/""""",/g, ",\"[[doublequote]][[doublequote]]\",").replace(/"""""(\r\n|\r|\n)/g,"[[doublequote]][[doublequote]]\r");
 		
-		//replace all instances of ,""" and """, """/n
-		csv = csv.replace(/,"""/g, ",\"[[doublequote]]").replace(/""",/g, ",\"[[doublequote]]\",").replace(/"""(\r\n|\r|\n)/g,"[[doublequote]]\r");
+		//replace all instances of ,""" and """, """/n 
+		csv = csv.replace(/,"""/g, ",\"[[doublequote]]")	//double quotes at beginning of cell
+				.replace(/""",/g, "[[doublequote]]\",")		//double quotes at end of cell	
+				.replace(/"""(\r\n|\r|\n)/g,"[[doublequote]]\"\r")	//double quotes at end of line
+				csv.replace(/"""/g, "\"[[doublequote]]")	//double quotes at beginning of line
 		
 		//replace all double double quotes
 		csv = csv.replace(/""/g, "[|[doublequote]|]");
