@@ -78,7 +78,7 @@ var CSVtoJSON = {
 			cell = cell.slice(1,-1);
 		}
 		
-		cell = cell.replace(/[[doublequote]]/g,'"');
+		//cell = cell.replace(/[[doublequote]]/g,'"');
 		
 		return cell;
 	}
