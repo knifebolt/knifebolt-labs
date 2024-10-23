@@ -8,7 +8,9 @@ var CSVtoJSON = {
 		//todo: look for all groups of double quotes with an odd count above 3
 		
 		//replace all instances of ,""""" and """"", """""/n
-		csv = csv.replace(/,"""""/g, ",\"[[doublequote]][[doublequote]]").replace(/""""",/g, ",\"[[doublequote]][[doublequote]]\",").replace(/"""""(\r\n|\r|\n)/g,"[[doublequote]][[doublequote]]\r");
+		csv = csv.replace(/,"""""/g, ",\"[[doublequote]][[doublequote]]")
+				.replace(/""""",/g, ",\"[[doublequote]][[doublequote]]\",")
+				.replace(/"""""(\r\n|\r|\n)/g,"[[doublequote]][[doublequote]]\r");
 		
 		//replace all instances of ,""" and """, """/n 
 		csv = csv.replace(/,"""/g, ",\"[[doublequote]]")	//double quotes at beginning of cell
@@ -76,7 +78,7 @@ var CSVtoJSON = {
 			cell = cell.slice(1,-1);
 		}
 		
-		cell.replace(/[|[doublequote]|]/g,'"');
+		cell = cell.replace(/[|[doublequote]|]/g,'"');
 		
 		return cell;
 	}
