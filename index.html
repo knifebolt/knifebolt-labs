@@ -254,7 +254,7 @@ function handleFileSelect() {
     console.log(contents);
     var convertedJSON = CSVtoJSON.GetJSON(contents);
     console.log(convertedJSON);
-    $("#csv-json-output").val(JSON.stringify(convertedJSON.replace(String.fromCharCode(92),String.fromCharCode(92,92)));
+    $("#csv-json-output").val(JSON.stringify(convertedJSON));
   };
   reader.readAsText(file);
 }
