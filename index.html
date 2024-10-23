@@ -78,6 +78,7 @@ pre {
 
 <script src="ChordsJS/Chords.js"></script>
 <script src="JSONtoHTML/JSONtoHTML.js"></script>
+<script src="CSVtoJSON/CSVtoJSON.js"></script>
 <script src="RecipeManager/js/Recipes.js"></script>
 <script src="RecipeManager/js/Ingredients.js"></script>
 <script src="RecipeManager/js/Glasses.js"></script>
@@ -249,6 +250,7 @@ function handleFileSelect() {
     const contents = reader.result;
     // Process the contents of the file
     console.log(contents);
+    var convertedJSON = CSVtoJSON.GetJSON(contents);
   };
   reader.readAsText(file);
 }
