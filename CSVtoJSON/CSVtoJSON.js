@@ -70,6 +70,24 @@ var CSVtoJSON = {
 		
 		JSON = rows;
 		
+		//if we have multiple rows, assume the first row is headers
+		if (rows.length > 1){
+			
+			JSON = [];
+			
+			var keys = rows[0];
+			
+			for (let i = 1; i < rows.length; i++) {
+				var thisObject = {};
+				
+				for (let j = 0; j < rows[i].length; j++) {
+					thisObject[keys[j] = rows[i][j]	
+				}
+				JSON.push(thisObject);
+			}
+			
+		}
+		
 		return JSON;
 	},
 	
