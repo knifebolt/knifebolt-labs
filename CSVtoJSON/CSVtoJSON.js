@@ -75,14 +75,20 @@ var CSVtoJSON = {
 	
 	FixCellDoubleQuotes: function (cell){
 		
+		//if our cell is surrounded by double quotes, remove them
 		if (cell[0] !== undefined && cell[0] == '"' && cell[cell.length-1] == '"'){
 			cell = cell.slice(1,-1);
-		}
-		else if (!isNaN(cell)){
-			cell = Number(cell);
+			cell = cell.replace(/zdblqtz/g,'"');
 		}
 		
-		cell = cell.replace(/zdblqtz/g,'"');
+		//if our cell is a number without a leading zero, change it to a number
+		else if (!isNaN(cell) && cell[0] != undefined && cell[0] != "0"){
+			cell = Number(cell);
+		}
+
+		else {
+			cell = cell.replace(/zdblqtz/g,'"');
+		}
 		
 		return cell;
 	}
