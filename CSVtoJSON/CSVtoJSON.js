@@ -14,7 +14,7 @@ var CSVtoJSON = {
 		csv = csv.replace(/,"""/g, ",\"[[doublequote]]").replace(/""",/g, ",\"[[doublequote]]\",").replace(/"""(\r\n|\r|\n)/g,"[[doublequote]]\r");
 		
 		//replace all double double quotes
-		csv = csv.replace(/""/g, ",\"[|[doublequote]|]");
+		csv = csv.replace(/""/g, "[|[doublequote]|]");
 		
 		//replace \r\n with \n
 		csv = csv.replace(/\r\n/g, "\n");
