@@ -28,8 +28,6 @@ var CSVtoJSON = {
 		
 		//break into 2d array
 		for (let i = 0; i < csv.length; i++) {
-
-			console.log(csv[i]);
 			
 			//if the current character is a double quote and we are not between double quotes, now we are
 			if (csv[i] == '"' && betweenDoubleQuotes == false){
@@ -43,13 +41,12 @@ var CSVtoJSON = {
 			
 			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell, 
 			//also advance i to skip the next character
-			if (!betweenDoubleQuotes & csv[i] == "\\" && csv[i+1] != undefined && (csv[i+1] == 'r' || csv[i+1] == 'n')){
+			if (!betweenDoubleQuotes && (csv[i] == "\n" || csv[i] == "\r")){
 				thisRow.push(thisCell);
 				rows.push(thisRow);
 				
 				thisCell = "";
 				thisRow = [];
-				i++;
 			}
 			
 			//if we are not between quotes and the current character is a comma, add cell to this row and clear this cell
