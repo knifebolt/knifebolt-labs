@@ -242,7 +242,7 @@ $("#recipeMenu").on("click","[id*='glassDiv']",function(){
 });
 
 function handleFileSelect() {
-  const input = document.getElementById('file-input');
+  const input = document.getElementById('csv-upload');
   const file = input.files[0];
   const reader = new FileReader();
   reader.onload = function() {
