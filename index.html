@@ -200,6 +200,11 @@ document.getElementById('jsonToHtmlOutput').innerHTML = html;</textarea>
 <p>Example output:</p>
 <div id="jsonToHtmlOutput"></div>
 
+<h2>CSVtoJSON.js</h2>
+<p>
+A JavaScript library that converts a CSV file into usable JSON.
+</p>
+<input id="csv-upload" name="csv-upload" type="file" />
 
 </div>
 </div>
@@ -235,6 +240,15 @@ $("#recipeMenu").on("click","[id*='glassDiv']",function(){
 	RecipeManager.RenderCocktail(Recipes[index],"#glassDiv");
 			
 });
+
+function handleFiles() {
+	thisFile = this.files[0]; /* now you can work with the file list */
+	console.log(thisFile);
+}
+
+const inputElement = document.getElementById("csv-upload");
+inputElement.addEventListener("change", handleFiles, false);
+	
 </script>
 </body>
 </html>
