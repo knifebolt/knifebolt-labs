@@ -8,18 +8,18 @@ var CSVtoJSON = {
 		//todo: look for all groups of double quotes with an odd count above 3
 		
 		//replace all instances of ,""""" and """"", """""/n
-		csv = csv.replace(/,"""""/g, ",\"[[doublequote]][[doublequote]]")
-				.replace(/""""",/g, ",\"[[doublequote]][[doublequote]]\",")
-				.replace(/"""""(\r\n|\r|\n)/g,"[[doublequote]][[doublequote]]\r");
+		csv = csv.replace(/,"""""/g, ",\"zzdoublequotezzzzdoublequotezz")
+				.replace(/""""",/g, ",\"zzdoublequotezzzzdoublequotezz\",")
+				.replace(/"""""(\r\n|\r|\n)/g,"zzdoublequotezzzzdoublequotezz\r");
 		
 		//replace all instances of ,""" and """, """/n 
-		csv = csv.replace(/,"""/g, ",\"[[doublequote]]")	//double quotes at beginning of cell
-				.replace(/""",/g, "[[doublequote]]\",")		//double quotes at end of cell	
-				.replace(/"""(\r\n|\r|\n)/g,"[[doublequote]]\"\r")	//double quotes at end of line
-				csv.replace(/"""/g, "\"[[doublequote]]")	//double quotes at beginning of line
+		csv = csv.replace(/,"""/g, ",\"zzdoublequotezz")	//double quotes at beginning of cell
+				.replace(/""",/g, "zzdoublequotezz\",")		//double quotes at end of cell	
+				.replace(/"""(\r\n|\r|\n)/g,"zzdoublequotezz\"\r")	//double quotes at end of line
+				csv.replace(/"""/g, "\"zzdoublequotezz")	//double quotes at beginning of line
 		
 		//replace all double double quotes
-		csv = csv.replace(/""/g, "[[doublequote]]");
+		csv = csv.replace(/""/g, "zzdoublequotezz");
 		
 		//replace \r\n with \n
 		csv = csv.replace(/\r\n/g, "\n");
@@ -78,7 +78,7 @@ var CSVtoJSON = {
 			cell = cell.slice(1,-1);
 		}
 		
-		//cell = cell.replace(/[[doublequote]]/g,'"');
+		//cell = cell.replace(/zzdoublequotezz/g,'"');
 		
 		return cell;
 	}
