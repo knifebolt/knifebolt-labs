@@ -28,6 +28,8 @@ var CSVtoJSON = {
 		
 		//break into 2d array
 		for (let i = 0; i < csv.length; i++) {
+
+			console.log(csv[i]);
 			
 			//if the current character is a double quote and we are not between double quotes, now we are
 			if (csv[i] == '"' && betweenDoubleQuotes == false){
