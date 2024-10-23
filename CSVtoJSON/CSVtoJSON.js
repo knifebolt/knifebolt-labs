@@ -81,7 +81,7 @@ var CSVtoJSON = {
 				var thisObject = {};
 				
 				for (let j = 0; j < rows[i].length; j++) {
-					thisObject[keys[j] = rows[i][j]	
+					thisObject[keys[j]] = rows[i][j];
 				}
 				JSON.push(thisObject);
 			}
