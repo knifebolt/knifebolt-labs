@@ -204,7 +204,7 @@ document.getElementById('jsonToHtmlOutput').innerHTML = html;</textarea>
 <p>
 A JavaScript library that converts a CSV file into usable JSON.
 </p>
-<input id="csv-upload" name="csv-upload" type="file" />
+<input id="csv-upload" name="csv-upload" type="file" onchange="handleFileSelect()" />
 
 </div>
 </div>
@@ -241,13 +241,17 @@ $("#recipeMenu").on("click","[id*='glassDiv']",function(){
 			
 });
 
-function handleFiles() {
-	thisFile = this.files[0]; /* now you can work with the file list */
-	console.log(thisFile);
+function handleFileSelect() {
+  const input = document.getElementById('file-input');
+  const file = input.files[0];
+  const reader = new FileReader();
+  reader.onload = function() {
+    const contents = reader.result;
+    // Process the contents of the file
+    console.log(contents);
+  };
+  reader.readAsText(file);
 }
-
-const inputElement = document.getElementById("csv-upload");
-inputElement.addEventListener("change", handleFiles, false);
 	
 </script>
 </body>
