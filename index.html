@@ -205,8 +205,8 @@ document.getElementById('jsonToHtmlOutput').innerHTML = html;</textarea>
 <p>
 A JavaScript library that converts a CSV file into usable JSON.
 </p>
-<span>Fields to split values on carriage returns</span><input type="text" class="kb-input" id="splitValuesOnCarriageReturn" /> <br>
-<span>Fields to split values on commas</span><input type="text" class="kb-input" id="splitValuesOnCarriageReturn" /> <br>
+<span>Fields to split values on carriage returns</span><input type="text" class="kb-input" id="splitValuesOnCarriageReturns" /> <br>
+<span>Fields to split values on commas</span><input type="text" class="kb-input" id="splitValuesOnCommas" /> <br>
 <input id="csv-upload" name="csv-upload" type="file" onchange="handleFileSelect()" />
 <textarea id="csv-json-output" rows="20" class="example-code">Output will show here</textarea>
 </div>
@@ -252,8 +252,20 @@ function handleFileSelect() {
     const contents = reader.result;
     // Process the contents of the file
     console.log(contents);
-    var convertedJSON = CSVtoJSON.GetJSON(contents);
+    var options = {};
+    options.Splits = [];
+    var carriageSplits = {
+	    SplitFields: $("#splitValuesOnCarriageReturns").val(),
+	    SplitOnString: "\n"
+    }
+    var commaSplits = {
+	    SplitFields: $("#splitValuesOnCommas").val(),
+	    SplitOnString: ","
+    }
+    options.Splits.push(carriageSplits,commaSplits);
+    var convertedJSON = CSVtoJSON.GetJSON(contents,options);
     console.log(convertedJSON);
+	  
     $("#csv-json-output").val(JSON.stringify(convertedJSON));
   };
   reader.readAsText(file);
