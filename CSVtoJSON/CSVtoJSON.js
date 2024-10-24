@@ -2,7 +2,8 @@ var CSVtoJSON = {
 	Init: function(){
 	
 	},
-	GetJSON: function (csv){
+	GetJSON: function (csv, options){
+		
 		var JSON = [];
 		
 		//todo: look for all groups of double quotes with an odd count above 3
@@ -88,6 +89,29 @@ var CSVtoJSON = {
 			
 		}
 		
+		if (options != undefined && options.Splits != undefined){
+			for (let a = 0; a < options.Splits.length; a++) {
+				if (options.Splits[a].SplitFields != undefined && options.Splits[a].SplitOnString != undefined) {
+					JSON = CSVtoJSON.SplitFields(JSON,options.Splits[a].SplitFields,options.Splits[a].SplitOnString)
+				}
+			}
+		}
+		
+		
+		return JSON;
+	},
+	
+	SplitFields: function (JSON,fields,splitOnString){
+		var splitFields = options.SplitFieldsOnCarriageReturns.split(',');
+				
+		for (let i = 1; i < splitFields.length; i++) {
+			
+			for (let j = 0; j < JSON.length; j++) {
+				if (JSON[j][splitFields[i] != undefined){
+					JSON[j][splitFields[i] = JSON[j][splitFields[i].split(splitOnString);
+				}
+			}
+		}
 		return JSON;
 	},
 	
