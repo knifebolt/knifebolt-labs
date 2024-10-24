@@ -107,8 +107,8 @@ var CSVtoJSON = {
 		for (let i = 1; i < splitFields.length; i++) {
 			
 			for (let j = 0; j < JSON.length; j++) {
-				if (JSON[j][splitFields[i] != undefined){
-					JSON[j][splitFields[i] = JSON[j][splitFields[i].split(splitOnString);
+				if (JSON[j][splitFields[i]] != undefined){
+					JSON[j][splitFields[i]] = JSON[j][splitFields[i]].split(splitOnString);
 				}
 			}
 		}
