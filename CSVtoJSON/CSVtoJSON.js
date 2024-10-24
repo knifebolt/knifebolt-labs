@@ -102,7 +102,7 @@ var CSVtoJSON = {
 	},
 	
 	SplitFields: function (JSON,fields,splitOnString){
-		var splitFields = options.SplitFieldsOnCarriageReturns.split(',');
+		var splitFields = fields.split(',');
 				
 		for (let i = 1; i < splitFields.length; i++) {
 			
