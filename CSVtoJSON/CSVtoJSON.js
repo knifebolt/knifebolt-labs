@@ -48,7 +48,7 @@ var CSVtoJSON = {
 			//if we are between double quotes and this character and the next character are both double quotes, increment one extra and add our replace string
 			else if (csv[i] == '"' && betweenDoubleQuotes == true && csv[i+1] != undefined && csv[i+1] == '"'){
 				isEscapedDoubleQuote = true;
-				thisCell += '"'
+				thisCell += '\"'
 				i++;
 			}
 			
