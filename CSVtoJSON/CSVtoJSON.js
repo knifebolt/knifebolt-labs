@@ -110,15 +110,17 @@ var CSVtoJSON = {
 				if (JSON[j][splitFields[i]] != undefined){
 					JSON[j][splitFields[i]] = JSON[j][splitFields[i]].split(splitOnString);
 				
+					//trim empty spaces from the split out field, remove elements which are empty string if they are not the first element
+					var updatedArray = [];
 					for (let a = 0; a < JSON[j][splitFields[i]].length; a++) {
 						JSON[j][splitFields[i]][a] = JSON[j][splitFields[i]][a].trim();
 						
-						//var updatedArray = [];
-						//if (a != 0 && JSON[j][splitFields[i]][a] != ""){
-						//	updatedArray.push(JSON[j][splitFields[i]][a]);
-						//}
-						//JSON[j][splitFields[i]] = updatedArray;
+						if (a != 0 && JSON[j][splitFields[i]][a] != ""){
+							updatedArray.push(JSON[j][splitFields[i]][a]);
+						}
+						
 					}
+					JSON[j][splitFields[i]] = updatedArray;
 				}
 			}
 		}
