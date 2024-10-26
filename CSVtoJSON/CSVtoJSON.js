@@ -109,6 +109,16 @@ var CSVtoJSON = {
 			for (let j = 0; j < JSON.length; j++) {
 				if (JSON[j][splitFields[i]] != undefined){
 					JSON[j][splitFields[i]] = JSON[j][splitFields[i]].split(splitOnString);
+				
+					for (let a = 0; a < JSON[j][splitFields[i]].length; a++) {
+						JSON[j][splitFields[i]][a] = JSON[j][splitFields[i]][a].trim();
+						
+						var updatedArray = [];
+						if (a != 0 && JSON[j][splitFields[i]][a] != ""){
+							updatedArray.push(JSON[j][splitFields[i]][a]);
+						}
+						JSON[j][splitFields[i]] = updatedArray;
+					}
 				}
 			}
 		}
