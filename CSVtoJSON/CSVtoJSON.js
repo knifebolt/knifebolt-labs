@@ -8,6 +8,7 @@ var CSVtoJSON = {
 		
 		//todo: look for all groups of double quotes with an odd count above 3
 		
+		/*
 		//replace all instances of ,""""" and """"", """""/n
 		//zdblqtz is a placeholder for double quotes that should never occur in your source text
 		csv = csv.replace(/,"""""/g, ",\"zdblqtzzdblqtz")
@@ -22,6 +23,7 @@ var CSVtoJSON = {
 		
 		//replace all double double quotes
 		csv = csv.replace(/""/g, "zdblqtz");
+		*/
 		
 		//replace \r\n with \n
 		csv = csv.replace(/\r\n/g, "\n");
@@ -36,10 +38,20 @@ var CSVtoJSON = {
 		//break into 2d array
 		for (let i = 0; i < csv.length; i++) {
 			
+			var isEscapedDoubleQuote = false;
+			
 			//if the current character is a double quote and we are not between double quotes, now we are
 			if (csv[i] == '"' && betweenDoubleQuotes == false){
 				betweenDoubleQuotes = true;
 			}
+			
+			//if we are between double quotes and this character and the next character are both double quotes, increment one extra and add our replace string
+			else if (csv[i] == '"' && betweenDoubleQuotes == true && csv[i+1] != undefined && csv[i+1] == '"'){
+				isEscapedDoubleQuote = true;
+				thisCell += '""'
+				i++;
+			}
+			
 			
 			//if the current character is a double quote and we are between double quotes, we no longer are
 			else if (csv[i] == '"' && betweenDoubleQuotes == true){
@@ -49,7 +61,7 @@ var CSVtoJSON = {
 			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell, 
 			//also advance i to skip the next character
 			if (!betweenDoubleQuotes && (csv[i] == "\n" || csv[i] == "\r")){
-				thisRow.push(CSVtoJSON.FixCellDoubleQuotes(thisCell));
+				thisRow.push(thisCell);
 				rows.push(thisRow);
 				
 				thisCell = "";
@@ -58,12 +70,12 @@ var CSVtoJSON = {
 			
 			//if we are not between quotes and the current character is a comma, add cell to this row and clear this cell
 			else if (!betweenDoubleQuotes && csv[i] == ','){
-				thisRow.push(CSVtoJSON.FixCellDoubleQuotes(thisCell));
+				thisRow.push(thisCell);
 				thisCell = "";
 			}
 			
-			//else add current character to this cell
-			else {
+			//else add current character to this cell, unless current character is an escaped double quote which would already be added
+			else if (!isEscapedDoubleQuote){
 				thisCell += csv[i];
 			}
 			
