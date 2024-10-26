@@ -113,11 +113,11 @@ var CSVtoJSON = {
 					for (let a = 0; a < JSON[j][splitFields[i]].length; a++) {
 						JSON[j][splitFields[i]][a] = JSON[j][splitFields[i]][a].trim();
 						
-						var updatedArray = [];
-						if (a != 0 && JSON[j][splitFields[i]][a] != ""){
-							updatedArray.push(JSON[j][splitFields[i]][a]);
-						}
-						JSON[j][splitFields[i]] = updatedArray;
+						//var updatedArray = [];
+						//if (a != 0 && JSON[j][splitFields[i]][a] != ""){
+						//	updatedArray.push(JSON[j][splitFields[i]][a]);
+						//}
+						//JSON[j][splitFields[i]] = updatedArray;
 					}
 				}
 			}
