@@ -32,7 +32,7 @@ var CSVtoJSON = {
 		var rows = [];
 		var betweenDoubleQuotes = false;
 		var thisRow = [];
-		var thisCell = '';
+		var thisCell = new String();
 
 		
 		//break into 2d array
