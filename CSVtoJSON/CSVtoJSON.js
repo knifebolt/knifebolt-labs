@@ -6,25 +6,6 @@ var CSVtoJSON = {
 		
 		var JSON = [];
 		
-		//todo: look for all groups of double quotes with an odd count above 3
-		
-		/*
-		//replace all instances of ,""""" and """"", """""/n
-		//zdblqtz is a placeholder for double quotes that should never occur in your source text
-		csv = csv.replace(/,"""""/g, ",\"zdblqtzzdblqtz")
-				.replace(/""""",/g, ",\"zdblqtzzdblqtz\",")
-				.replace(/"""""(\r\n|\r|\n)/g,"zdblqtzzdblqtz\r");
-		
-		//replace all instances of ,""" and """, """/n 
-		csv = csv.replace(/,"""/g, ",\"zdblqtz")	//double quotes at beginning of cell
-				.replace(/""",/g, "zdblqtz\",")		//double quotes at end of cell	
-				.replace(/"""(\r\n|\r|\n)/g,"zdblqtz\"\r")	//double quotes at end of line
-				csv.replace(/"""/g, "\"zdblqtz")	//double quotes at beginning of line
-		
-		//replace all double double quotes
-		csv = csv.replace(/""/g, "zdblqtz");
-		*/
-		
 		//replace \r\n with \n
 		csv = csv.replace(/\r\n/g, "\n");
 		
@@ -101,6 +82,7 @@ var CSVtoJSON = {
 			
 		}
 		
+		//check if we have an options object with cells to split and strings to split them on
 		if (options != undefined && options.Splits != undefined){
 			for (let a = 0; a < options.Splits.length; a++) {
 				if (options.Splits[a].SplitFields != undefined && options.Splits[a].SplitOnString != undefined) {
@@ -108,7 +90,6 @@ var CSVtoJSON = {
 				}
 			}
 		}
-		
 		
 		return JSON;
 	},
@@ -138,25 +119,5 @@ var CSVtoJSON = {
 		}
 		return JSON;
 	},
-	
-	FixCellDoubleQuotes: function (cell){
-		
-		//if our cell is surrounded by double quotes, remove them
-		if (cell[0] !== undefined && cell[0] == '"' && cell[cell.length-1] == '"'){
-			cell = cell.slice(1,-1);
-			cell = cell.replace(/zdblqtz/g,'"');
-		}
-		
-		//if our cell is a number without a leading zero, change it to a number
-		else if (!isNaN(cell) && cell[0] != undefined && cell[0] != "0"){
-			cell = Number(cell);
-		}
-
-		else {
-			cell = cell.replace(/zdblqtz/g,'"');
-		}
-		
-		return cell;
-	}
 }
 CSVtoJSON.Init();
