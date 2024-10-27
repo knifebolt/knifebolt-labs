@@ -64,14 +64,14 @@ var CSVtoJSON = {
 				thisRow.push(thisCell);
 				rows.push(thisRow);
 				
-				thisCell = "";
+				thisCell = new String();
 				thisRow = [];
 			}
 			
 			//if we are not between quotes and the current character is a comma, add cell to this row and clear this cell
 			else if (!betweenDoubleQuotes && csv[i] == ','){
 				thisRow.push(thisCell);
-				thisCell = "";
+				thisCell = new String();
 			}
 			
 			//else add current character to this cell, unless current character is an escaped double quote which would already be added
