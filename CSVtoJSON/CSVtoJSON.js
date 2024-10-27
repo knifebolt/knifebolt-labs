@@ -15,7 +15,6 @@ var CSVtoJSON = {
 		var thisRow = [];
 		var thisCell = new String();
 
-		
 		//break into 2d array
 		for (let i = 0; i < csv.length; i++) {
 			
@@ -32,7 +31,6 @@ var CSVtoJSON = {
 				thisCell += '"'
 				i++;
 			}
-			
 			
 			//if the current character is a double quote and we are between double quotes, we no longer are
 			else if (csv[i] == '"' && betweenDoubleQuotes == true){
@@ -79,7 +77,6 @@ var CSVtoJSON = {
 				}
 				JSON.push(thisObject);
 			}
-			
 		}
 		
 		//check if we have an options object with cells to split and strings to split them on
@@ -94,11 +91,12 @@ var CSVtoJSON = {
 		return JSON;
 	},
 	
+	//for an exact match field name, split its contents on a provided string
 	SplitFields: function (JSON,fields,splitOnString){
 		var splitFields = fields.split(',');
-				
-		for (let i = 0; i < splitFields.length; i++) {
 			
+		//loop over field names, then loop over contents of that field in each row
+		for (let i = 0; i < splitFields.length; i++) {			
 			for (let j = 0; j < JSON.length; j++) {
 				if (JSON[j][splitFields[i]] != undefined){
 					JSON[j][splitFields[i]] = JSON[j][splitFields[i]].split(splitOnString);
@@ -106,6 +104,8 @@ var CSVtoJSON = {
 					//trim empty spaces from the split out field, remove elements which are empty string if they are not the first element
 					var updatedArray = [];
 					updatedArray.push(JSON[j][splitFields[i]][0]);
+					
+					//loop over new child array to trim contents and remove empty members (mainly from trailing carriage returns)
 					for (let a = 0; a < JSON[j][splitFields[i]].length; a++) {
 						JSON[j][splitFields[i]][a] = JSON[j][splitFields[i]][a].trim();
 						
