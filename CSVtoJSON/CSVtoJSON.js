@@ -99,8 +99,6 @@ var CSVtoJSON = {
 		return JSON;
 	},
 	
-	
-	
 	//for an exact match field name, split its contents on a provided string
 	SplitFields: function (JSON,fields,splitOnString){
 		var splitFields = fields.split(',');
