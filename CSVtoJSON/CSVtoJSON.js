@@ -38,8 +38,11 @@ var CSVtoJSON = {
 			}
 			
 			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell, 
-			//also advance i to skip the next character
 			if (!betweenDoubleQuotes && (csv[i] == "\n" || csv[i] == "\r")){
+				//cast numbers as numbers unless they have a leading zero
+				if (!isNaN(thisCell) && thisCell[0] != undefined && thisCell[0] != "0"){
+					thisCell = Number(thisCell);
+				}
 				thisRow.push(thisCell);
 				rows.push(thisRow);
 				
@@ -49,6 +52,11 @@ var CSVtoJSON = {
 			
 			//if we are not between quotes and the current character is a comma, add cell to this row and clear this cell
 			else if (!betweenDoubleQuotes && csv[i] == ','){
+				
+				//cast numbers as numbers unless they have a leading zero
+				if (!isNaN(thisCell) && thisCell[0] != undefined && thisCell[0] != "0"){
+					thisCell = Number(thisCell);
+				}
 				thisRow.push(thisCell);
 				thisCell = new String();
 			}
@@ -90,6 +98,8 @@ var CSVtoJSON = {
 		
 		return JSON;
 	},
+	
+	
 	
 	//for an exact match field name, split its contents on a provided string
 	SplitFields: function (JSON,fields,splitOnString){
