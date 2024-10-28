@@ -37,7 +37,7 @@ var CSVtoJSON = {
 				betweenDoubleQuotes = false;
 			}
 			
-			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell, 
+			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell
 			if (!betweenDoubleQuotes && (csv[i] == "\n" || csv[i] == "\r")){
 				//cast numbers as numbers unless they have a leading zero
 				if (!isNaN(thisCell) && thisCell[0] != undefined && thisCell[0] != "0"){
@@ -65,7 +65,6 @@ var CSVtoJSON = {
 			else if (!isEscapedDoubleQuote && csv[i] != '"'){
 				thisCell += csv[i];
 			}
-			
 		}
 		
 		JSON = rows;
