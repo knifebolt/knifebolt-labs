@@ -74,9 +74,9 @@ var CSVtoJSON = {
 		if (rows.length > 1){
 			
 			JSON = [];
-			
 			var keys = rows[0];
 			
+			//loop over all the rows except the first one and add the values with their column header names as keys
 			for (let i = 1; i < rows.length; i++) {
 				var thisObject = {};
 				
@@ -85,6 +85,9 @@ var CSVtoJSON = {
 				}
 				JSON.push(thisObject);
 			}
+			
+			//check to make sure number values aren't actually unique identifiers (because at least one value in the column has a leading zero)
+			JSON = CSVtoJSON.CheckForStringNumberKeys(rows[0],JSON);
 		}
 		
 		//check if we have an options object with cells to split and strings to split them on
@@ -95,7 +98,31 @@ var CSVtoJSON = {
 				}
 			}
 		}
-		
+		return JSON;
+	},
+	
+	//if we find any number values with leading zeroes, the whole column is probably a unique identifier and all values should be strings
+	CheckForStringNumberKeys: function(columns,JSON) {
+		for (let a = 0; a < columns.length; a++) {
+			
+			var leadingZeroFound = false;
+			
+			for (let j = 0; j < JSON.length; j++) {
+				if (JSON[j][columns[a]] != undefined){
+					if (!isNaN(JSON[j][columns[a]]) && JSON[j][columns[a]][0] != undefined && JSON[j][columns[a]][0] == "0"){
+						leadingZeroFound = true;
+					}
+				}
+			}
+			
+			if (leadingZeroFound){
+				for (let j = 0; j < JSON.length; j++) {
+				if (JSON[j][columns[a]] != undefined){
+					JSON[j][columns[a]] = JSON[j][columns[a]].toString();
+				}
+			}
+			
+		}
 		return JSON;
 	},
 	
