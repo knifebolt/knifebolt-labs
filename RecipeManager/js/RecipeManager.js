@@ -33,7 +33,7 @@ var RecipeManager = {
 	RenderCocktail: async function (recipe,glassDivSelector,pour){
 		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
-		$(glassDivSelector).append(Glasses[recipe.Glass]);
+		$(glassDivSelector).append(Glasses["Rocks"]);
 		
 		$(glassDivSelector).find("[id*='Liquid-']").css("fill","transparent");
 		$(glassDivSelector).find("[id*='Liquid-']").css("stroke","transparent");
