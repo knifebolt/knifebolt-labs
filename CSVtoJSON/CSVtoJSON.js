@@ -39,10 +39,8 @@ var CSVtoJSON = {
 			
 			//if we are not between quotes and the current character is a newline, add cell to this row, add row to rows, and clear this row and this cell
 			if (!betweenDoubleQuotes && (csv[i] == "\n" || csv[i] == "\r")){
-				//cast numbers as numbers unless they have a leading zero
-				if (!isNaN(thisCell) && thisCell[0] != undefined && thisCell[0] != "0"){
-					thisCell = Number(thisCell);
-				}
+				
+				thisCell = CSVtoJSON.CastNumbersAndBooleans(thisCell);
 				thisRow.push(thisCell);
 				rows.push(thisRow);
 				
@@ -53,10 +51,7 @@ var CSVtoJSON = {
 			//if we are not between quotes and the current character is a comma, add cell to this row and clear this cell
 			else if (!betweenDoubleQuotes && csv[i] == ','){
 				
-				//cast numbers as numbers unless they have a leading zero
-				if (!isNaN(thisCell) && thisCell[0] != undefined && thisCell[0] != "0"){
-					thisCell = Number(thisCell);
-				}
+				thisCell = CSVtoJSON.CastNumbersAndBooleans(thisCell);
 				thisRow.push(thisCell);
 				thisCell = new String();
 			}
@@ -98,6 +93,24 @@ var CSVtoJSON = {
 			}
 		}
 		return JSON;
+	},
+	
+	CastNumbersAndBooleans: function (val){
+		
+		//cast booleans
+		if (val.toLowerCase() == '"false"' || val.toLowerCase() == "'false'"){
+			val = 'false';
+		}
+		if (val.toLowerCase() == '"true"' || val.toLowerCase() == "'true'"){
+			val= 'true';
+		}
+		
+		//cast numbers as numbers unless they have a leading zero
+		if (typeof val != "boolean" && !isNaN(val) && val[0] != undefined && thisCell[0] != "0"){
+			val = Number(val);
+		}
+		
+		return val;
 	},
 	
 	//if we find any number values with leading zeroes, the whole column is probably a unique identifier and all values should be strings
