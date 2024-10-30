@@ -106,7 +106,7 @@ var CSVtoJSON = {
 		}
 		
 		//cast numbers as numbers unless they have a leading zero
-		if (typeof val != "boolean" && !isNaN(val) && val[0] != undefined && thisCell[0] != "0"){
+		if (typeof val != "boolean" && !isNaN(val) && val[0] != undefined && val[0] != "0"){
 			val = Number(val);
 		}
 		
