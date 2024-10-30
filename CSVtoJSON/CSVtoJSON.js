@@ -99,10 +99,10 @@ var CSVtoJSON = {
 		
 		//cast booleans
 		if (val.toLowerCase() == '"false"' || val.toLowerCase() == "'false'" || val.toLowerCase() == "false"){
-			val = 'false';
+			val = false;
 		}
 		if (val.toLowerCase() == '"true"' || val.toLowerCase() == "'true'" || val.toLowerCase() == "true"){
-			val= 'true';
+			val = true;
 		}
 		
 		//cast numbers as numbers unless they have a leading zero
