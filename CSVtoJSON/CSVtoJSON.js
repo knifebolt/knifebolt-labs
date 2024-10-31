@@ -146,7 +146,7 @@ var CSVtoJSON = {
 		//loop over field names, then loop over contents of that field in each row
 		for (let i = 0; i < splitFields.length; i++) {			
 			for (let j = 0; j < JSON.length; j++) {
-				if (JSON[j][splitFields[i]] != undefined){
+				if (JSON[j][splitFields[i]] != undefined && typeof JSON[j][splitFields[i]] == "string"){
 					JSON[j][splitFields[i]] = JSON[j][splitFields[i]].split(splitOnString);
 				
 					//trim empty spaces from the split out field, remove elements which are empty string if they are not the first element
