@@ -43,7 +43,7 @@ var RecipeManager = {
 		
 		$(glassDivSelector).find("#Ice-cube-1,#Ice-cube-2,#Mint-leaf1,#Mint-leaf2,#Half-wedge,#Full-wedge,#Strawberry-body,#Strawberry-Leaf,#Olive-body,#Olive-eye,#Olive-pick,#Cherry").hide();
 		
-		var adders = ["Ice"]
+		var adders = ["ice"]
 		for (let i = 0; i < adders.length; i++) {
 			if (recipe[adders[i]]){
 				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
@@ -65,7 +65,7 @@ var RecipeManager = {
 		for (let i = 0; i < recipe.Ingredients.length; i++) {
 			
 			var thisIngredientHTML = ingredientTemplateHTML.replace("{{name}}",recipe.Ingredients[i])
-										.replace("{{color}}",RecipeManager.GetIngredientColor(recipe.Ingredients[i].split(" - ")[0]));
+										.replace("{{color}}",RecipeManager.GetIngredientColor(recipe.Ingredients[i].split(" - ")[1]));
 			
 			$("#ingredientsSpan").append(thisIngredientHTML);
 			
@@ -84,7 +84,7 @@ var RecipeManager = {
 							.replace("oz","");
 							
 				
-				totalOz += Number(thisIngredient.split(" - ")[1]);
+				totalOz += Number(thisIngredient.split(" - ")[0]);
 				ingredientsOz.push(thisIngredient);
 			}
 		}
