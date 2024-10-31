@@ -256,6 +256,7 @@ var RecipeManager = {
 		#speared-berries,
 		#speared-berries-pick,
 		#mint-sprig-stem,
+		#mint-sprig-stem-2,
 		#mint-sprig-leaves,
 		#onion-crown,
 		#onion-body,
