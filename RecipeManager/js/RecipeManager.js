@@ -162,7 +162,7 @@ var RecipeManager = {
 	GetIngredientColor: function(ingredientName){
 		var ingredientColor = "black";
 		for (let z = 0; z < IngredientColors.length; z++) {
-			if (IngredientColors[z].Name == ingredientName){
+			if (IngredientColors[z].Name.toLowerCase() == ingredientName.toLowerCase()){
 				ingredientColor = IngredientColors[z].Color;
 			}
 		}
