@@ -241,6 +241,48 @@ var RecipeManager = {
 			stroke-width: 2 !important;
 			opacity: 0.8 !important;
 		}
+		#apple-slice-flesh,
+		#apple-slice-skin,
+		#celery-stalk,
+		#celery-leaves,
+		#strawberry-body,
+		#strawberry-leaves,
+		#red-chili-body,
+		#red-chili-stem,
+		#speared-grapes,
+		#speared-grapes-pick,
+		#stemmed-grapes,
+		#stemmed-grapes-stem,
+		#speared-berries,
+		#speared-berries-pick,
+		#mint-sprig-stem,
+		#mint-sprig-leaves,
+		#onion-crown,
+		#onion-body,
+		#onion-pick,
+		#mint-leaf-1,
+		#mint-leaf-2,
+		#pineapple-wedge-flesh,
+		#pineapple-wedge-skin,
+		#kit-kat-piece,
+		#ice-cube-1,
+		#ice-cube-2,
+		#citrus-slice,
+		#citrus-wedge,
+		#cherry-fruit,
+		#cherry-stem,
+		#olive-pick,
+		#olive-eye,
+		#olive-body,
+		#coffee-beans,
+		#whipped-cream,
+		#peach-slice-flesh,
+		#peach-slice-skin,
+		#peach-slice-center
+		
+		{
+			display: none;
+		}
 
 		/* width */
 		::-webkit-scrollbar {
