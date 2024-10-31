@@ -268,7 +268,7 @@ function handleFileSelect() {
 	  
     $("#csv-json-output").val(JSON.stringify(convertedJSON));
   };
-  reader.readAsText(file);
+  reader.readAsText(file,'ISO-8859-3');
 }
 	
 </script>
