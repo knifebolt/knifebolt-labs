@@ -183,7 +183,7 @@ var RecipeManager = {
 		#recipeDiv {
 			width: 50vw;
 		}
-		#Glass {
+		#glass {
 			fill: white !important;
 			stroke: black !important;
 			stroke-width: 3 !important;
@@ -246,13 +246,13 @@ var RecipeManager = {
 		#celery-stalk,
 		#celery-leaves,
 		#strawberry-body,
-		#strawberry-leaves,
+		#strawberry-leaf,
 		#red-chili-body,
 		#red-chili-stem,
 		#speared-grapes,
 		#speared-grapes-pick,
 		#stemmed-grapes,
-		#stemmed-grapes-stem,
+		#stemmed-grape-stem,
 		#speared-berries,
 		#speared-berries-pick,
 		#mint-sprig-stem,
@@ -261,7 +261,9 @@ var RecipeManager = {
 		#onion-body,
 		#onion-pick,
 		#mint-leaf-1,
+		#mint-leaf-1-stem,
 		#mint-leaf-2,
+		#mint-leaf-2-stem,
 		#pineapple-wedge-flesh,
 		#pineapple-wedge-skin,
 		#kit-kat-piece,
@@ -269,6 +271,7 @@ var RecipeManager = {
 		#ice-cube-2,
 		#citrus-slice,
 		#citrus-wedge,
+		#citrus-wedge-outline,
 		#cherry-fruit,
 		#cherry-stem,
 		#olive-pick,
