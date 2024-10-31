@@ -94,8 +94,8 @@ var RecipeManager = {
 		for (let i = ingredientsOz.length -1; i >=0; i--) {
 			
 			//get number of ounces for this ingredient
-			var ingredientName = ingredientsOz[i].split(" - ")[0];
-			var oz = ingredientsOz[i].split(" - ")[1].replace(" oz","").replace("oz","");
+			var ingredientName = ingredientsOz[i].split(" - ")[1];
+			var oz = ingredientsOz[i].split(" - ")[0].replace(" oz","").replace("oz","");
 			
 			//get number of parts to fill 
 			//formula: (this ingredient oz * total number of parts in image)/total oz in drink, rounded to nearest whole number
