@@ -496,7 +496,7 @@ var Glasses = {
          inkscape:connector-curvature="0" />
       <path
          style="fill:#44aa00;stroke:#44aa00;stroke-width:3.45796609;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:1"
-         id="path72"
+         id="mint-sprig-stem-2"
          d="m 1312.9411,347.35588 4.9433,-4.0518 4.0989,-3.35879 -1.2408,-2.44543 -2.4713,-1.17468 -4.9433,4.05117 -4.0989,3.35942 -1.9339,2.49283 -0.047,0.0602 -0.041,2.36665 -0.011,0.63153 -0.043,0.83906 -0.1799,3.58168 0.052,-0.0564 4.3784,-4.66028 1.5369,-1.6352"
          inkscape:connector-curvature="0" />
       <path
