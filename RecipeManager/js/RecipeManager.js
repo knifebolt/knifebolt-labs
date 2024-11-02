@@ -111,6 +111,14 @@ var RecipeManager = {
 			currentPartToFill = currentPartToFill+partsToFill;
 		}
 		
+		var garnishes = recipe.Garnishes;
+		
+		if (garnishes != "" && garnishes.length > 0){
+			for (let i = 0; i < garnishes.length; i++) {
+				RecipeManager.ShowGarnish(garnishes[i],glassDivSelector,isPour);
+			}
+		}
+		/*
 		var adders = ["Cherry","Olive","Mint","Strawberry"]
 		for (let i = 0; i < adders.length; i++) {
 			if (recipe[adders[i]]){
@@ -142,9 +150,31 @@ var RecipeManager = {
 				await RecipeManager.DropElement($(glassDivSelector).find("#Half-wedge"),40);
 			} 
 		}
+		*/
 		
 		
+	},
+	
+	ShowGarnish: async function(garnishName,glassDivSelector,isPour){
+		var garnish = {};
 		
+		for (let g = 0; g < Garnishes.length; g++) {
+			if (garnishName.toLowerCase() == Garnishes[g].Name.toLowerCase(){
+				garnish =  Garnishes[g];
+			}
+		}
+		if (garnish.ColorChange != undefined && garnish.ColorChange != "" && garnish.ColorChange.indexOf(",") > -1){
+			var garnishSelector = garnish.ColorChange.split(',')[0];
+			var garnishNewColor = garnish.ColorChange.split(',')[1];
+			$(garnish.ColorChange.split(',')[0]).css("fill",garnishNewColor).css("stroke",garnishNewColor);
+		}
+		
+		if (garnish.Name != undefined && garnish.Selector != undefined) {
+			$("[id*='" + selector + "']").show();
+			if (isPour){
+				await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + selector + "']"),40);
+			}
+		}
 	},
 	
 	FillLiquidParts: async function (start,end,ingredientName,glassDivSelector,pour){
