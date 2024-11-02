@@ -61,9 +61,6 @@ var RecipeManager = {
 					"<span class='ingredient-key-color' style='background-color:{{color}};'>&nbsp;</span>" +
 					"<span class='ingredient-name'>{{name}}</span></div>";
 		
-		
-		recipe.Ingredients = recipe.Ingredients.reverse();
-		
 		//for ingredients measured in liquid oz get oz total and add to array
 		for (let i = 0; i < recipe.Ingredients.length; i++) {
 			
@@ -93,6 +90,8 @@ var RecipeManager = {
 		}
 		
 		currentPartToFill = 1;
+		
+		ingredientsOz = ingredientsOz.reverse();
 		
 		for (let i = ingredientsOz.length -1; i >=0; i--) {
 			
