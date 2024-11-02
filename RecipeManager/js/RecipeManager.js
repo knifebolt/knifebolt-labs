@@ -170,9 +170,9 @@ var RecipeManager = {
 		}
 		
 		if (garnish.Name != undefined && garnish.Selector != undefined) {
-			$("[id*='" + selector + "']").show();
+			$("[id*='" + garnish.Selector + "']").show();
 			if (isPour){
-				await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + selector + "']"),40);
+				await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + garnish.Selector + "']"),40);
 			}
 		}
 	},
