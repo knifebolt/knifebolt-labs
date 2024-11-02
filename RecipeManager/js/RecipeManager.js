@@ -115,7 +115,7 @@ var RecipeManager = {
 		
 		if (garnishes != "" && garnishes.length > 0){
 			for (let i = 0; i < garnishes.length; i++) {
-				RecipeManager.ShowGarnish(garnishes[i],glassDivSelector,isPour);
+				RecipeManager.ShowGarnish(garnishes[i],glassDivSelector,pour);
 			}
 		}
 		/*
