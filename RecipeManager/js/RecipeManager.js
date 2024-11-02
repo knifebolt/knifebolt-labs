@@ -159,7 +159,7 @@ var RecipeManager = {
 		var garnish = {};
 		
 		for (let g = 0; g < Garnishes.length; g++) {
-			if (garnishName.toLowerCase() == Garnishes[g].Name.toLowerCase(){
+			if (garnishName.toLowerCase() == Garnishes[g].Name.toLowerCase()){
 				garnish =  Garnishes[g];
 			}
 		}
