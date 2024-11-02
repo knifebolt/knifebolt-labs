@@ -43,17 +43,13 @@ var RecipeManager = {
 		
 		$(glassDivSelector).find("#Ice-cube-1,#Ice-cube-2,#Mint-leaf1,#Mint-leaf2,#Half-wedge,#Full-wedge,#Strawberry-body,#Strawberry-Leaf,#Olive-body,#Olive-eye,#Olive-pick,#Cherry").hide();
 		
-		var adders = ["ice"]
-		for (let i = 0; i < adders.length; i++) {
-			if (recipe[adders[i]]){
-				$(glassDivSelector).find("[id*='" + [adders[i]] + "']").show();
-				if (pour){
-					await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + [adders[i]] + "']"),40);
-				} 
-			}
+		if (recipe.Ice){
+			$(glassDivSelector).find("[id*='ice']").show();
+			if (pour){
+				await RecipeManager.DropElement($(glassDivSelector).find("[id*='ice']"),40);
+			} 
 		}
-		
-		
+
 		//get ingredients with oz
 		var ingredientsOz = [];
 		var totalOz = 0;
