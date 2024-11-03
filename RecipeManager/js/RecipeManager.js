@@ -6,7 +6,8 @@ function asyncTimeout (ms) {
 
 var RecipeManager = {
 	
-	Init: function (){		
+	Init: function (){
+		
 		RecipeManager.BindFunctions();
 		console.log("did this here");
 		document.head.insertAdjacentHTML( 'beforeend', RecipeManager.StyleTag.replace(/[\r\n\t]/g, ""));
@@ -162,11 +163,11 @@ var RecipeManager = {
 			var garnishSelector = garnish.ColorChange.split(',')[0];
 			var garnishNewColor = garnish.ColorChange.split(',')[1];
 			$(garnish.ColorChange.split(',')[0]).css("fill",garnishNewColor).css("stroke",garnishNewColor);
-			$("[id*='" + garnish.Selector + "']").show();
+			
 		}
 		
 		if (garnish.Name != undefined && garnish.Selector != undefined) {
-			
+			$("[id*='" + garnish.Selector + "']").show();
 			if (isPour){
 				await RecipeManager.DropElement($(glassDivSelector).find("[id*='" + garnish.Selector + "']"),40);
 			}
