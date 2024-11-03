@@ -89,7 +89,7 @@ var RecipeManager = {
 		$(glassDivSelector).find("#Ice-cube-1,#Ice-cube-2,#Mint-leaf1,#Mint-leaf2,#Half-wedge,#Full-wedge,#Strawberry-body,#Strawberry-Leaf,#Olive-body,#Olive-eye,#Olive-pick,#Cherry").hide();
 		
 		if (recipe.Ice){
-			$(glassDivSelector).find("[id*='ice']").show();
+			$(glassDivSelector).find("[id*='ice-cube']").show();
 			if (pour){
 				await RecipeManager.DropElement($(glassDivSelector).find("[id*='ice']"),40);
 			} 
