@@ -78,7 +78,12 @@ var RecipeManager = {
 		$(glassDivSelector).find(allGarnishes).hide();
 		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
-		$(glassDivSelector).append(Glasses["Rocks"]);
+		
+		if (recipe.Glass.toLowerCase() == "irish coffee mug"){
+			$(glassDivSelector).append(Glasses["Irish Coffee Mug"]);
+		} else {
+			$(glassDivSelector).append(Glasses["Rocks"]);
+		}
 		
 		$(glassDivSelector).find("[id*='Liquid-']").css("fill","transparent");
 		$(glassDivSelector).find("[id*='Liquid-']").css("stroke","transparent");
