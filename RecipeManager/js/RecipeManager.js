@@ -305,7 +305,7 @@ var RecipeManager = {
 			margin: 20px;
 		}
 		[id*='Liquid-']{
-			stroke-width: 3 !important;
+			stroke-width: 5 !important;
 		}
 		#recipeMenu {
 			vertical-align: top;
