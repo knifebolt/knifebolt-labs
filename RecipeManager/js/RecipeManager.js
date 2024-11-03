@@ -32,6 +32,51 @@ var RecipeManager = {
 	
 	RenderCocktail: async function (recipe,glassDivSelector,pour){
 		
+		var allGarnishes = `#apple-slice-flesh,
+		#apple-slice-skin,
+		#celery-stalk,
+		#celery-leaves,
+		#strawberry-body,
+		#strawberry-leaf,
+		#red-chili-body,
+		#red-chili-stem,
+		#speared-grapes,
+		#speared-grapes-pick,
+		#stemmed-grapes,
+		#stemmed-grape-stem,
+		#speared-berries,
+		#speared-berries-pick,
+		#mint-sprig-stem,
+		#mint-sprig-stem-2,
+		#mint-sprig-leaves,
+		#onion-crown,
+		#onion-body,
+		#onion-pick,
+		#mint-leaf-1,
+		#mint-leaf-1-stem,
+		#mint-leaf-2,
+		#mint-leaf-2-stem,
+		#pineapple-wedge-flesh,
+		#pineapple-wedge-skin,
+		#kit-kat-piece,
+		#ice-cube-1,
+		#ice-cube-2,
+		#citrus-slice,
+		#citrus-wedge,
+		#citrus-wedge-outline,
+		#cherry-fruit,
+		#cherry-stem,
+		#olive-pick,
+		#olive-eye,
+		#olive-body,
+		#coffee-beans,
+		#whipped-cream,
+		#peach-slice-flesh,
+		#peach-slice-skin,
+		#peach-slice-center`;
+		
+		$(glassDivSelector).find(allGarnishes).hide();
+		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
 		$(glassDivSelector).append(Glasses["Rocks"]);
 		
@@ -109,50 +154,7 @@ var RecipeManager = {
 		
 		var garnishes = recipe.Garnishes;
 		
-		var allGarnishes = `#apple-slice-flesh,
-		#apple-slice-skin,
-		#celery-stalk,
-		#celery-leaves,
-		#strawberry-body,
-		#strawberry-leaf,
-		#red-chili-body,
-		#red-chili-stem,
-		#speared-grapes,
-		#speared-grapes-pick,
-		#stemmed-grapes,
-		#stemmed-grape-stem,
-		#speared-berries,
-		#speared-berries-pick,
-		#mint-sprig-stem,
-		#mint-sprig-stem-2,
-		#mint-sprig-leaves,
-		#onion-crown,
-		#onion-body,
-		#onion-pick,
-		#mint-leaf-1,
-		#mint-leaf-1-stem,
-		#mint-leaf-2,
-		#mint-leaf-2-stem,
-		#pineapple-wedge-flesh,
-		#pineapple-wedge-skin,
-		#kit-kat-piece,
-		#ice-cube-1,
-		#ice-cube-2,
-		#citrus-slice,
-		#citrus-wedge,
-		#citrus-wedge-outline,
-		#cherry-fruit,
-		#cherry-stem,
-		#olive-pick,
-		#olive-eye,
-		#olive-body,
-		#coffee-beans,
-		#whipped-cream,
-		#peach-slice-flesh,
-		#peach-slice-skin,
-		#peach-slice-center`;
 		
-		$(glassDivSelector).find(allGarnishes).hide();
 		
 		if (garnishes != "" && garnishes.length > 0){
 			for (let i = 0; i < garnishes.length; i++) {
