@@ -96,6 +96,11 @@ var RecipeManager = {
 			var glassSelGlass = $(glassDivSelector).find("#glass");
 			glassSelGlass[0].style.setProperty('fill', '#fa883c', 'important');
 		}
+		else if (recipe.Glass.toLowerCase() == "julep"){
+			$(glassDivSelector).append(Glasses["Julep"]);
+			var glassSelGlass = $(glassDivSelector).find("#glass");
+			glassSelGlass[0].style.setProperty('fill', '#a4a6a6', 'important');
+		}
 		
 		else {
 			$(glassDivSelector).append(Glasses["Rocks"]);
