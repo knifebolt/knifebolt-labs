@@ -83,7 +83,7 @@ var RecipeManager = {
 			$(glassDivSelector).append(Glasses["Glass stemmed mug"]);
 		} 
 		else if (recipe.Glass.toLowerCase() == "copper mug"){
-			$(glassDivSelector).append(Glasses["Copper mug"]);
+			$(glassDivSelector).append(Glasses["Copper mug"]).find("#glass").css("fill","#fa883c");
 		}
 		
 		
@@ -304,7 +304,7 @@ var RecipeManager = {
 			margin: 20px;
 		}
 		[id*='Liquid-']{
-			stroke-width: 5 !important;
+			stroke-width: 3 !important;
 		}
 		#recipeMenu {
 			vertical-align: top;
