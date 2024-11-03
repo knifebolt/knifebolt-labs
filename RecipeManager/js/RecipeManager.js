@@ -316,7 +316,7 @@ var RecipeManager = {
 		#peach-slice-center
 		
 		{
-			display: none;
+			display: none !important;
 		}
 
 		/* width */
