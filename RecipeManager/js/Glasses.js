@@ -1245,7 +1245,7 @@ var Glasses = {
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1277,52 +1277,52 @@ var Glasses = {
      inkscape:window-height="986"
      id="namedview74"
      showgrid="false"
-     inkscape:zoom="2.1243074"
-     inkscape:cx="95.605837"
-     inkscape:cy="160.83537"
+     inkscape:zoom="1.5021122"
+     inkscape:cx="159.27658"
+     inkscape:cy="164.5993"
      inkscape:window-x="2389"
      inkscape:window-y="-11"
      inkscape:window-maximized="1"
-     inkscape:current-layer="strokes-5"
+     inkscape:current-layer="strokes"
      inkscape:snap-global="false" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-32"
-     width="191.20096"
+     width="184.02214"
      height="6.0289679"
-     x="70.197189"
+     x="73.845436"
      y="91.311256"
      inkscape:label="#rect2491" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-31"
-     width="191.20096"
+     width="183.6691"
      height="6.0289679"
-     x="69.748337"
+     x="74.220383"
      y="96.938271"
      inkscape:label="#rect2491-4" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-30"
-     width="191.20096"
+     width="183.43372"
      height="6.0289679"
-     x="69.972832"
+     x="74.209503"
      y="102.46485"
      inkscape:label="#rect2491-3" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-28"
-     width="191.20096"
+     width="183.78677"
      height="6.0289679"
-     x="70.085052"
+     x="74.321724"
      y="113.86964"
      inkscape:label="#rect2491-6" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-29"
-     width="191.20096"
+     width="183.31604"
      height="6.0289679"
-     x="69.523956"
+     x="74.231369"
      y="108.09189"
      inkscape:label="#rect2491-4-6" />
   <rect
@@ -1400,57 +1400,57 @@ var Glasses = {
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-22"
-     width="191.20096"
+     width="184.67461"
      height="6.0289679"
-     x="69.903946"
-     y="147.36281"
+     x="72.899727"
+     y="147.59818"
      inkscape:label="#rect2491-3-25" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-21"
-     width="191.20096"
+     width="184.02216"
      height="6.0289679"
-     x="69.455124"
+     x="73.456429"
      y="152.98987"
      inkscape:label="#rect2491-4-6-0" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-20"
-     width="191.20096"
+     width="184.02214"
      height="6.0289679"
-     x="70.016197"
+     x="73.546761"
      y="158.76761"
      inkscape:label="#rect2491-6-2" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-19"
-     width="191.20096"
+     width="183.6691"
      height="6.0289679"
-     x="69.567345"
+     x="73.097908"
      y="164.39465"
      inkscape:label="#rect2491-4-8-6" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-18"
-     width="191.20096"
+     width="184.3752"
      height="6.0289679"
-     x="69.791809"
+     x="73.086998"
      y="169.92122"
      inkscape:label="#rect2491-3-2-2" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-17"
-     width="191.20096"
+     width="184.61058"
      height="6.0289679"
-     x="69.342964"
+     x="72.873528"
      y="175.54826"
      inkscape:label="#rect2491-4-6-5-1" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-16"
-     width="191.20096"
+     width="183.66908"
      height="6.0289679"
-     x="70.162804"
+     x="73.457993"
      y="181.30103"
      inkscape:label="#rect2491-8" />
   <rect
@@ -1504,41 +1504,41 @@ var Glasses = {
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-27"
-     width="191.20096"
+     width="184.72827"
      height="6.0289679"
-     x="69.636177"
+     x="73.637482"
      y="119.49667"
      inkscape:label="#rect2491-4-8" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-25"
-     width="191.20096"
+     width="183.6691"
      height="6.0289679"
-     x="69.411819"
+     x="73.883865"
      y="130.65027"
      inkscape:label="#rect2491-4-6-5" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-26"
-     width="191.20096"
+     width="184.13985"
      height="6.0289679"
-     x="69.860664"
+     x="73.861969"
      y="125.02321"
      inkscape:label="#rect2491-3-2" />
   <rect
      style="opacity:1;fill:#0000ff;fill-opacity:1;stroke:#0000ff;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-23"
-     width="191.20096"
+     width="184.13983"
      height="6.0289679"
-     x="69.679482"
+     x="73.445412"
      y="141.83629"
      inkscape:label="#rect2491-4-3" />
   <rect
      style="opacity:1;fill:#000080;fill-opacity:1;stroke:#000080;stroke-width:0.3172062;stroke-opacity:1"
      id="Liquid-24"
-     width="191.20096"
+     width="182.0215"
      height="6.0289679"
-     x="70.128334"
+     x="75.777237"
      y="136.20923"
      inkscape:label="#rect2491-0" />
   <path
@@ -1820,17 +1820,17 @@ var Glasses = {
       <g
          inkscape:label="RenderLayer_LineSet"
          id="RenderLayer_LineSet-0"
-         transform="matrix(0.50050003,0,0,0.5001154,469.49427,163.26573)"
-         style="stroke-width:2.65559459">
+         transform="matrix(0.50050003,0,0,0.49530818,922.23376,146.42315)"
+         style="stroke-width:2.66845036">
         <g
            inkscape:label="strokes"
            inkscape:groupmode="layer"
            id="strokes-5"
-           style="stroke-width:2.65559459">
+           style="stroke-width:2.66845036">
           <path
              id="glass"
-             style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:6.11820602;stroke-opacity:1"
-             d="m 1342.3745,490.8121 c -8.0025,-7.95689 -15.462,-16.76638 -16.5767,-19.57669 -2.4611,-6.20494 -2.9615,-210.95374 -0.5403,-221.00563 1.1609,-4.81922 6.1837,-11.30816 16.6644,-21.52819 l 15.0026,-14.6296 56.7625,-0.0137 56.7627,-0.0137 v 13.74983 13.74985 h -48.7826 c -55.6608,0 -58.0355,0.51382 -65.5852,14.19013 -4.2622,7.72089 -4.3652,10.1819 -4.3652,104.1805 0,92.14822 0.1756,96.57596 4.1014,103.34829 2.2558,3.8915 7.4625,8.9038 11.5708,11.13842 7.3508,3.99832 8.2295,4.04157 55.2652,2.71992 l 47.7956,-1.34302 v 14.88126 14.88129 l -56.7627,-0.13143 -56.7625,-0.13145 -14.55,-14.46704 z m 142.316,111.14517 c -9.418,-7.30096 -10.0748,-23.31627 -10.0748,-245.70236 0,-118.27943 -0.7981,-204.26591 -1.9284,-207.73442 -1.7361,-5.32761 -1.3403,-6.28683 3.9667,-9.61278 3.9978,-2.50528 9.2085,-3.69461 16.187,-3.69461 16.7715,0 16.6904,-0.25939 14.9105,47.66608 -0.8424,22.68723 -1.609,112.61115 -1.7033,199.83094 -0.1668,154.33458 -0.062,158.73895 3.9052,164.46569 2.2422,3.23637 7.8255,7.56758 12.4075,9.62488 8.1815,3.67349 11.3371,3.74059 175.9254,3.74059 160.1524,0 168.0053,-0.15521 176.8475,-3.49079 5.8196,-2.19548 10.9077,-5.84727 13.7125,-9.84129 4.4105,-6.28071 4.4565,-7.35513 4.211,-97.79964 -0.1365,-50.29705 -0.8553,-140.12358 -1.597,-199.61453 -1.1476,-92.03361 -0.9071,-108.64382 1.6128,-111.37364 4.0355,-4.372 22.5383,-4.3322 28.3536,0.0608 4.1371,3.12539 4.1566,4.67169 2.8091,222.22798 -0.7463,120.49436 -2.0142,222.79313 -2.8173,227.33056 -0.89,5.02765 -3.5633,10.21906 -6.8442,13.2915 l -5.3839,5.04161 -209.4758,-0.058 -209.476,-0.0578 z"
+             style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:6.14782429;stroke-opacity:1"
+             d="m 435.71688,529.23465 c -8.12492,-8.08635 -15.69853,-17.03928 -16.83028,-19.89533 -2.49875,-6.30603 -3.0068,-214.38838 -0.54857,-224.60394 1.17866,-4.89766 6.2783,-11.49225 16.91932,-21.87868 l 15.2321,-14.86778 57.63081,-0.0139 57.63101,-0.0139 v 13.97369 13.97372 h -49.52884 c -56.51225,0 -58.92328,0.52215 -66.58847,14.42112 -4.3274,7.84661 -4.43198,10.34767 -4.43198,105.87668 0,93.64859 0.17829,98.14838 4.16414,105.03094 2.29031,3.95486 7.57666,9.04876 11.74781,11.31985 7.46324,4.06339 8.35538,4.1073 56.1106,2.76418 l 48.52674,-1.36487 v 15.12349 15.12358 l -57.63101,-0.13354 -57.63081,-0.13364 -14.77257,-14.70254 z M 580.20991,642.18942 C 570.64784,634.76966 569.981,618.49351 569.981,392.4868 c 0,-120.20522 -0.81031,-207.59166 -1.9579,-211.11664 -1.76266,-5.41435 -1.36081,-6.38919 4.02738,-9.76929 4.05895,-2.54607 9.34936,-3.75476 16.43461,-3.75476 17.02806,0 16.94572,-0.26361 15.13859,48.44214 -0.85529,23.05661 -1.63361,114.44463 -1.72936,203.08447 -0.16935,156.84725 -0.0629,161.32336 3.96494,167.1434 2.2765,3.28899 7.94521,7.69071 12.5973,9.7815 8.30666,3.73331 11.51053,3.8015 178.61657,3.8015 162.60228,0 170.57531,-0.15772 179.55277,-3.54763 5.90862,-2.23115 11.07456,-5.9424 13.92226,-10.00153 4.47797,-6.38296 4.52468,-7.47485 4.27542,-99.39189 -0.13859,-51.1159 -0.86838,-142.40499 -1.62143,-202.86447 -1.16515,-93.53206 -0.92098,-110.4127 1.63747,-113.18697 4.09723,-4.44318 22.88308,-4.40273 28.78728,0.0618 4.2004,3.17628 4.2202,4.74776 2.8521,225.84611 -0.7577,122.4562 -2.045,226.42044 -2.8604,231.03182 -0.9036,5.10945 -3.6178,10.38538 -6.9489,13.5079 l -5.4662,5.12368 -212.68022,-0.0589 -212.6804,-0.059 z"
              inkscape:connector-curvature="0" />
         </g>
       </g>
