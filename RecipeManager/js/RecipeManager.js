@@ -277,7 +277,7 @@ var RecipeManager = {
 		#glass {
 			fill: white !important;
 			stroke: black !important;
-			stroke-width: 3 !important;
+			stroke-width: 5 !important;
 		}
 		#glassDiv,#recipeMenu,#recipeDiv {
 			display: inline-block;
