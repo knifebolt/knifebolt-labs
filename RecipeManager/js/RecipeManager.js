@@ -84,9 +84,8 @@ var RecipeManager = {
 		} 
 		else if (recipe.Glass.toLowerCase() == "copper mug"){
 			$(glassDivSelector).append(Glasses["Copper mug"]);
-			var glassSelglass = $(glassDivSelector).find("#glass");
-			glassSelglass[0].style.removeAttribute('width');
-			glassSelglass[0].style.setProperty('fill', '#fa883c', 'important');
+			var glassSelGlass = $(glassDivSelector).find("#glass");
+			glassSelGlass[0].style.setProperty('fill', '#fa883c', 'important');
 		}
 		
 		else {
