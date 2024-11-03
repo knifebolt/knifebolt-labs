@@ -79,8 +79,8 @@ var RecipeManager = {
 		
 		$(glassDivSelector + ",#ingredientsSpan").empty();
 		
-		if (recipe.Glass.toLowerCase() == "irish coffee mug"){
-			$(glassDivSelector).append(Glasses["Irish Coffee Mug"]);
+		if (recipe.Glass.toLowerCase() == "glass stemmed mug"){
+			$(glassDivSelector).append(Glasses["Glass stemmed mug"]);
 		} else {
 			$(glassDivSelector).append(Glasses["Rocks"]);
 		}
