@@ -83,7 +83,7 @@ var RecipeManager = {
 			$(glassDivSelector).append(Glasses["Glass stemmed mug"]);
 		} 
 		else if (recipe.Glass.toLowerCase() == "copper mug"){
-			$(glassDivSelector).append(Glasses["Copper mug"]).find("#glass").css("fill","#fa883c");
+			$(glassDivSelector).append(Glasses["Copper mug"]).find("#glass").css("fill","#fa883c !important");
 		}
 		
 		
