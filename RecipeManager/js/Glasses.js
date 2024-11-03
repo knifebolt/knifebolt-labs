@@ -604,7 +604,7 @@ var Glasses = {
      inkscape:connector-curvature="0" />
 </svg>
 `,
-	"Irish Coffee Mug": `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	"Glass stemmed mug": `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
    xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
