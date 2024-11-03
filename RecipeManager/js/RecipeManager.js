@@ -6,8 +6,7 @@ function asyncTimeout (ms) {
 
 var RecipeManager = {
 	
-	Init: function (){
-		
+	Init: function (){	
 		RecipeManager.BindFunctions();
 		console.log("did this here");
 		document.head.insertAdjacentHTML( 'beforeend', RecipeManager.StyleTag.replace(/[\r\n\t]/g, ""));
