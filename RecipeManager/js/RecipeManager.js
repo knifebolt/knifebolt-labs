@@ -87,7 +87,11 @@ var RecipeManager = {
 			recipe.Glass =="Collins"
 		){
 			$(glassDivSelector).append(Glasses[recipe.Glass]);
-		} 
+		} else if (recipe.Glass =="Martini" ||
+			recipe.Glass =="Cocktail")
+		{
+			$(glassDivSelector).append(Glasses["Martini"]);
+		}			
 		else if (recipe.Glass.toLowerCase() == "clay mug"){
 			$(glassDivSelector).append(Glasses["Clay mug"]);
 			var glassSelGlass = $(glassDivSelector).find("#glass");
