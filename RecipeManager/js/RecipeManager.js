@@ -85,7 +85,8 @@ var RecipeManager = {
 			recipe.Glass =="Shot" ||
 			recipe.Glass =="Highball" ||
 		    	recipe.Glass =="Coupe" ||
-			recipe.Glass =="Collins"
+			recipe.Glass =="Collins" || 
+		    	recipe.Glass =="Nick and Nora"
 		){
 			$(glassDivSelector).append(Glasses[recipe.Glass]);
 		} else if (recipe.Glass =="Martini" ||
