@@ -244,10 +244,10 @@ var RecipeManager = {
 				garnish =  Garnishes[g];
 			}
 		}
-		if (garnish.ColorChange != undefined && garnish.ColorChange != "" && garnish.ColorChange.indexOf(",") > -1){
-			var garnishSelector = garnish.ColorChange.split(',')[0];
-			var garnishNewColor = garnish.ColorChange.split(',')[1];
-			$(glassDivSelector).find(garnish.ColorChange.split(',')[0]).css("fill",garnishNewColor).css("stroke",garnishNewColor);
+		if (garnish["Color Change"] != undefined && garnish["Color Change"] != "" && garnish["Color Change"].indexOf(",") > -1){
+			var garnishSelector = garnish["Color Change"].split(',')[0];
+			var garnishNewColor = garnish["Color Change"].split(',')[1];
+			$(glassDivSelector).find(garnishSelector).css("fill",garnishNewColor).css("stroke",garnishNewColor);
 			
 		}
 		
