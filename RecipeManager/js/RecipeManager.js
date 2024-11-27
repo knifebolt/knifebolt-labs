@@ -246,7 +246,7 @@ var RecipeManager = {
 		}
 		if (garnish["Color Change"] != undefined && garnish["Color Change"] != "" && garnish["Color Change"].indexOf(",") > -1){
 			var garnishSelector = garnish["Color Change"].split(',')[0];
-			var garnishNewColor = garnish["Color Change"].split(',')[1];
+			var garnishNewColor = garnish["Color Change"].split('|')[1];
 			$(glassDivSelector).find(garnishSelector).css("fill",garnishNewColor).css("stroke",garnishNewColor);
 			
 		}
