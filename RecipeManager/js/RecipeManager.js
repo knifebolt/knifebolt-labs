@@ -244,7 +244,7 @@ var RecipeManager = {
 				garnish =  Garnishes[g];
 			}
 		}
-		if (garnish["Color Change"] != undefined && garnish["Color Change"] != "" && garnish["Color Change"].indexOf("|") > -1){
+		if (garnish["Color Change"] != undefined && garnish["Color Change"] != "" && garnish["Color Change"].indexOf(",") > -1){
 			var garnishSelector = garnish["Color Change"].split('|')[0];
 			var garnishNewColor = garnish["Color Change"].split('|')[1];
 			$(glassDivSelector).find(garnishSelector).css("fill",garnishNewColor).css("stroke",garnishNewColor);
@@ -296,6 +296,9 @@ var RecipeManager = {
 			color: white;
 			font-size: 25px;
 			font-family: Arial;
+		}
+		#citrus-wedge-outline {
+			display: none !important;
 		}
 		#recipeDiv {
 			width: 50vw;
