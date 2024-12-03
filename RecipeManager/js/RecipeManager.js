@@ -344,9 +344,6 @@ var RecipeManager = {
 			height: 600px;
 			margin: 20px;
 		}
-		span#ingredientsSpan {
-			font-size: 20px;
-		}
 
 		#recipeMenu > [id*='glassDiv'] > svg:hover{
 			background: #404040;
