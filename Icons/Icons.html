@@ -31,7 +31,7 @@ function LoadIcons() {
 	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
 	
 	setTimeout(function(){
-		document.querySelectorAll("#icons")[0].remove();
+		
 		
 		var svgHtml = "";
 		var svgObjects = document.querySelectorAll('#icons > object');
@@ -39,7 +39,7 @@ function LoadIcons() {
 			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500"');
 		}
 		document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
-	
+		document.querySelectorAll("#icons")[0].remove();
 	},100);
 	
 }
