@@ -22,7 +22,7 @@ function LoadIcons() {
 
 	var svgString = "";
 	for (let i = 0; i < iconList.length; i++) {
-		svgString += '<object data="'+ iconList[i] +'.svg" width="200" height="200"> </object>'
+		svgString += '<object data="SVG/'+ iconList[i] +'.svg" width="200" height="200"> </object>'
 	}
 	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
 
