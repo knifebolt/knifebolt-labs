@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+</style>
+</head>
+<body>
+
+<div id="icons"></div>
+
+<script>
+
+function LoadIcons() {
+
+	var iconList = [
+		"Arrow-Circle",
+		"Shield-1",
+		"Speed-Boot",
+		"Sword-1"
+	];
+
+	var svgElementTemplate = ;
+	var svgString = "";
+	for (let i = 0; i < iconList.length; i++) {
+		svgString += '<object data="'+ iconList[i] +'.svg" width="200" height="200"> </object>'
+	}
+	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
+
+}
+
+LoadIcons();
+</script>
+</body>
