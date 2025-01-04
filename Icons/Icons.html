@@ -8,6 +8,7 @@
 <body>
 
 <div id="icons"></div>
+<div id="icon-svgs"></div>
 
 <script>
 
@@ -26,6 +27,12 @@ function LoadIcons() {
 	}
 	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
 
+	var svgDiv = ;
+	var svgObjects = document.querySelectorAll('#icons > object');
+	for (let i = 0; i < svgObjects.length; i++) {
+		svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML;
+	}
+	document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 }
 
 LoadIcons();
