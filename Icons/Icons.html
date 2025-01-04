@@ -31,7 +31,7 @@ function LoadIcons() {
 	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
 	
 	setTimeout(function(){
-		document.querySelectorAll("#icons").remove();
+		document.querySelectorAll("#icons")[0].remove();
 		
 		var svgHtml = "";
 		var svgObjects = document.querySelectorAll('#icons > object');
