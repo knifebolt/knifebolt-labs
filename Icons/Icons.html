@@ -3,6 +3,9 @@
 <head>
 
 <style>
+#icons {
+	display: none;
+}
 </style>
 </head>
 <body>
@@ -28,6 +31,8 @@ function LoadIcons() {
 	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
 	
 	setTimeout(function(){
+		document.querySelectorAll("#icons").remove();
+		
 		var svgHtml = "";
 		var svgObjects = document.querySelectorAll('#icons > object');
 		for (let i = 0; i < svgObjects.length; i++) {
@@ -35,7 +40,7 @@ function LoadIcons() {
 		}
 		document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 	
-	},1000);
+	},100);
 	
 }
 
