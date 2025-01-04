@@ -26,13 +26,17 @@ function LoadIcons() {
 		svgString += '<object data="SVG/'+ iconList[i] +'.svg" width="200" height="200"> </object>'
 	}
 	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
-
-	var svgHtml = "";
-	var svgObjects = document.querySelectorAll('#icons > object');
-	for (let i = 0; i < svgObjects.length; i++) {
-		svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML;
-	}
-	document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
+	
+	setTimeout(function(){
+		var svgHtml = "";
+		var svgObjects = document.querySelectorAll('#icons > object');
+		for (let i = 0; i < svgObjects.length; i++) {
+			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML;
+		}
+		document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
+	
+	},1000);
+	
 }
 
 LoadIcons();
