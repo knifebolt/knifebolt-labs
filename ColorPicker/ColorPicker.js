@@ -63,6 +63,7 @@ var ColorPicker = {
 			border-radius: 4px;
 			padding-left: 11px;
 			position: fixed;
+			z-index: 100000;
 		}
 
 		#hex-value,#rgb-value {
