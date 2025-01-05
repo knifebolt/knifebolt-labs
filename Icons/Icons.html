@@ -3,7 +3,10 @@
 <head>
 
 <style>
-div#overlay {
+#icon-loader {
+	zoom: 0.01;
+}
+#overlay {
     position: fixed;
     top: 0px;
     width: 100vw;
@@ -11,7 +14,7 @@ div#overlay {
     background-color: rgba(100,100,100,0.5);
     left: 0px;
 }
-div#icon-editor {
+#icon-editor {
     width: 60vw;
     margin: auto;
     background: white;
@@ -38,10 +41,11 @@ div#icon-editor {
 </head>
 <body>
 
+<div id="icon-loader"></div>
 <div id="icons"></div>
-<div id="icon-svgs"></div>
 <div id="overlay">
 	<div id="icon-editor">
+		<span id="close-editor">&#10006;</span>
 		<table id="icon-editor-table">
 			<tbody>
 				<tr>
@@ -60,7 +64,7 @@ div#icon-editor {
 				</tr>
 			</tbody>
 		</table>
-		<span id="close-editor">&#10006;</span>
+		
 	</div>
 </div>
 </div>
@@ -80,18 +84,18 @@ function LoadIcons() {
 	for (let i = 0; i < iconList.length; i++) {
 		svgString += '<object data="SVG/'+ iconList[i] +'.svg" width="500px" height="500px"> </object>'
 	}
-	document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgString);
+	document.querySelectorAll("#icon-loader")[0].insertAdjacentHTML("beforeEnd",svgString);
 	
 	setTimeout(function(){
 		
 		
 		var svgHtml = "";
-		var svgObjects = document.querySelectorAll('#icons > object');
+		var svgObjects = document.querySelectorAll('#icon-loader > object');
 		for (let i = 0; i < svgObjects.length; i++) {
 			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500"');
 		}
-		document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
-		document.querySelectorAll("#icons")[0].remove();
+		document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgHtml);
+		document.querySelectorAll("#icon-loader")[0].remove();
 	},1000);
 	
 }
