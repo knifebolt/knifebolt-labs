@@ -153,6 +153,12 @@ function LoadIcons() {
 		}
 		document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 		document.querySelectorAll("#icon-loader")[0].remove();
+		
+		$("#icons > svg").click(function(){
+			$("#selected-icon").empty();
+			$("#selected-icon").append($(this));
+			$("#overlay").show();
+		});
 	},1000);
 	
 }
@@ -163,8 +169,6 @@ $("#close-editor").click(function(){
 	$("#overlay").hide();
 });
 
-$("#close-editor").click(function(){
-	$("#overlay").hide();
-});
+
 </script>
 </body>
