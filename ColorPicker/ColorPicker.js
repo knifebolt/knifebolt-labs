@@ -292,7 +292,7 @@ var ColorPicker = {
 		targetElement.after(document.getElementById("color-picker"));
 		document.head.insertAdjacentHTML("beforeEnd","<style id='color-picker-style'>" + ColorPicker.Style + "</style>");
 		
-		if (ColorPicker.Options != null && ColorPicker.Options.Simplfied != undefined && ColorPicker.Options.Simplified == true){
+		if (ColorPicker.Options != null && ColorPicker.Options.Simplified != undefined && ColorPicker.Options.Simplified == true){
 			$("#selected-gradient,#outputs").hide();
 		}
 		
@@ -465,7 +465,7 @@ var ColorPicker = {
 				document.getElementById("rgb-value").value = rgb;
 				ColorPicker.RenderSelectedGradient(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2]));
 				
-				if (ColorPicker.Options != null && ColorPicker.Options.Simplfied != undefined && ColorPicker.Options.Simplified == true){
+				if (ColorPicker.Options != null && ColorPicker.Options.Simplified != undefined && ColorPicker.Options.Simplified == true){
 					ColorPicker.CurrentTarget.value = hexColor;
 					var event = new Event('change');
 					ColorPicker.CurrentTarget.dispatchEvent(event);
