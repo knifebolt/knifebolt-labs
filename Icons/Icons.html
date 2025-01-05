@@ -195,7 +195,7 @@ $("#selected-icon").on("click","svg path", function(){
 	$("#selected-path-id").val($(this).attr("id"));
 });
 
-$("#selected-path-color").on("input",function(){
+$("#selected-path-color").on("change",function(){
 	var selectedPathID = $("#selected-path-id").val();
 	$("#selected-icon #"+selectedPathID).css("fill",$("#selected-path-color").val());
 });
