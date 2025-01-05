@@ -3,6 +3,11 @@
 <head>
 
 <style>
+#editor-inputs > div {
+    border: 2px solid #D3D3D3;
+    margin: 10px;
+    border-radius: 4px;
+}
 body {
 	font-family: Arial;
 	font-size: 12.5px;
@@ -57,7 +62,21 @@ span#close-editor {
 #close-editor:hover {
 	color: gray;
 }
-
+#editor-inputs > div > span {
+    margin-left: 10px;
+    position: relative;
+    top: -8px;
+    background: white;
+    padding: 3px;
+}
+#editor-inputs > div > input {
+    vertical-align: top;
+    position: relative;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    border: none;
+    outline: none;
+}
 </style>
 </head>
 <body>
