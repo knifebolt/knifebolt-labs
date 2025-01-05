@@ -174,7 +174,7 @@ function LoadIcons() {
 		var svgHtml = "";
 		var svgObjects = document.querySelectorAll('#icon-loader > object');
 		for (let i = 0; i < svgObjects.length; i++) {
-			var name = svgObject[i].getAttribute("data").replace("SVG/","").replace(".svg","");
+			var name = svgObjects[i].getAttribute("data").replace("SVG/","").replace(".svg","");
 			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500" icon-name="' + name +'"');
 		}
 		document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgHtml);
