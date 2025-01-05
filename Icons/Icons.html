@@ -94,8 +94,8 @@ span#close-editor {
 
 #selected-icon > svg path:hover {
     cursor: pointer;
-	stroke: white;
-	stroke-width: 5;
+	stroke: white !important;
+	stroke-width: 5 !important;
 }
 
 #download-icon {
@@ -218,6 +218,21 @@ $("#selected-path-color").on("change",function(){
 	$("#selected-icon #"+selectedPathID).css("fill",$("#selected-path-color").val()).css("stroke-width",0);
 });
 
+$("#download-icon").on("click",function(){
+	var filename = "download.svg";
+	var fileContent = document.querySelectorAll("#selected-icon > svg")[0].outerHTML;
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
+	element.setAttribute('download', filename);
+
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+	
+});
 
 </script>
 <script src="https://knifebolt.github.io/knifebolt-labs/ColorPicker/ColorPicker.js"></script>
