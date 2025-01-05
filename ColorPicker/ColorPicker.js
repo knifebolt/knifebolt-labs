@@ -319,7 +319,7 @@ var ColorPicker = {
 			document.querySelectorAll("#selected-gradient")[0].style.display = "none";
 			document.querySelectorAll("#outputs")[0].style.display = "none";
 			if (ColorPicker.StartingColor != null){
-				var startingColorRGB = ColorPicker.HexToRgb(ColorPicker.StartingColor);
+				var startingColorRGB = ColorPicker.StartingColor.replace("rgb(","").replace(/ /g,"").replace(")","");
 				document.querySelectorAll("[rgb='"+ startingColorRGB +"']")[0].style.outline = "2px solid white";
 			}
 		} else {
