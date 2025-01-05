@@ -426,6 +426,8 @@ var ColorPicker = {
 			&& ColorPicker.CurrentTarget.getAttribute('type') == 'text'
 			){
 				ColorPicker.CurrentTarget.value = hexColor;
+				var event = new Event('change');
+				ColorPicker.CurrentTarget.dispatchEvent(event);
 			}
 			document.getElementById("color-picker").remove();
 		});
