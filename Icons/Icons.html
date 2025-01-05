@@ -192,7 +192,12 @@ $("#icons").on("click","svg",function(){
 
 $("#selected-icon").on("click","svg path", function(){
 	setTimeout(function(){$("#selected-path-color").click();},50);
-	//$("#selected-path-id").val($(this).id());
+	$("#selected-path-id").val($(this).attr("id"));
+});
+
+$("#selected-path-color").on("change",function(){
+	var selectedPathID = $("#selected-path-id").val();
+	$("#"+selected-path-id).css("fill",$("#selected-path-color").val());
 });
 
 
