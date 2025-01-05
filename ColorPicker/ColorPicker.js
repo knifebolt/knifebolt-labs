@@ -292,9 +292,7 @@ var ColorPicker = {
 		targetElement.after(document.getElementById("color-picker"));
 		document.head.insertAdjacentHTML("beforeEnd","<style id='color-picker-style'>" + ColorPicker.Style + "</style>");
 		
-		if (ColorPicker.Options != null && ColorPicker.Options.Simplified != undefined && ColorPicker.Options.Simplified == true){
-			$("#selected-gradient,#outputs").hide();
-		}
+		
 		
 		ColorPicker.RenderGrayRow();
 
@@ -314,7 +312,11 @@ var ColorPicker = {
 		
 		ColorPicker.BindActions();
 		
-		document.querySelectorAll("[rgb='255,0,0']")[0].click();
+		if (ColorPicker.Options != null && ColorPicker.Options.Simplified != undefined && ColorPicker.Options.Simplified == true){
+			$("#selected-gradient,#outputs").hide();
+		} else {
+			document.querySelectorAll("[rgb='255,0,0']")[0].click();
+		}
 	},
 	
 	RenderGrayRow:function() {
@@ -466,10 +468,10 @@ var ColorPicker = {
 				ColorPicker.RenderSelectedGradient(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2]));
 				
 				if (ColorPicker.Options != null && ColorPicker.Options.Simplified != undefined && ColorPicker.Options.Simplified == true){
-					//ColorPicker.CurrentTarget.value = hexColor;
-					//var event = new Event('change');
-					//ColorPicker.CurrentTarget.dispatchEvent(event);
-					//document.getElementById("color-picker").remove();
+					ColorPicker.CurrentTarget.value = hexColor;
+					var event = new Event('change');
+					ColorPicker.CurrentTarget.dispatchEvent(event);
+					document.getElementById("color-picker").remove();
 				} else {
 					
 					//we can't bind this event until the selected gradient exists from the function in the line above
