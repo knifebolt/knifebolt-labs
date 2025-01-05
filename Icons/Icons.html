@@ -191,7 +191,7 @@ $("#icons").on("click","svg",function(){
 });
 
 $("#selected-icon").on("click","svg path", function(){
-	$("#selected-path-color").click();
+	setTimeout(function(){$("#selected-path-color").click();},50);
 	//$("#selected-path-id").val($(this).id());
 });
 
