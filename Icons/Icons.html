@@ -191,7 +191,7 @@ $("#icons").on("click","svg",function(){
 });
 
 $("#selected-icon").on("click","svg path", function(){
-	ColorPicker.LaunchColorPicker($("#selected-path-color"));
+	ColorPicker.LaunchColorPicker($(this));
 	//$("#selected-path-id").val($(this).id());
 });
 
