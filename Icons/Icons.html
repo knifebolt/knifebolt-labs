@@ -156,7 +156,8 @@ function LoadIcons() {
 		
 		$("#icons > svg").click(function(){
 			$("#selected-icon").empty();
-			$("#selected-icon").append($(this));
+			var selectedIcon = $(this);
+			$("#selected-icon").append(selectedIcon);
 			$("#overlay").show();
 		});
 	},1000);
