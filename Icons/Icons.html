@@ -190,11 +190,12 @@ $("#icons").on("click","svg",function(){
 });
 
 $("#selected-icon").on("click","svg path", function(){
+	ColorPicker.StartingColor = $(this).css("fill");
 	$("#selected-icon svg path").css("stroke-width",0);
 	$(this).css("stroke","yellow").css("stroke-width",5);
 	setTimeout(function(){$("#selected-path-color").click();},50);
 	$("#selected-path-id").val($(this).attr("id"));
-	ColorPicker.StartingColor = $(this).css("fill");
+	
 });
 
 $("#selected-path-color").on("change",function(){
