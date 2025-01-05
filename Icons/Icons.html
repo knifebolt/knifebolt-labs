@@ -3,11 +3,7 @@
 <head>
 
 <style>
-#editor-inputs > div {
-    border: 2px solid #D3D3D3;
-    margin: 10px;
-    border-radius: 4px;
-}
+
 body {
 	font-family: Arial;
 	font-size: 12.5px;
@@ -62,14 +58,19 @@ span#close-editor {
 #close-editor:hover {
 	color: gray;
 }
-#editor-inputs > div > span {
+.editor-input-div{
+    border: 2px solid #D3D3D3;
+    margin: 10px;
+    border-radius: 4px;
+}
+.editor-input-label {
     margin-left: 10px;
     position: relative;
     top: -8px;
     background: white;
     padding: 3px;
 }
-#editor-inputs > div > input {
+.editor-input {
     vertical-align: top;
     position: relative;
     margin-left: 5px;
@@ -95,11 +96,11 @@ span#close-editor {
 					</td>
 					<td>
 						<div id="editor-inputs">
-							<div><span>Entire Color<span><br> <input id="entire-color" type="text" /></div>
-							<div><span>Selected Path ID</span><br> <input id="selected-path-id" type="text" /></div>
-							<div><span>Selected Path Color</span><br> <input id="selected-path-color" type="text" /></div>
-							<div><span>File Type</span><br> 
-								<select id="file-type-select">
+							<div class="editor-input-div"><span class="editor-input-label">Entire Color<span><br> <input class="editor-input" id="entire-color" type="text" /></div>
+							<div class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br> <input class="editor-input" id="selected-path-id" type="text" /></div>
+							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br> <input class="editor-input" id="selected-path-color" type="text" /></div>
+							<div class="editor-input-div"><span class="editor-input-label">File Type</span><br> 
+								<select class="editor-input" id="file-type-select">
 									<option value="svg">.svg</option>
 									<option value="png">.png</option>
 									<option value="png">.jpeg</option>
