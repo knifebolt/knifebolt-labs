@@ -2,6 +2,7 @@
 <html>
 <head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://knifebolt.github.io/knifebolt-labs/ColorPicker/ColorPicker.js"></script>
 <style>
 
 body {
@@ -95,7 +96,7 @@ span#close-editor {
 #selected-icon > svg path:hover {
     cursor: pointer;
 	stroke: yellow !important;
-	stroke-width: 2 !important;
+	stroke-width: 5 !important;
 }
 
 </style>
@@ -165,13 +166,6 @@ function LoadIcons() {
 		document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 		document.querySelectorAll("#icon-loader")[0].remove();
 		
-		$("#icons > svg").click(function(){
-			$("#selected-icon").empty();
-			var selectedIcon = $(this).clone();
-			$(selectedIcon).find("path").css("stroke-opacity",0);
-			$("#selected-icon").append(selectedIcon);
-			$("#overlay").show();
-		});
 	},1000);
 	
 }
@@ -180,6 +174,18 @@ LoadIcons();
 $("#overlay").hide();
 $("#close-editor").click(function(){
 	$("#overlay").hide();
+});
+
+$("#icons").on("click","svg",function(){
+	$("#selected-icon").empty();
+	var selectedIcon = $(this).clone();
+	$(selectedIcon).find("path").css("stroke-opacity",0);
+	$("#selected-icon").append(selectedIcon);
+	$("#overlay").show();			
+});
+
+$("#selected-icon").on("click","svg path", function(){
+	ColorPicker.LaunchColorPicker($(this));
 });
 
 
