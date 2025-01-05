@@ -94,8 +94,6 @@ span#close-editor {
 
 #selected-icon > svg path:hover {
     cursor: pointer;
-	stroke: white !important;
-	stroke-width: 5 !important;
 }
 
 #download-icon {
@@ -131,6 +129,7 @@ span#close-editor {
 					</td>
 					<td>
 						<div id="editor-inputs">
+							<div class="editor-input-div"><span class="editor-input-label">File Name</span><br><input class="editor-input" id="file-name" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Entire Color</span><br><input class="editor-input" id="entire-color" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br><input class="editor-input color-picker" id="selected-path-color" type="text"></input></div>
@@ -175,7 +174,8 @@ function LoadIcons() {
 		var svgHtml = "";
 		var svgObjects = document.querySelectorAll('#icon-loader > object');
 		for (let i = 0; i < svgObjects.length; i++) {
-			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500"');
+			var name = svgObject[i].getAttribute("data").replace("SVG/","").replace(".svg","");
+			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500" icon-name="' + name +'"');
 		}
 		document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 		document.querySelectorAll("#icon-loader")[0].remove();
@@ -193,6 +193,8 @@ $("#close-editor").click(function(){
 $("#icons").on("click","svg",function(){
 	$("#selected-icon").empty();
 	var selectedIcon = $(this).clone();
+	var fileName = $(this).attr("icon-name");
+	$("#file-name").val(fileName);
 	$(selectedIcon).find("path").css("stroke-opacity",0);
 	
 	$("#selected-icon").append(selectedIcon);
@@ -219,7 +221,7 @@ $("#selected-path-color").on("change",function(){
 });
 
 $("#download-icon").on("click",function(){
-	var filename = "download.svg";
+	var filename = $("#file-name").val() + ".svg";
 	var fileContent = document.querySelectorAll("#selected-icon > svg")[0].outerHTML;
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
