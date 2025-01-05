@@ -3,6 +3,10 @@
 <head>
 
 <style>
+body {
+	font: Arial;
+}
+
 :root {
     --colour1: #F4F4F4;
     --colour2: #BDBDBD;
@@ -74,7 +78,14 @@ span#close-editor {
 							<div><span>Entire Color<span><br> <input id="entire-color" type="text" /></div>
 							<div><span>Selected Path ID</span><br> <input id="selected-path-id" type="text" /></div>
 							<div><span>Selected Path Color</span><br> <input id="selected-path-color" type="text" /></div>
-						
+							<div><span>File Type</span><br> 
+								<select id="file-type-select">
+									<option value="svg">.svg</option>
+									<option value="png">.png</option>
+									<option value="png">.jpeg</option>
+								</select>
+							</div>
+							<div><input id="download-icon" type="submit" value="Download Icon" /></div>
 						</div>
 					</td>
 				</tr>
