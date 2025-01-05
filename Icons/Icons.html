@@ -3,15 +3,37 @@
 <head>
 
 <style>
-#icons{
-zoom: 0.01;
-}
+
 </style>
 </head>
 <body>
 
 <div id="icons"></div>
 <div id="icon-svgs"></div>
+<div id="overlay">
+	<div id="icon-editor">
+		<table id="icon-editor-table">
+			<tbody>
+				<tr>
+					<td>
+						<div id="selected-icon">
+						</div>
+					</td>
+					<td>
+						<div id="editor inputs">
+							<div><span>Entire Color<span><br> <input id="entire-color" type="text" /></div>
+							<div><span>Selected Path ID</span><br> <input id="selected-path-id" type="text" /></div>
+							<div><span>Selected Path Color</span><br> <input id="selected-path-color" type="text" /></div>
+						
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<span id="close-editor">&#10006;</span>
+	</div>
+</div>
+</div>
 
 <script>
 
@@ -36,7 +58,7 @@ function LoadIcons() {
 		var svgHtml = "";
 		var svgObjects = document.querySelectorAll('#icons > object');
 		for (let i = 0; i < svgObjects.length; i++) {
-			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:50px;width:50px;" viewBox="0 0 500 500"');
+			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500"');
 		}
 		document.querySelectorAll("#icon-svgs")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 		document.querySelectorAll("#icons")[0].remove();
