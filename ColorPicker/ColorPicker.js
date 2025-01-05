@@ -4,6 +4,8 @@ var ColorPicker = {
 	
 	Options: null,
 	
+	StartingColor: null,
+	
 	HTML: `<div id="color-picker">
 		<table id="color-table"><thead></thead><tbody></tbody></table>
 		<table id="selected-gradient"><tbody></tbody></table>
@@ -313,7 +315,12 @@ var ColorPicker = {
 		ColorPicker.BindActions();
 		
 		if (ColorPicker.Options != null && ColorPicker.Options.Simplified != undefined && ColorPicker.Options.Simplified == true){
-			$("#selected-gradient,#outputs").hide();
+			document.querySelectorAll("#selected-gradient")[0].style.display = "none";
+			document.querySelectorAll("#outputs")[0].style.display = "none";
+			if (ColorPicker.StartingColor != null){
+				var startingColorRGB = ColorPicker.HexToRgb(ColorPicker.StartingColor);
+				document.querySelectorAll("[rgb='"+ +"']")[0].style.outline = "2px solid white";
+			}
 		} else {
 			document.querySelectorAll("[rgb='255,0,0']")[0].click();
 		}
