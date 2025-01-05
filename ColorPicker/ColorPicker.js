@@ -2,6 +2,8 @@ var ColorPicker = {
 
 	CurrentTarget: null,
 	
+	Options: null,
+	
 	HTML: `<div id="color-picker">
 		<table id="color-table"><thead></thead><tbody></tbody></table>
 		<table id="selected-gradient"><tbody></tbody></table>
@@ -270,8 +272,11 @@ var ColorPicker = {
 	
 
 
-	LaunchColorPicker: function(targetElement){
+	LaunchColorPicker: function(targetElement,options){
 		
+		if (options != undefined){
+			ColorPicker.Options = options;
+		}
 		ColorPicker.CurrentTarget = targetElement;
 		
 		var colorPicker = document.getElementById("color-picker");
@@ -286,6 +291,10 @@ var ColorPicker = {
 		document.body.insertAdjacentHTML("beforeEnd",ColorPicker.HTML);
 		targetElement.after(document.getElementById("color-picker"));
 		document.head.insertAdjacentHTML("beforeEnd","<style id='color-picker-style'>" + ColorPicker.Style + "</style>");
+		
+		if (ColorPicker.Options != null && ColorPicker.Options.Simplfied != undefined && ColorPicker.Options.Simplified == true){
+			$("#selected-gradient,#outputs").hide();
+		}
 		
 		ColorPicker.RenderGrayRow();
 
@@ -407,9 +416,7 @@ var ColorPicker = {
 	BindActions: function(){
 		
 		document.addEventListener("click",function(e) {
-			
-			
-			
+
 			if (document.getElementById("color-picker") != null &&
 				ColorPicker.CurrentTarget != null &&
 				e.target != ColorPicker.CurrentTarget &&
@@ -452,20 +459,30 @@ var ColorPicker = {
 				var rgb = e.target.getAttribute("rgb");
 				document.getElementById("selected-block").style.backgroundColor = "rgb("+rgb+")";
 				var rgbSplit = rgb.split(",")
-				document.getElementById("hex-value").value = ColorPicker.RgbToHex(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2])).toUpperCase();
+
+				var hexColor = ColorPicker.RgbToHex(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2])).toUpperCase();
+				document.getElementById("hex-value").value = hexColor;
 				document.getElementById("rgb-value").value = rgb;
 				ColorPicker.RenderSelectedGradient(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2]));
 				
-				//we can't bind this event until the selected gradient exists from the function in the line above
-				document.querySelectorAll("#selected-gradient > tbody > tr > td").forEach(function(el){
-					el.addEventListener("click", function(e){
-						var rgb = e.target.getAttribute("rgb");
-						document.getElementById("selected-block").style.backgroundColor = "rgb("+rgb+")";
-						var rgbSplit = rgb.split(",")
-						document.getElementById("hex-value").value = ColorPicker.RgbToHex(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2])).toUpperCase();
-						document.getElementById("rgb-value").value = rgb;
+				if (ColorPicker.Options != null && ColorPicker.Options.Simplfied != undefined && ColorPicker.Options.Simplified == true){
+					ColorPicker.CurrentTarget.value = hexColor;
+					var event = new Event('change');
+					ColorPicker.CurrentTarget.dispatchEvent(event);
+					document.getElementById("color-picker").remove();
+				} else {
+					
+					//we can't bind this event until the selected gradient exists from the function in the line above
+					document.querySelectorAll("#selected-gradient > tbody > tr > td").forEach(function(el){
+						el.addEventListener("click", function(e){
+							var rgb = e.target.getAttribute("rgb");
+							document.getElementById("selected-block").style.backgroundColor = "rgb("+rgb+")";
+							var rgbSplit = rgb.split(",")
+							document.getElementById("hex-value").value = ColorPicker.RgbToHex(Number(rgbSplit[0]),Number(rgbSplit[1]),Number(rgbSplit[2])).toUpperCase();
+							document.getElementById("rgb-value").value = rgb;
+						});
 					});
-				});
+				}
 			});
 		});
 		
