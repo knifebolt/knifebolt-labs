@@ -119,7 +119,7 @@ span#close-editor {
 						<div id="editor-inputs">
 							<div class="editor-input-div"><span class="editor-input-label">Entire Color</span><br><input class="editor-input" id="entire-color" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
-							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br><input class="editor-input" id="selected-path-color" type="text"></input></div>
+							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br><input class="editor-input color-picker" id="selected-path-color" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">File Type</span><br> 
 								<select class="editor-input" id="file-type-select">
 									<option value="svg">.svg</option>
@@ -184,9 +184,9 @@ $("#icons").on("click","svg",function(){
 	$("#selected-icon").append(selectedIcon);
 	$("#overlay").show();		
 	
-	setTimeout(function(){
-		$("#selected-icon path").addClass("color-picker");
-	},200);
+	//setTimeout(function(){
+	//	$("#selected-icon path").addClass("color-picker");
+	//},200);
 	
 });
 
