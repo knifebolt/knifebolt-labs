@@ -180,6 +180,7 @@ $("#icons").on("click","svg",function(){
 	$("#selected-icon").empty();
 	var selectedIcon = $(this).clone();
 	$(selectedIcon).find("path").css("stroke-opacity",0);
+	$(selectedIcon).addClass("color-picker")
 	$("#selected-icon").append(selectedIcon);
 	$("#overlay").show();			
 });
