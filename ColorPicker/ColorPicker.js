@@ -320,7 +320,7 @@ var ColorPicker = {
 			document.querySelectorAll("#outputs")[0].style.display = "none";
 			if (ColorPicker.StartingColor != null){
 				var startingColorRGB = ColorPicker.HexToRgb(ColorPicker.StartingColor);
-				document.querySelectorAll("[rgb='"+ +"']")[0].style.outline = "2px solid white";
+				document.querySelectorAll("[rgb='"+ startingColorRGB +"']")[0].style.outline = "2px solid white";
 			}
 		} else {
 			document.querySelectorAll("[rgb='255,0,0']")[0].click();
