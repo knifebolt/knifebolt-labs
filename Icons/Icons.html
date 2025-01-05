@@ -80,6 +80,13 @@ span#close-editor {
     border: none;
     outline: none;
 }
+#icons > svg {
+    margin: 8px;
+	cursor: pointer;
+}
+#icons > svg:hover {
+    border: 2px solid yellow;
+}
 </style>
 </head>
 <body>
@@ -151,6 +158,11 @@ function LoadIcons() {
 }
 
 LoadIcons();
+$("#overlay").hide();
+$("#close-editor").click(function(){
+	$("#overlay").hide();
+});
+
 $("#close-editor").click(function(){
 	$("#overlay").hide();
 });
