@@ -70,8 +70,11 @@ span#close-editor {
     top: -8px;
     background: white;
     padding: 3px;
-	color: #4F4F4F;
-	z-index: 2;
+    color: #4F4F4F;
+    z-index: 2;
+    height: 8px;
+    display: inline-block;
+	top: -12px;
 }
 .editor-input {
     vertical-align: top;
@@ -114,6 +117,9 @@ span#close-editor {
 #file-name {
     width: 125px;
 }
+#selected-path-id-div {
+	display: none;
+}
 </style>
 </head>
 <body>
@@ -137,8 +143,8 @@ span#close-editor {
 									<option value="png">.png</option>
 									<option value="png">.jpeg</option>
 								</select></div>
-							<div class="editor-input-div"><span class="editor-input-label">Entire Color</span><br><input class="editor-input" id="entire-color" type="text"></input></div>
-							<div class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
+							<div class="editor-input-div"><span class="editor-input-label">Set Entire SVG Color</span><br><input class="editor-input" id="entire-color" type="text"></input></div>
+							<div id="selected-path-id-div" class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br><input class="editor-input color-picker" id="selected-path-color" type="text"></input></div>
 							<div><input id="download-icon" type="submit" value="Download Icon" /></div>
 						</div>
@@ -221,6 +227,19 @@ $("#selected-path-color").on("change",function(){
 });
 
 $("#download-icon").on("click",function(){
+	
+	//remove extra svg attributes by using a template for svg + innerHTML
+	
+	//remove extra non-path and non-group elements
+	
+	//remove color-picker class from all paths
+	
+	//let users choose pixel size of svg
+	
+	//remove stroke width from all paths
+	
+	//rotation? do translation -> rotation (need to figure out scaling)
+	
 	var filename = $("#file-name").val() + ".svg";
 	var fileContent = document.querySelectorAll("#selected-icon > svg")[0].outerHTML;
 	var element = document.createElement('a');
