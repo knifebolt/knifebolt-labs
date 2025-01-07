@@ -120,6 +120,16 @@ span#close-editor {
 #selected-path-id-div {
 	display: none;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 </style>
 </head>
 <body>
@@ -143,10 +153,10 @@ span#close-editor {
 									<option value="png">.png</option>
 									<option value="png">.jpeg</option>
 								</select></div>
-							<div class="editor-input-div"><span class="editor-input-label">Set Entire SVG Color</span><br><input class="editor-input" id="entire-color" type="text"></input></div>
+							<div class="editor-input-div"><span class="editor-input-label">Set Entire SVG Color</span><br><input class="editor-input color-picker" id="entire-color" type="text"></input></div>
 							<div id="selected-path-id-div" class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br><input class="editor-input color-picker" id="selected-path-color" type="text"></input></div>
-							<div class="editor-input-div"><span class="editor-input-label">Width/Height</span><br><input class="editor-input color-picker" id="size-input" type="number" min="1" max="999999"></input>px</div>
+							<div class="editor-input-div"><span class="editor-input-label">Width/Height</span><br><input class="editor-input" id="size-input" type="number" min="1" max="999999"></input><span id="px-span">px</span></div>
 							
 							<div><input id="download-icon" type="submit" value="Download Icon" /></div>
 						</div>
@@ -231,15 +241,19 @@ $("#selected-path-color").on("change",function(){
 $("#download-icon").on("click",function(){
 	
 	//let users choose pixel size of svg
-
+	var size = $("#size-input").val();
+	
+	if (size == null || size == 0 || size ==""){
+		size = 75;
+	}
 	//rotation? do translation -> rotation (need to figure out scaling)
 	
 	var fileName = $("#file-name").val();
 	
 	//remove extra svg attributes by using a template for svg + innerHTML
-	var svgTagTemplate = '<svg style="height:70px;width:70px;" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" height="500" width="500" version="1.1"  id="{{name}}">';
+	var svgTagTemplate = '<svg style="height:{{size}}px;width:{{size}}px;" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" height="500" width="500" version="1.1"  id="{{name}}">';
 	
-	var svgTag = svgTagTemplate.replace("{{name}}",fileName);
+	var svgTag = svgTagTemplate.replace("{{name}}",fileName).replace(/{{size}}/g,size);
 	
 	var svg = document.querySelectorAll("#selected-icon > svg")[0];
 	
@@ -258,6 +272,7 @@ $("#download-icon").on("click",function(){
 	//strip and replace svg tags
 	var fileContent = svgTag + svg.innerHTML + "</svg>";
 	
+	//remove extra carriage returns
 	fileContent = fileContent.replace(/  \n/g,"");
 	
 	var element = document.createElement('a');
