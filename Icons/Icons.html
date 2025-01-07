@@ -273,6 +273,9 @@ $("#download-icon").on("click",function(){
 	//remove sodipodi tag
 	$(svg).find("sodipodi\\:namedview").remove()
 	
+	//remove inkscape connector
+	$(svg).find("path").removeAttr("inkscape:connector-curvature")
+	
 	//strip and replace svg tags
 	var fileContent = svgTag + svg.innerHTML + "</svg>";
 	
