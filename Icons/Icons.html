@@ -228,23 +228,43 @@ $("#selected-path-color").on("change",function(){
 
 $("#download-icon").on("click",function(){
 	
-	//remove extra svg attributes by using a template for svg + innerHTML
-	
-	//remove extra non-path and non-group elements
-	
-	//remove color-picker class from all paths
-	
 	//let users choose pixel size of svg
-	
-	//remove stroke width from all paths
-	
+
 	//rotation? do translation -> rotation (need to figure out scaling)
 	
-	var filename = $("#file-name").val() + ".svg";
-	var fileContent = document.querySelectorAll("#selected-icon > svg")[0].outerHTML;
+	var fileName = $("#file-name").val();
+	
+	//remove extra svg attributes by using a template for svg + innerHTML
+	var svgTagTemplate = `
+		<svg 
+			style="height:70px;width:70px;" 
+			viewBox="0 0 500 500" 
+			xmlns="http://www.w3.org/2000/svg" 
+			height="500" 
+			width="500"
+			version="1.1"  id="{{name}}">
+	
+	`;
+	
+	var svgTag = svgTagTemplate.replace("{{name}}",fileName);
+	
+	var svg = document.querySelectorAll("#selected-icon > svg")[0];
+	
+	//remove color-picker class from all paths
+	$(svg).find("path").removeClass("color-picker");
+	
+	//remove stroke width from all paths
+	$(svg).find("path").css("stroke-width",0);
+	
+	//remove metadata and defs tags
+	$(svg).find("metadata,defs").remove();
+	
+	//strip and replace svg tags
+	var fileContent = svgTag + svg.innerHTML + "</svg>";
+	
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
-	element.setAttribute('download', filename);
+	element.setAttribute('download', filename + ".svg");
 
 	element.style.display = 'none';
 	document.body.appendChild(element);
