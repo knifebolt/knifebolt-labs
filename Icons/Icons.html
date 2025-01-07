@@ -258,6 +258,8 @@ $("#download-icon").on("click",function(){
 	//strip and replace svg tags
 	var fileContent = svgTag + svg.innerHTML + "</svg>";
 	
+	fileContent = fileContent.replace(/  \n/g,"");
+	
 	var element = document.createElement('a');
 	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
 	element.setAttribute('download', fileName + ".svg");
