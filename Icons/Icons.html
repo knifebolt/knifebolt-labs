@@ -193,7 +193,7 @@ function LoadIcons() {
 		var svgObjects = document.querySelectorAll('#icon-loader > object');
 		for (let i = 0; i < svgObjects.length; i++) {
 			var name = svgObjects[i].getAttribute("data").replace("SVG/","").replace(".svg","");
-			if (svgObjects[i].contentDocument.childNodes[0].outerHTML.indexOf("style=") > -1){
+			if (svgObjects[i].contentDocument.childNodes[0].outerHTML.indexOf("svg style=") > -1){
 				svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg name="' + name +'"');
 			} else {
 				svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:75px;width:75px;" viewBox="0 0 500 500" name="' + name +'"');
