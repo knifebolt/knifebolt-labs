@@ -275,7 +275,8 @@ $("#download-icon").on("click",function(){
 	$(svg).find("sodipodi\\:namedview").remove()
 	
 	//remove inkscape connector
-	$(svg).find("path").removeAttr("inkscape:connector-curvature")
+	$(svg).find("path").removeAttr("inkscape:connector-curvature");
+	$(svg).find("g").removeAttr("inkscape:label").removeAttr("inkscape:groupmode");
 	
 	//strip and replace svg tags
 	var fileContent = svgTag + svg.innerHTML + "</svg>";
