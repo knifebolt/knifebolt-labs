@@ -175,7 +175,7 @@ function LoadIcons() {
 
 	var iconList = [
 		"Arrow-Circle",
-		"Shield-Stenci1-1",
+		"Shield-Stencil-1",
 		"Speed-Boot-Stencil",
 		"Sword-Stencil-1"
 	];
@@ -193,7 +193,11 @@ function LoadIcons() {
 		var svgObjects = document.querySelectorAll('#icon-loader > object');
 		for (let i = 0; i < svgObjects.length; i++) {
 			var name = svgObjects[i].getAttribute("data").replace("SVG/","").replace(".svg","");
-			svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:70px;width:70px;" viewBox="0 0 500 500" icon-name="' + name +'"');
+			if (svgObjects[i].contentDocument.childNodes[0].outerHTML.indexOf("style=") > -1){
+				svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg name="' + name +'"');
+			} else {
+				svgHtml += svgObjects[i].contentDocument.childNodes[0].outerHTML.replace("<svg",'<svg style="height:75px;width:75px;" viewBox="0 0 500 500" name="' + name +'"');
+			}
 		}
 		document.querySelectorAll("#icons")[0].insertAdjacentHTML("beforeEnd",svgHtml);
 		document.querySelectorAll("#icon-loader")[0].remove();
@@ -211,7 +215,7 @@ $("#close-editor").click(function(){
 $("#icons").on("click","svg",function(){
 	$("#selected-icon").empty();
 	var selectedIcon = $(this).clone();
-	var fileName = $(this).attr("icon-name");
+	var fileName = $(this).attr("name");
 	$("#file-name").val(fileName);
 	$(selectedIcon).find("path").css("stroke-opacity",0);
 	
