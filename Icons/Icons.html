@@ -128,14 +128,13 @@ span#px-span {
     position: relative;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+#size-input {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
+#size-input {
   -moz-appearance: textfield;
 }
 </style>
@@ -254,12 +253,32 @@ $("#selected-path-color").on("change",function(){
 
 $("#rotate-input").on("change",function(){
 	var rot = $("#rotate-input").val();
-	
+	var rotDist = 0;
 	if (rot == null || rot == ""){
 		rot = 0;
 	}
 	
-	$("#selected-icon > svg").css("transform","rotate(" + rot +"deg)");
+	
+	//need to get the scaling factor
+	if (rot >= 270){
+		rotDist = rot - 270;
+	} else if (rot >= 180){
+		rotDist = rot - 180;
+	} else if (rot >= 90) {
+		rotDist = rot - 90;
+	}
+	
+	if (rotDist >= 45){
+		rotDist = rotDist - 45;
+	} else {
+		rotDist = 45 - rotDist;
+	}
+	
+	rotDist = (rotDist * (2/3))/100;
+	var scale = 1 - rotDist;
+	
+	
+	$("#selected-icon > svg").css("transform","scale("+ scale +")rotate(" + rot +"deg)");
 	
 	
 });
