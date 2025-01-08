@@ -165,6 +165,7 @@ input[type=number] {
 							<div id="selected-path-id-div" class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Selected Path Color</span><br><input class="editor-input color-picker" id="selected-path-color" type="text"></input></div>
 							<div class="editor-input-div"><span class="editor-input-label">Width/Height</span><br><input class="editor-input" id="size-input" type="number" min="1" max="999999"></input><span id="px-span">px</span></div>
+							<div class="editor-input-div"><span class="editor-input-label">Rotate (0-360)</span><br><input class="editor-input" id="rotate-input" type="number" min="0" max="360"></input></div>
 							
 							<div><input id="download-icon" type="submit" value="Download Icon" /></div>
 						</div>
@@ -249,6 +250,18 @@ $("#selected-icon").on("click","svg path", function(){
 $("#selected-path-color").on("change",function(){
 	var selectedPathID = $("#selected-path-id").val();
 	$("#selected-icon #"+selectedPathID).css("fill",$("#selected-path-color").val()).css("stroke-width",0);
+});
+
+$("#rotate-input").on("change",function(){
+	var rot = $("#rotate-input").val();
+	
+	if (rot == null || rot == ""){
+		rot = 0;
+	}
+	
+	$("#selected-icon > svg").css("transform","rotate(" + rot +"deg)");
+	
+	
 });
 
 $("#download-icon").on("click",function(){
