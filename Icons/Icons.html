@@ -266,6 +266,8 @@ $("#rotate-input").on("change",function(){
 		rotDist = rot - 180;
 	} else if (rot >= 90) {
 		rotDist = rot - 90;
+	} else {
+		rotDist = rot;
 	}
 	
 	if (rotDist >= 45){
