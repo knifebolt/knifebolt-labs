@@ -42,6 +42,8 @@ var CookieCruncher = {
 		if (window.innerHeight > window.innerWidth){
 			$("#cookie-box").css("width","150vw");
 			$("#game-title").css("width","5vw").css("margin-top","9vh").css("font-size","140px");
+			$("#start-game").css("width","50vw").css("font-size","80px");
+			$("#score").css("width","80vw");
 			CookieCruncher.IsMobile = true;
 		}
 	
@@ -150,7 +152,7 @@ var CookieCruncher = {
 			var currHeight = Number($(this).css("top").replace("px",""));
 			
 			if (CookieCruncher.IsMobile){
-				currHeight += 30;
+				currHeight += 10;
 			} else {
 				currHeight += 5;
 			}
