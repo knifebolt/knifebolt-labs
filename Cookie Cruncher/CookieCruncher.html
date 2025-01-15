@@ -134,6 +134,10 @@ var CookieCruncher = {
 			.css("transform","rotate(" + rot +"deg)")
 			.css("width","150px")
 			.attr("rot",rot);
+			
+		if (isMobile){
+			$("[generated='" + CookieCruncher.GeneratedCount +"']").css("width","400px")
+		}
 	},
 	
 	//gravity to pull the cookies down the screen
