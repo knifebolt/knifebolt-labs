@@ -1,0 +1,112 @@
+#game-area {
+    width: 100%;
+}
+#cookie-box {
+    text-align: center;
+    display: inline-block;
+	top: -80px;
+    position: absolute;
+    width: 55vw;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+	z-index: 2;
+}
+
+#game-title {
+    margin: auto;
+    display: block;
+
+    position: relative;
+    padding: 30px;
+    background: transparent;
+    color: white;
+    font-family: 'Alata';
+    font-size: 70px;
+    border-radius: 10px;
+    width: 25vw;
+    text-align: center;
+    transform: rotate(-27deg);
+	z-index: 5;
+	line-height: 1.1;
+}
+
+#start-game {
+    margin: auto;
+    display: block;
+    top: 40vh;
+    position: relative;
+    padding: 30px;
+    background: #33cc33;
+    color: white;
+    font-family: 'Alata';
+    font-size: 40px;
+    border-radius: 10px;
+    width: 25vw;
+    text-align: center;
+    transform: rotate(5deg);
+    cursor: pointer;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+#start-game:hover {
+	background: green;
+}
+#start-game:active {
+	background: green;
+	zoom: 0.95;
+}
+body {
+    background: #e6ffff;
+	font-family: 'Alata';
+	overflow: hidden;
+}
+.cookie {
+	position: absolute;
+    height: 15vh;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+	top: 10px;
+}
+.cookie-group {
+	cursor: pointer;
+}
+#footer {
+	position:fixed;
+	margin: 0 auto;
+	bottom:40px;
+	height:30px;
+	width:30vw;
+	z-index: 2;
+	width: 100%;
+}
+#score{
+	margin: 0 auto;
+	background: green;
+	width: 40vw;
+	padding: 10px;
+	padding-bottom: 100px;
+	border-radius: 20px;
+	transform: rotate(-3deg);
+}
+#score > table {
+	width: 80%;
+}
+td {
+	color: white;
+}
+td > span {
+	font-size: 20px;
+}
+#timer-outside {
+    width: 200px;
+}
+#timer-inside {
+	background: white;
+	width: 100%;
+}

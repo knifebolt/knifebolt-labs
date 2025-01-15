@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Alata' rel='stylesheet'>
+<script src="js/Cookies.js"></script>
+<link href='css/CookieCruncher.css' rel='stylesheet'>
+</head>
+<body>
+<div id="game-area">
+<img id="cookie-box" src="images/Cookie-Box-Longer.png" />
+<div id="game-title">cookie cruncher</div>
+<div id="start-game">start crunching</div>
+<div id="footer">
+<div id="score">
+	<table>
+		<tr>
+			<td><span id="crunched-label">crunched:</span></td><td><span id="crunched-count">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td><span id="missed-label">missed:</span></td><td><span id="missed-count">0</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+			<td><span id="time-label">time:</span></td><td><div id="timer-outside"><div id="timer-inside">&nbsp;</div></div></td>
+		</tr>
+	</table>
+</div>
+</div>
+</div>
+<script>
+
+var CookieCruncher = {
+
+	MissedCount: 0,
+	CrunchedCount: 0,
+	GeneratedCount: 0,
+	ScreenHeight: null,
+	EndTime: null,
+	TimerLength: 15000,
+	FirstPlay: false,
+	IsMobile: false,
+	
+	//runs when page loads
+	Init: function(){
+	
+		if (window.innerHeight > window.innerWidth){
+			$("#cookie-box").css("width","150vw");
+			$("#game-title").css("width","5vw").css("margin-top","9vh").css("font-size","140px");
+			CookieCruncher.IsMobile = true;
+		}
+	
+		CookieCruncher.BindActions();
+	},
+	
+	//clears out old info and starts a new game
+	StartGame: function (){
+		
+		//slide up the box the first time the user plays
+		if (CookieCruncher.FirstPlay == false){
+			$('#cookie-box').animate({
+				'marginTop' : "-=250px" //moves up
+			});
+			$('#game-title').animate({
+				'marginTop' : "-=250px" //moves up
+			});
+		}
+		
+		//clear properties
+		CookieCruncher.FirstPlay = true;
+		CookieCruncher.MissedCount = 0;
+		CookieCruncher.CrunchedCount = 0;
+		
+		//clear UI
+		$("#crunched-count").text(0);
+		$("#missed-count").text(0);
+		$(".cookie").remove();
+		
+		//get some properties tied to user screen and current time
+		CookieCruncher.ScreenHeight = $(document).height();
+		CookieCruncher.EndTime = new Date().valueOf() + CookieCruncher.TimerLength;
+		
+		//start intervals that run timer, gravity, and cookie generation
+		CookieCruncher.IntervalTimer = setInterval(CookieCruncher.UpdateTimer,100);
+		CookieCruncher.IntervalDropCookies = setInterval(CookieCruncher.DropCookies,20);
+		CookieCruncher.IntervalGenerateCookie = setInterval(CookieCruncher.GenerateCookie,2000);
+		
+		//generate cookie
+		CookieCruncher.GenerateCookie();
+	},
+	
+	//update the timer
+	UpdateTimer: function () {
+	
+		var currTime = new Date().valueOf()
+		var timeRemaining = CookieCruncher.EndTime - currTime;
+		var percentRemaining = (timeRemaining/CookieCruncher.TimerLength) * 100;
+		$("#timer-inside").css("width",percentRemaining + "%");
+		
+		if (timeRemaining < 0) {
+			CookieCruncher.EndGame();
+		}
+	},
+	
+	//clear up the UI and stop all the intervals
+	EndGame: function () {
+	
+		//end the timers
+		clearInterval(CookieCruncher.IntervalTimer);
+		clearInterval(CookieCruncher.IntervalDropCookies);
+		clearInterval(CookieCruncher.IntervalGenerateCookie);
+		
+		//get rid of cookies
+		$(".cookie").remove();
+
+		var crunchCount = $("#crunched-count").text();
+		$("#start-game").text("you crunched " + crunchCount  + " cookies. crunch again?");
+		$("#start-game").fadeIn();
+	},
+	
+	//get a cookie from the svg templates and attach it to the UI
+	GenerateCookie: function () {
+	
+		CookieCruncher.GeneratedCount++;
+		var offset = Math.floor(Math.random() * 40) - 30; //how far the cookie is from the center of the screen
+		var rot = Math.floor(Math.random() * 45); //random starting rotation
+		var rnd = Math.floor(Math.random() * 3) + 1; //which cookie we show
+		
+		var thisCookie = Cookies["Cookie"+rnd].replace("{{count}}",CookieCruncher.GeneratedCount);
+		
+		//attach the cookie
+		$("#game-area").append(thisCookie);
+		
+		//style the cookie
+		$("[generated='" + CookieCruncher.GeneratedCount +"']")
+			.css("left",offset + "vw")
+			.css("transform","rotate(" + rot +"deg)")
+			.css("width","150px")
+			.attr("rot",rot);
+	},
+	
+	//gravity to pull the cookies down the screen
+	DropCookies: function(){
+		$(".cookie").each(function(){
+			//get the top
+			
+			//only rotate uncrunched
+			if (!$(this).hasClass("crunched")){
+				var currRot = Number($(this).attr("rot"));
+				currRot = currRot + 2;
+				$(this).css("transform","rotate(" + currRot + "deg)");
+				$(this).attr("rot",currRot);
+			};
+			
+			var currHeight = Number($(this).css("top").replace("px",""));
+			
+			if (CookieCruncher.IsMobile){
+				currHeight += 30;
+			} else {
+				currHeight += 5;
+			}
+			$(this).css("top",currHeight + "px");
+			
+			//when the cookie hits the bottom of the screen
+			if (currHeight > CookieCruncher.ScreenHeight){
+				
+				//if it's not crunched it's a miss
+				if (!$(this).hasClass("crunched")){
+					CookieCruncher.MissedCount++;
+					$("#missed-count").text(CookieCruncher.MissedCount);
+					var audio = new Audio("sounds/Miss.mp3");
+					audio.play();
+				}
+				
+				//remove the cookie from the page
+				$(this).remove();
+			}
+		})
+	},
+	
+	//randomly play one of three  crunches
+	PlayCrunch: function (){
+		var rnd = Math.floor(Math.random() * 3) + 1;
+		var audio = new Audio("sounds/Crunch-" + rnd +".mp3");
+		audio.play();
+	},
+	
+	//actions that happen when UI elements are clicked
+	BindActions: function(){
+		
+		//start game button
+		document.getElementById("start-game").addEventListener("click", (event) => {
+			document.getElementById("start-game").style.display = "none";
+			CookieCruncher.StartGame();
+		});
+		
+		//when a cookie is clicked, crunch it
+		$("body").on("click",".cookie-group",function(){
+			CookieCruncher.PlayCrunch();
+			CookieCruncher.CrunchedCount++;
+			$("#crunched-count").text(CookieCruncher.CrunchedCount);
+			$(this).hide();
+			$(this).parent().addClass("crunched");
+			$(this).parent().find("crunch-group").show().fadeOut(500);
+		});
+	}
+}
+CookieCruncher.Init();
+</script>
+</body>
