@@ -295,12 +295,13 @@ function DownloadSVG (){
 
 function DownloadRaster() {
 	
-	var fileType = $("#file-type-select").val()
+	var fileType = $("#file-type-select").val();
+	var fileName = $("#file-name").val();
 	var size = $("#size-input").val();
 	if (size == null || size == 0 || size ==""){
 		size = 75;
 	}
-	const output = {"name": "result." + fileType, "width": size, "height": size}
+	const output = {"name": fileName + "." + fileType, "width": size, "height": size}
 	const svgElem = document.querySelectorAll("#selected-icon > svg")[0];
 	const uriData = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svgElem))}`
 	const img = new Image()
