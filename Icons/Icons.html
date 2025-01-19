@@ -310,11 +310,11 @@ function DownloadRaster() {
 		[canvas.width, canvas.height] = [output.width, output.height]
 		const ctx = canvas.getContext("2d")
 		
+		
+		ctx.drawImage(img, 0, 0, output.width, output.height)
 		if (fileType == "jpeg"){
 			ctx.fillStyle = "white";
 		}
-		ctx.drawImage(img, 0, 0, output.width, output.height)
-		
 		const a = document.createElement("a")
 		const quality = 3.0;
 		a.href = canvas.toDataURL("image/" + fileType, quality)
