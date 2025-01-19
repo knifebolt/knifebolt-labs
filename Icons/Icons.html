@@ -129,13 +129,16 @@ span#px-span {
 }
 
 #size-input {
-  -webkit-appearance: none;
-  margin: 0;
+  width: 40px;
 }
 
-/* Firefox */
+#size-input::-webkit-outer-spin-button,
+#size-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 #size-input {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 </style>
 </head>
@@ -306,9 +309,12 @@ function DownloadRaster() {
 		const canvas = document.createElement("canvas");
 		[canvas.width, canvas.height] = [output.width, output.height]
 		const ctx = canvas.getContext("2d")
+		
+		if (fileType == "jpeg"){
+			ctx.fillStyle = "white";
+		}
 		ctx.drawImage(img, 0, 0, output.width, output.height)
-
-		// 👇 download
+		
 		const a = document.createElement("a")
 		const quality = 3.0;
 		a.href = canvas.toDataURL("image/" + fileType, quality)
