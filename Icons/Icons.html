@@ -308,7 +308,7 @@ function DownloadPNG() {
 
 		// 👇 download
 		const a = document.createElement("a")
-		const quality = 1.0
+		const quality = 3.0;
 		a.href = canvas.toDataURL("image/png", quality)
 		a.download = output.name
 		a.append(canvas)
