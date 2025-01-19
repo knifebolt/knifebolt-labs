@@ -158,7 +158,8 @@ span#px-span {
 							<div class="editor-input-div"><span class="editor-input-label">File Name and Type</span><br><input class="editor-input" id="file-name" type="text"></input><select class="editor-input" id="file-type-select">
 									<option value="svg">.svg</option>
 									<option value="png">.png</option>
-									<option value="png">.jpeg</option>
+									<option value="jpeg">.jpeg</option>
+									<option value="bmp">.bmp</option>
 								</select></div>
 							<div class="editor-input-div"><span class="editor-input-label">Set Entire SVG Color</span><br><input class="editor-input color-picker" id="entire-color" type="text"></input></div>
 							<div id="selected-path-id-div" class="editor-input-div"><span class="editor-input-label">Selected Path ID</span><br><input class="editor-input" id="selected-path-id" type="text"></input></div>
@@ -289,13 +290,14 @@ function DownloadSVG (){
 	document.body.removeChild(element);
 }
 
-function DownloadPNG() {
+function DownloadRaster() {
 	
+	var fileType = $("#file-type-select").val()
 	var size = $("#size-input").val();
 	if (size == null || size == 0 || size ==""){
 		size = 75;
 	}
-	const output = {"name": "result.png", "width": size, "height": size}
+	const output = {"name": "result." + fileType, "width": size, "height": size}
 	const svgElem = document.querySelectorAll("#selected-icon > svg")[0];
 	const uriData = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svgElem))}`
 	const img = new Image()
@@ -309,7 +311,7 @@ function DownloadPNG() {
 		// 👇 download
 		const a = document.createElement("a")
 		const quality = 3.0;
-		a.href = canvas.toDataURL("image/png", quality)
+		a.href = canvas.toDataURL("image/" + fileType, quality)
 		a.download = output.name
 		a.append(canvas)
 		a.click()
@@ -397,8 +399,8 @@ $("#download-icon").on("click",function(){
 	
 	if (fileType == "svg"){
 		DownloadSVG();
-	} else if (fileType == "png"){
-		DownloadPNG();
+	} else {
+		DownloadRaster();
 	}
 	
 });
