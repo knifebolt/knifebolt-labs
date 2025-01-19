@@ -271,6 +271,11 @@ $("#selected-path-color").on("change",function(){
 	$("#selected-icon #"+selectedPathID).css("fill",$("#selected-path-color").val()).css("stroke-width",0);
 });
 
+$("#entire-color").on("change",function(){
+
+	$("#selected-icon svg").css("fill",$("#entire-color").val()).css("stroke-width",0);
+});
+
 $("#rotate-input").on("change",function(){
 	var rot = $("#rotate-input").val();
 	var rotDist = 0;
