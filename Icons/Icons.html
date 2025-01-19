@@ -236,6 +236,81 @@ function LoadIcons() {
 }
 
 LoadIcons();
+
+function DownloadSVG (){
+	//let users choose pixel size of svg
+	var size = $("#size-input").val();
+	
+	if (size == null || size == 0 || size ==""){
+		size = 75;
+	}
+	//rotation? do translation -> rotation (need to figure out scaling)
+	
+	var fileName = $("#file-name").val();
+	
+	//remove extra svg attributes by using a template for svg + innerHTML
+	var svgTagTemplate = '<svg style="height:{{size}}px;width:{{size}}px;" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" height="500" width="500" version="1.1"  id="{{name}}">';
+	
+	var svgTag = svgTagTemplate.replace("{{name}}",fileName).replace(/{{size}}/g,size);
+	
+	var svg = document.querySelectorAll("#selected-icon > svg")[0];
+	
+	//remove color-picker class from all paths
+	$(svg).find("path").removeClass("color-picker");
+	
+	//remove stroke width from all paths
+	$(svg).find("path").css("stroke-width",0);
+	
+	//remove metadata and defs tags
+	$(svg).find("metadata,defs").remove();
+	
+	//remove sodipodi tag
+	$(svg).find("sodipodi\\:namedview").remove()
+	
+	//remove inkscape connector
+	$(svg).find("path").removeAttr("inkscape:connector-curvature");
+	$(svg).find("g").removeAttr("inkscape:label").removeAttr("inkscape:groupmode");
+	
+	//strip and replace svg tags
+	var fileContent = svgTag + svg.innerHTML + "</svg>";
+	
+	//remove extra carriage returns
+	fileContent = fileContent.replace(/  \n/g,"");
+	
+	var element = document.createElement('a');
+	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
+	element.setAttribute('download', fileName + ".svg");
+
+	element.style.display = 'none';
+	document.body.appendChild(element);
+
+	element.click();
+
+	document.body.removeChild(element);
+}
+
+function DownloadPNG() {
+	const svgElem = document.querySelectorAll("#selected-icon > svg")[0];
+	const uriData = `data:image/svg+xml;base64,${btoa(new XMLSerializer().serializeToString(svgElem))}`
+	const img = new Image()
+	img.src = uriData
+	img.onload = () => {
+		const canvas = document.createElement("canvas");
+		[canvas.width, canvas.height] = [output.width, output.height]
+		const ctx = canvas.getContext("2d")
+		ctx.drawImage(img, 0, 0, output.width, output.height)
+
+		// 👇 download
+		const a = document.createElement("a")
+		const quality = 1.0
+		a.href = canvas.toDataURL("image/png", quality)
+		a.download = output.name
+		a.append(canvas)
+		a.click()
+		a.remove()
+	}
+}
+
 $("#overlay").hide();
 $("#close-editor").click(function(){
 	$("#overlay").hide();
@@ -312,55 +387,13 @@ $("#rotate-input").on("change",function(){
 
 $("#download-icon").on("click",function(){
 	
-	//let users choose pixel size of svg
-	var size = $("#size-input").val();
+	var fileType = $("#file-type-select").val()
 	
-	if (size == null || size == 0 || size ==""){
-		size = 75;
+	if (fileType == "svg"){
+		DownloadSVG();
+	} else if (fileType == "png"){
+		DownloadPNG();
 	}
-	//rotation? do translation -> rotation (need to figure out scaling)
-	
-	var fileName = $("#file-name").val();
-	
-	//remove extra svg attributes by using a template for svg + innerHTML
-	var svgTagTemplate = '<svg style="height:{{size}}px;width:{{size}}px;" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" height="500" width="500" version="1.1"  id="{{name}}">';
-	
-	var svgTag = svgTagTemplate.replace("{{name}}",fileName).replace(/{{size}}/g,size);
-	
-	var svg = document.querySelectorAll("#selected-icon > svg")[0];
-	
-	//remove color-picker class from all paths
-	$(svg).find("path").removeClass("color-picker");
-	
-	//remove stroke width from all paths
-	$(svg).find("path").css("stroke-width",0);
-	
-	//remove metadata and defs tags
-	$(svg).find("metadata,defs").remove();
-	
-	//remove sodipodi tag
-	$(svg).find("sodipodi\\:namedview").remove()
-	
-	//remove inkscape connector
-	$(svg).find("path").removeAttr("inkscape:connector-curvature");
-	$(svg).find("g").removeAttr("inkscape:label").removeAttr("inkscape:groupmode");
-	
-	//strip and replace svg tags
-	var fileContent = svgTag + svg.innerHTML + "</svg>";
-	
-	//remove extra carriage returns
-	fileContent = fileContent.replace(/  \n/g,"");
-	
-	var element = document.createElement('a');
-	element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(fileContent));
-	element.setAttribute('download', fileName + ".svg");
-
-	element.style.display = 'none';
-	document.body.appendChild(element);
-
-	element.click();
-
-	document.body.removeChild(element);
 	
 });
 
