@@ -333,6 +333,7 @@ $("#close-editor").click(function(){
 });
 
 $("#icons").on("click","svg",function(){
+	$("#entire-color").val("");
 	$("#selected-icon").empty();
 	var selectedIcon = $(this).clone();
 	var fileName = $(this).attr("name");
@@ -363,8 +364,9 @@ $("#selected-path-color").on("change",function(){
 });
 
 $("#entire-color").on("change",function(){
-
-	$("#selected-icon path").css("fill",$("#entire-color").val()).css("stroke-width",0);
+	if ($("#entire-color").val() != null && $("#entire-color").val() != ""){
+		$("#selected-icon path").css("fill",$("#entire-color").val()).css("stroke-width",0);
+	}
 });
 
 $("#rotate-input").on("change",function(){
