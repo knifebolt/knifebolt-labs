@@ -1529,401 +1529,803 @@ var Jokes = {
 		 "Punchline":"It really brings the room together"
 		},
 		{
- "Setup":"I got fired from my job as a magician",
- "Punchline":"I was completely disillusioned"
-},
-{
- "Setup":"Santa's a pure capitalist",
- "Punchline":"He's an elf-made man"
-},
-{
- "Setup":"I got hit by a ball of hail once",
- "Punchline":"I was knocked out cold"
-},
-{
- "Setup":"I tried to multiply a negative and a positive number together but I ended up nonplussed",
- "Punchline":""
-},
-{
- "Setup":"I tried to make a boat out of stone",
- "Punchline":"It was a real hardship"
-},
-{
- "Setup":"You don't need to cook stolen eggs",
- "Punchline":"They're already poached"
-},
-{
- "Setup":"I used to be really fixated on stealing road signs",
- "Punchline":"I pulled out all the stops"
-},
-{
- "Setup":"I bought my prosthetic arm at a second-hand store",
- "Punchline":""
-},
-{
- "Setup":"I took my dog to a flea circus",
- "Punchline":"He stole the show"
-},
-{
- "Setup":"I decided to learn karate",
- "Punchline":"Just for kicks"
-},
-{
- "Setup":"One time I got a transfusion in Taiwan",
- "Punchline":"It was Taipei blood"
-},
-{
- "Setup":"I'd be a terrible mountain climber",
- "Punchline":"I'm not in peak condition"
-},
-{
- "Setup":"I would never join a dangerous cult",
- "Punchline":"I prefer safe sects"
-},
-{
- "Setup":"I tried opening a bank in southern California",
- "Punchline":"But it ended up in de fault"
-},
-{
- "Setup":"I saw a note on a broken perfume bottle that said 'out of odor'",
- "Punchline":""
-},
-{
- "Setup":"I used to stumble around drunk as a toddler",
- "Punchline":"It really messed up my kid knees"
-},
-{
- "Setup":"I saw a really huge fan today",
- "Punchline":"I was completely blown away"
-},
-{
- "Setup":"I thought I'd make money as a submarine captain",
- "Punchline":"But I couldn't keep my head above water"
-},
-{
- "Setup":"I had a bad masseuse",
- "Punchline":"He really rubbed me the wrong way"
-},
-{
- "Setup":"It's never hard to find work as a garbage man",
- "Punchline":"Business is always picking up"
-},
-{
- "Setup":"I thought my unemployed cowboy friend was crazy",
- "Punchline":"Turns out he was just de-ranged"
-},
-{
- "Setup":"Why do ducks have tailfeathers?",
- "Punchline":"To hide their butt-quacks"
-},
-{
- "Setup":"I'm no good at setting up tents",
- "Punchline":"Too many missed stakes"
-},
-{
- "Setup":"I saw a thief running out of a store with a bunch of soap",
- "Punchline":"He made a clean getaway"
-},
-{
- "Setup":"I had a dream I wrote 'The Hobbit'",
- "Punchline":"But it turns out I was just Tolkien in my sleep"
-},
-{
- "Setup":"I know a guy who trains walruses and elephants at the same time",
- "Punchline":"He's great at multi-tusking"
-},
-{
- "Setup":"What do you call an Italian hooker?",
- "Punchline":"A pastatute",
- "Tags":"nsfw"
-},
-{
- "Setup":"I used to pretend I was my identical twin",
- "Punchline":"But I couldn't live with myself"
-},
-{
- "Setup":"Bass players usually aren't flashy",
- "Punchline":"They're too low-key"
-},
-{
- "Setup":"I saw an average ghost once",
- "Punchline":"He was mean-spirited"
-},
-{
- "Setup":"Electricians are always shopping at outlet stores",
- "Punchline":""
-},
-{
- "Setup":"I go to the paint store instead of the gym",
- "Punchline":"I heard I can get thinner there"
-},
-{
- "Setup":"Spelling errors are a big deal at Hogwarts",
- "Punchline":""
-},
-{
- "Setup":"My psychiatrist isn't helping with my kleptomania",
- "Punchline":"He keeps telling me I should be taking something"
-},
-{
- "Setup":"When milking a cow, take care not to strain your calf",
- "Punchline":""
-},
-{
- "Setup":"I know a guy who's always stealing board games",
- "Punchline":"He's a huge Risk-taker"
-},
-{
- "Setup":"She said my name wasn't on the list, but I had my reservations",
- "Punchline":""
-},
-{
- "Setup":"When winter ends, the trees are re-leaved",
- "Punchline":""
-},
-{
- "Setup":"I don't trust priests",
- "Punchline":"They always seem to have an altar ego"
-},
-{
- "Setup":"I can't stop coming up with jokes about monorails",
- "Punchline":"I'm obsessed with one-liners"
-},
-{
- "Setup":"British cannibals love eating fish and chaps",
- "Punchline":""
-},
-{
- "Setup":"I tried to join the debate team in high school",
- "Punchline":"But they talked me out of it"
-},
-{
- "Setup":"Nobody taught me how to use a zipper",
- "Punchline":"I had to learn on the fly"
-},
-{
- "Setup":"I was confused when the stationery store moved across the street",
- "Punchline":""
-},
-{
- "Setup":"I know a dealer who dusts all his marijuana with sugar",
- "Punchline":"I think he's trying to sweeten the pot"
-},
-{
- "Setup":"I partied with some construction workers last night",
- "Punchline":"They really knew how to raise the roof"
-},
-{
- "Setup":"I met a narcissistic cannibal once",
- "Punchline":"He was full of himself"
-},
-{
- "Setup":"They say 'icy' is the easiest word to spell",
- "Punchline":"I see why"
-},
-{
- "Setup":"The toughest position at UPS is 'Professional Boxer'",
- "Punchline":""
-},
-{
- "Setup":"Did you like the puppet show?",
- "Punchline":"I had a hand in it"
-},
-{
- "Setup":"The best time to sneak past a panther is when he's taking a catnap",
- "Punchline":""
-},
-{
- "Setup":"Have you seen my new measuring stick?",
- "Punchline":"I got it at a yard sale"
-},
-{
- "Setup":"How do you get a one-armed guy out of a tree?",
- "Punchline":"Wave at him"
-},
-{
- "Setup":"I got attacked by a guy waving a pickaxe",
- "Punchline":"I escaped with miner injuries"
-},
-{
- "Setup":"Who is a librarian's worst enemy?",
- "Punchline":"A bookkeeper"
-},
-{
- "Setup":"How do you cut the ocean in half?",
- "Punchline":"With a sea saw"
-},
-{
- "Setup":"As I gain weight, my favorite outfits get harder to pull off",
- "Punchline":""
-},
-{
- "Setup":"If you hate puns, you might be laughtose intolerant",
- "Punchline":""
-},
-{
- "Setup":"I spent my whole life as a counterfeiter",
- "Punchline":"I never made any real money"
-},
-{
- "Setup":"I quit my job as a deep-sea diver",
- "Punchline":"I couldn't handle working under pressure"
-},
-{
- "Setup":"I turned down a bite of her pork sandwich",
- "Punchline":"I don't like ham-me-downs"
-},
-{
- "Setup":"I used to be obsessed with tornadoes",
- "Punchline":"I got a little carried away"
-},
-{
- "Setup":"What has two butts and kills people?",
- "Punchline":"An assassin"
-},
-{
- "Setup":"What would bears be without bees?",
- "Punchline":"Ears"
-},
-{
- "Setup":"I slept like a log at work",
- "Punchline":"And then I got axed"
-},
-{
- "Setup":"Dynamite was a ground-breaking invention",
- "Punchline":""
-},
-{
- "Setup":"I'm so good at being lazy I expect to get atrophy",
- "Punchline":""
-},
-{
- "Setup":"She said she didn't understand cloning",
- "Punchline":"I told her that makes two of us"
-},
-{
- "Setup":"It's hard to make friends with chauffeurs",
- "Punchline":"They're always trying to drive you away"
-},
-{
- "Setup":"I heard they won't be making yard sticks any longer",
- "Punchline":""
-},
-{
- "Setup":"Old artists don't retire",
- "Punchline":"They withdraw"
-},
-{
- "Setup":"How can you tell if a sniper likes you?",
- "Punchline":"He misses you"
-},
-{
- "Setup":"I finally found a stone wall with carvings on it",
- "Punchline":"It was a huge relief"
-},
-{
- "Setup":"The police aren't sure who stole my diet pills",
- "Punchline":"The suspect is still at large"
-},
-{
- "Setup":"Joking about antigravity never goes down very well",
- "Punchline":""
-},
-{
- "Setup":"A group of crows can't be called a 'murder' without probable caws",
- "Punchline":""
-},
-{
- "Setup":"Saw two pirates ramming their ships into each other",
- "Punchline":"Maybe they need anchor-management counseling"
-},
-{
- "Setup":"When students get kicked out of Hogwarts, are they ex-spelled?",
- "Punchline":""
-},
-{
- "Setup":"I tried taking a picture of a field of wheat",
- "Punchline":"But it was too grainy"
-},
-{
- "Setup":"One of my great uncles owned a perfume factory",
- "Punchline":"When he died, he didn't leave us a single scent"
-},
-{
- "Setup":"He tried to convince me it was a gator-skin shoe",
- "Punchline":"But I knew it was a Croc"
-},
-{
- "Setup":"A carpenter stopped by to build me a new door frame",
- "Punchline":"He made quite an entrance"
-},
-{
- "Setup":"You can't defeat an octopus",
- "Punchline":"They're too well-armed"
-},
-{
- "Setup":"If you wear a sport coat while hiking, does that make it a trailblazer?",
- "Punchline":""
-},
-{
- "Setup":"Claustrophobic people really need to think outside the box",
- "Punchline":""
-},
-{
- "Setup":"I entered a measuring competition but I didn't win",
- "Punchline":"I was overruled"
-},
-{
- "Setup":"I can picture myself taking a selfie",
- "Punchline":""
-},
-{
- "Setup":"I wanted to show people how to scoop ice cream",
- "Punchline":"So I got a job as a sundae school teacher"
-},
-{
- "Setup":"I just won a Twister contest",
- "Punchline":"Hands down"
-},
-{
- "Setup":"I saw a snail struggling to move around without a shell",
- "Punchline":"It looked sluggish"
-},
-{
- "Setup":"An invisible guy married an invisible girl",
- "Punchline":"Their kids weren't much to look at, either"
-},
-{
- "Setup":"My father wants me to run our family's clown college",
- "Punchline":"But those are awfully big shoes to fill"
-},
-{
- "Setup":"Sometimes, when I'm lying on the floor, I feel like the whole world is against me",
- "Punchline":""
-},
-{
- "Setup":"Someone made fun of me for majoring in Art History",
- "Punchline":"It was a first-degree burn"
-},
-{
- "Setup":"The teacher asked us who ate all the paste",
- "Punchline":"But my lips were sealed"
-},
-{
- "Setup":"Don't listen to horses",
- "Punchline":"They're a bunch of neigh-sayers"
-},
-{
- "Setup":"I saw two seeing-eye dogs walking side-by-side",
- "Punchline":"Turns out they were on a blind date"
-},
-{
- "Setup":"The older I get, the more youthless I feel",
- "Punchline":""
-},
-{
- "Setup":"I only like raw meat on rare occasions",
- "Punchline":""
-},
+		 "Setup":"I got fired from my job as a magician",
+		 "Punchline":"I was completely disillusioned"
+		},
+		{
+		 "Setup":"Santa's a pure capitalist",
+		 "Punchline":"He's an elf-made man"
+		},
+		{
+		 "Setup":"I got hit by a ball of hail once",
+		 "Punchline":"I was knocked out cold"
+		},
+		{
+		 "Setup":"I tried to multiply a negative and a positive number together but I ended up nonplussed",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I tried to make a boat out of stone",
+		 "Punchline":"It was a real hardship"
+		},
+		{
+		 "Setup":"You don't need to cook stolen eggs",
+		 "Punchline":"They're already poached"
+		},
+		{
+		 "Setup":"I used to be really fixated on stealing road signs",
+		 "Punchline":"I pulled out all the stops"
+		},
+		{
+		 "Setup":"I bought my prosthetic arm at a second-hand store",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I took my dog to a flea circus",
+		 "Punchline":"He stole the show"
+		},
+		{
+		 "Setup":"I decided to learn karate",
+		 "Punchline":"Just for kicks"
+		},
+		{
+		 "Setup":"One time I got a transfusion in Taiwan",
+		 "Punchline":"It was Taipei blood"
+		},
+		{
+		 "Setup":"I'd be a terrible mountain climber",
+		 "Punchline":"I'm not in peak condition"
+		},
+		{
+		 "Setup":"I would never join a dangerous cult",
+		 "Punchline":"I prefer safe sects"
+		},
+		{
+		 "Setup":"I tried opening a bank in southern California",
+		 "Punchline":"But it ended up in de fault"
+		},
+		{
+		 "Setup":"I saw a note on a broken perfume bottle that said 'out of odor'",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I used to stumble around drunk as a toddler",
+		 "Punchline":"It really messed up my kid knees"
+		},
+		{
+		 "Setup":"I saw a really huge fan today",
+		 "Punchline":"I was completely blown away"
+		},
+		{
+		 "Setup":"I thought I'd make money as a submarine captain",
+		 "Punchline":"But I couldn't keep my head above water"
+		},
+		{
+		 "Setup":"I had a bad masseuse",
+		 "Punchline":"He really rubbed me the wrong way"
+		},
+		{
+		 "Setup":"It's never hard to find work as a garbage man",
+		 "Punchline":"Business is always picking up"
+		},
+		{
+		 "Setup":"I thought my unemployed cowboy friend was crazy",
+		 "Punchline":"Turns out he was just de-ranged"
+		},
+		{
+		 "Setup":"Why do ducks have tailfeathers?",
+		 "Punchline":"To hide their butt-quacks"
+		},
+		{
+		 "Setup":"I'm no good at setting up tents",
+		 "Punchline":"Too many missed stakes"
+		},
+		{
+		 "Setup":"I saw a thief running out of a store with a bunch of soap",
+		 "Punchline":"He made a clean getaway"
+		},
+		{
+		 "Setup":"I had a dream I wrote 'The Hobbit'",
+		 "Punchline":"But it turns out I was just Tolkien in my sleep"
+		},
+		{
+		 "Setup":"I know a guy who trains walruses and elephants at the same time",
+		 "Punchline":"He's great at multi-tusking"
+		},
+		{
+		 "Setup":"What do you call an Italian hooker?",
+		 "Punchline":"A pastatute",
+		 "Tags":"nsfw"
+		},
+		{
+		 "Setup":"I used to pretend I was my identical twin",
+		 "Punchline":"But I couldn't live with myself"
+		},
+		{
+		 "Setup":"Bass players usually aren't flashy",
+		 "Punchline":"They're too low-key"
+		},
+		{
+		 "Setup":"I saw an average ghost once",
+		 "Punchline":"He was mean-spirited"
+		},
+		{
+		 "Setup":"Electricians are always shopping at outlet stores",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I go to the paint store instead of the gym",
+		 "Punchline":"I heard I can get thinner there"
+		},
+		{
+		 "Setup":"Spelling errors are a big deal at Hogwarts",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"My psychiatrist isn't helping with my kleptomania",
+		 "Punchline":"He keeps telling me I should be taking something"
+		},
+		{
+		 "Setup":"When milking a cow, take care not to strain your calf",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I know a guy who's always stealing board games",
+		 "Punchline":"He's a huge Risk-taker"
+		},
+		{
+		 "Setup":"She said my name wasn't on the list, but I had my reservations",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"When winter ends, the trees are re-leaved",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I don't trust priests",
+		 "Punchline":"They always seem to have an altar ego"
+		},
+		{
+		 "Setup":"I can't stop coming up with jokes about monorails",
+		 "Punchline":"I'm obsessed with one-liners"
+		},
+		{
+		 "Setup":"British cannibals love eating fish and chaps",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I tried to join the debate team in high school",
+		 "Punchline":"But they talked me out of it"
+		},
+		{
+		 "Setup":"Nobody taught me how to use a zipper",
+		 "Punchline":"I had to learn on the fly"
+		},
+		{
+		 "Setup":"I was confused when the stationery store moved across the street",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I know a dealer who dusts all his marijuana with sugar",
+		 "Punchline":"I think he's trying to sweeten the pot"
+		},
+		{
+		 "Setup":"I partied with some construction workers last night",
+		 "Punchline":"They really knew how to raise the roof"
+		},
+		{
+		 "Setup":"I met a narcissistic cannibal once",
+		 "Punchline":"He was full of himself"
+		},
+		{
+		 "Setup":"They say 'icy' is the easiest word to spell",
+		 "Punchline":"I see why"
+		},
+		{
+		 "Setup":"The toughest position at UPS is 'Professional Boxer'",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Did you like the puppet show?",
+		 "Punchline":"I had a hand in it"
+		},
+		{
+		 "Setup":"The best time to sneak past a panther is when he's taking a catnap",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Have you seen my new measuring stick?",
+		 "Punchline":"I got it at a yard sale"
+		},
+		{
+		 "Setup":"How do you get a one-armed guy out of a tree?",
+		 "Punchline":"Wave at him"
+		},
+		{
+		 "Setup":"I got attacked by a guy waving a pickaxe",
+		 "Punchline":"I escaped with miner injuries"
+		},
+		{
+		 "Setup":"Who is a librarian's worst enemy?",
+		 "Punchline":"A bookkeeper"
+		},
+		{
+		 "Setup":"How do you cut the ocean in half?",
+		 "Punchline":"With a sea saw"
+		},
+		{
+		 "Setup":"As I gain weight, my favorite outfits get harder to pull off",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"If you hate puns, you might be laughtose intolerant",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I spent my whole life as a counterfeiter",
+		 "Punchline":"I never made any real money"
+		},
+		{
+		 "Setup":"I quit my job as a deep-sea diver",
+		 "Punchline":"I couldn't handle working under pressure"
+		},
+		{
+		 "Setup":"I turned down a bite of her pork sandwich",
+		 "Punchline":"I don't like ham-me-downs"
+		},
+		{
+		 "Setup":"I used to be obsessed with tornadoes",
+		 "Punchline":"I got a little carried away"
+		},
+		{
+		 "Setup":"What has two butts and kills people?",
+		 "Punchline":"An assassin"
+		},
+		{
+		 "Setup":"What would bears be without bees?",
+		 "Punchline":"Ears"
+		},
+		{
+		 "Setup":"I slept like a log at work",
+		 "Punchline":"And then I got axed"
+		},
+		{
+		 "Setup":"Dynamite was a ground-breaking invention",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I'm so good at being lazy I expect to get atrophy",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"She said she didn't understand cloning",
+		 "Punchline":"I told her that makes two of us"
+		},
+		{
+		 "Setup":"It's hard to make friends with chauffeurs",
+		 "Punchline":"They're always trying to drive you away"
+		},
+		{
+		 "Setup":"I heard they won't be making yard sticks any longer",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Old artists don't retire",
+		 "Punchline":"They withdraw"
+		},
+		{
+		 "Setup":"How can you tell if a sniper likes you?",
+		 "Punchline":"He misses you"
+		},
+		{
+		 "Setup":"I finally found a stone wall with carvings on it",
+		 "Punchline":"It was a huge relief"
+		},
+		{
+		 "Setup":"The police aren't sure who stole my diet pills",
+		 "Punchline":"The suspect is still at large"
+		},
+		{
+		 "Setup":"Joking about antigravity never goes down very well",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"A group of crows can't be called a 'murder' without probable caws",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Saw two pirates ramming their ships into each other",
+		 "Punchline":"Maybe they need anchor-management counseling"
+		},
+		{
+		 "Setup":"When students get kicked out of Hogwarts, are they ex-spelled?",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I tried taking a picture of a field of wheat",
+		 "Punchline":"But it was too grainy"
+		},
+		{
+		 "Setup":"One of my great uncles owned a perfume factory",
+		 "Punchline":"When he died, he didn't leave us a single scent"
+		},
+		{
+		 "Setup":"He tried to convince me it was a gator-skin shoe",
+		 "Punchline":"But I knew it was a Croc"
+		},
+		{
+		 "Setup":"A carpenter stopped by to build me a new door frame",
+		 "Punchline":"He made quite an entrance"
+		},
+		{
+		 "Setup":"You can't defeat an octopus",
+		 "Punchline":"They're too well-armed"
+		},
+		{
+		 "Setup":"If you wear a sport coat while hiking, does that make it a trailblazer?",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Claustrophobic people really need to think outside the box",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I entered a measuring competition but I didn't win",
+		 "Punchline":"I was overruled"
+		},
+		{
+		 "Setup":"I can picture myself taking a selfie",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I wanted to show people how to scoop ice cream",
+		 "Punchline":"So I got a job as a sundae school teacher"
+		},
+		{
+		 "Setup":"I just won a Twister contest",
+		 "Punchline":"Hands down"
+		},
+		{
+		 "Setup":"I saw a snail struggling to move around without a shell",
+		 "Punchline":"It looked sluggish"
+		},
+		{
+		 "Setup":"An invisible guy married an invisible girl",
+		 "Punchline":"Their kids weren't much to look at, either"
+		},
+		{
+		 "Setup":"My father wants me to run our family's clown college",
+		 "Punchline":"But those are awfully big shoes to fill"
+		},
+		{
+		 "Setup":"Sometimes, when I'm lying on the floor, I feel like the whole world is against me",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"Someone made fun of me for majoring in Art History",
+		 "Punchline":"It was a first-degree burn"
+		},
+		{
+		 "Setup":"The teacher asked us who ate all the paste",
+		 "Punchline":"But my lips were sealed"
+		},
+		{
+		 "Setup":"Don't listen to horses",
+		 "Punchline":"They're a bunch of neigh-sayers"
+		},
+		{
+		 "Setup":"I saw two seeing-eye dogs walking side-by-side",
+		 "Punchline":"Turns out they were on a blind date"
+		},
+		{
+		 "Setup":"The older I get, the more youthless I feel",
+		 "Punchline":""
+		},
+		{
+		 "Setup":"I only like raw meat on rare occasions",
+		 "Punchline":""
+		},
+		{
+		"Setup":"What's made of leather and sounds like a sneeze?",
+		"Punchline":"A shoe",
+		},
+		{
+		"Setup":"The opposite of a dominatrix is a sub-contractor",
+		"Punchline":"",
+		"Tags":"nsfw"
+		},
+		{
+		"Setup":"I'm thinking of joining a gym",
+		"Punchline":"This is how I keep my mind active",
+		},
+		{
+		"Setup":"I took a pole",
+		"Punchline":"100 percent of people hated it when their tent collapsed",
+		},
+		{
+		"Setup":"My kid asked if we were pyromaniacs",
+		"Punchline":"I said, \"Yes, we arson\"",
+		},
+		{
+		"Setup":"Bears can't survive in Australia",
+		"Punchline":"Unless they are fully koala-fied",
+		},
+		{
+		"Setup":"I tried to start a conversation by talking about the Titanic",
+		"Punchline":"But I guess that wasn't a good enough icebreaker",
+		},
+		{
+		"Setup":"They won't let me drive trains anymore",
+		"Punchline":"Due to my bad track record",
+		},
+		{
+		"Setup":"I was being Frank when I told them about my split personalities",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I wish I could be ugly for just one day",
+		"Punchline":"Instead of all of them",
+		},
+		{
+		"Setup":"I heard all the dentists are going on strike next month",
+		"Punchline":"We'll have to brace ourselves",
+		},
+		{
+		"Setup":"I saw my telepathic friend across the street",
+		"Punchline":"I greeted him with a brain wave",
+		},
+		{
+		"Setup":"When I was a kid, I kept chewing on electrical cords",
+		"Punchline":"So they grounded me",
+		},
+		{
+		"Setup":"I've heard Argentina is starting to get a little colder",
+		"Punchline":"In fact, it's bordering on Chile",
+		},
+		{
+		"Setup":"Why are oysters so reluctant to give up their pearls?",
+		"Punchline":"Because they're shellfish",
+		},
+		{
+		"Setup":"I'll never be as brave as my pet rock",
+		"Punchline":"He'll always be a little boulder",
+		},
+		{
+		"Setup":"I was trying to figure out why this guy at the library was throwing Stephen King books at everyone",
+		"Punchline":"Then IT hit me",
+		},
+		{
+		"Setup":"I don't trust staircases",
+		"Punchline":"They're always up to something",
+		},
+		{
+		"Setup":"I thought my dentist did a great job",
+		"Punchline":"I left him a little plaque",
+		},
+		{
+		"Setup":"I got mugged by six dwarves today",
+		"Punchline":"Not Happy",
+		},
+		{
+		"Setup":"Thinking back about all the people I've lost over the years",
+		"Punchline":"I probably should not have become a tour guide",
+		},
+		{
+		"Setup":"You never see an unhealthy fish",
+		"Punchline":"They're full of vitamin sea",
+		},
+		{
+		"Setup":"I bought the Mortal Kombat soundtrack",
+		"Punchline":"But it turned out every track was a Finnish hymn",
+		},
+		{
+		"Setup":"I bought some stocks today: beef, chicken, and vegetable",
+		"Punchline":"Someday I'll be a bouillonaire",
+		},
+		{
+		"Setup":"I saw a guy turn into a vampire before he was even bitten",
+		"Punchline":"It was premature edraculation",
+		"Tags":"nsfw"
+		},
+		{
+		"Setup":"I upset some hipsters today",
+		"Punchline":"It turns out they prefer to be called 'conjoined twins'",
+		},
+		{
+		"Setup":"There are only two of us working on this Dracula figurine production line",
+		"Punchline":"I have to make every second Count",
+		},
+		{
+		"Setup":"I was feeling lonely so I bought some stocks",
+		"Punchline":"It's nice to have a bit of company",
+		},
+		{
+		"Setup":"Geologists don't like it when you take sedimentary rocks for granite",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Nearly-headless Nick was a poorly-executed character",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Why do dogs float in water?",
+		"Punchline":"Because they're good buoys",
+		},
+		{
+		"Setup":"Don't get upset if someone calls you fat",
+		"Punchline":"You're bigger than that",
+		},
+		{
+		"Setup":"The only thing worse than raining cats and dogs is hailing taxis",
+		"Punchline":"",
+		},
+		{
+		"Setup":"What's the best way to talk to a giant?",
+		"Punchline":"Use big words",
+		},
+		{
+		"Setup":"I found a 5,280 foot-long rock",
+		"Punchline":"It must be some kind of milestone",
+		},
+		{
+		"Setup":"2020 really proved that laughter is contagious",
+		"Punchline":"",
+		},
+		{
+		"Setup":"You rarely see naked elephants",
+		"Punchline":"They even bathe with their trunks on",
+		},
+		{
+		"Setup":"I was named after my father",
+		"Punchline":"But I was named before my younger sisters",
+		},
+		{
+		"Setup":"I have a friend who is a performance artist",
+		"Punchline":"She's great at drawing crowds",
+		},
+		{
+		"Setup":"The ugliest creature in Jurassic Park was the Eyesaur",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I always secretly thought I might be a goat",
+		"Punchline":"It started when I was a little kid",
+		},
+		{
+		"Setup":"Necromancers are great at raising children",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Ever since I took up baking, every day has been crumby",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I never picked my nose",
+		"Punchline":"I was born with it",
+		},
+		{
+		"Setup":"Ireland is one sea away from Iceland",
+		"Punchline":"",
+		},
+		{
+		"Setup":"A delivery guy tried to make me pay for a pizza I didn't order",
+		"Punchline":"It was uncalled for",
+		},
+		{
+		"Setup":"I bought a refrigerator magnet",
+		"Punchline":"So far, I've gotten six refrigerators",
+		},
+		{
+		"Setup":"I'm reading a horror story in Braille",
+		"Punchline":"It feels like something bad is about to happen",
+		},
+		{
+		"Setup":"I'm being haunted by the ghost of a chicken",
+		"Punchline":"I think it's a poultry-geist",
+		},
+		{
+		"Setup":"My ceiling isn't quite the best",
+		"Punchline":"But it's up there",
+		},
+		{
+		"Setup":"I had a dream I was drowning in orange soda",
+		"Punchline":"But it was just a Fanta-sea",
+		},
+		{
+		"Setup":"I know a guy who started his mosquito repellant business from scratch",
+		"Punchline":"",
+		},
+		{
+		"Setup":"How do you make a waterbed bouncy?",
+		"Punchline":"Fill it with spring water",
+		},
+		{
+		"Setup":"Someone stole all the wheels off a cop car",
+		"Punchline":"Police are working tirelessly to catch them",
+		},
+		{
+		"Setup":"Zombies get their strength from doing lots of deadlifts",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I always wake up thinking I'm going to make pancakes, but end up waffling",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I know a loan shark who takes a lot of interest in his work",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I was told my odorless perfumes were complete non-scents",
+		"Punchline":"",
+		},
+		{
+		"Setup":"The female version of a dad bod is an auntie body",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Grandma gets mad when I borrow her kitchen utensils",
+		"Punchline":"But it's a whisk I'm willing to take",
+		},
+		{
+		"Setup":"I got injured while I was playing peekaboo",
+		"Punchline":"They sent me to the ICU",
+		},
+		{
+		"Setup":"I got fired from the keyboard factory",
+		"Punchline":"They said I wasn't putting in enough shifts",
+		},
+		{
+		"Setup":"They say the invention of the drill bit was a real turning point",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I'm an expert at shoplifting candy bars",
+		"Punchline":"I've still got a few Twix up my sleeve",
+		},
+		{
+		"Setup":"Telemarketers don't have managers",
+		"Punchline":"They have ring leaders",
+		},
+		{
+		"Setup":"Every national anthem is technically a country song",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I asked if my insurance would pay for volcano eruptions",
+		"Punchline":"They told me I'd be covered",
+		},
+		{
+		"Setup":"Pyramids are square",
+		"Punchline":"But only up to a point",
+		},
+		{
+		"Setup":"I thought I had a Korean friend when I was a kid",
+		"Punchline":"But it was just my imagin-asian",
+		},
+		{
+		"Setup":"I tried to get a job teaching meditation",
+		"Punchline":"But I didn't have a good inner view",
+		},
+		{
+		"Setup":"I prefer using pregnant mares to pull my stuff around",
+		"Punchline":"They have twice as much horsepower",
+		},
+		{
+		"Setup":"My therapist says I'm obsessed with revenge",
+		"Punchline":"I'll show him",
+		},
+		{
+		"Setup":"Erasable pens must have seemed like a good idea",
+		"Punchline":"On paper",
+		},
+		{
+		"Setup":"I want to be a bodybuilder like my hero, Dr. Frankenstein",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I stopped talking to my kinky hairstylist",
+		"Punchline":"She was always brushing people off",
+		},
+		{
+		"Setup":"I wanted to open a chiropractic clinic",
+		"Punchline":"But I couldn't find any backers",
+		},
+		{
+		"Setup":"If we pool our resources and work together...",
+		"Punchline":"We can defeat socialism",
+		},
+		{
+		"Setup":"Getting paid to participate in a sleep study is my dream job",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Two silkworms had a race",
+		"Punchline":"It resulted in a tie",
+		},
+		{
+		"Setup":"My friend said his food tasted funny",
+		"Punchline":"But I noticed he wasn't laughing",
+		},
+		{
+		"Setup":"My friend went on a diet",
+		"Punchline":"I've been seeing less of him lately",
+		},
+		{
+		"Setup":"They say the best way to drive cattle is with a steering wheel",
+		"Punchline":"",
+		},
+		{
+		"Setup":"The most underhanded person I know is a softball pitcher",
+		"Punchline":"",
+		},
+		{
+		"Setup":"The main ingredient in dog biscuits is collie flour",
+		"Punchline":"",
+		},
+		{
+		"Setup":"I knew a guy with a stutter who went to prison",
+		"Punchline":"He died before he could finish his sentence",
+		},
+		{
+		"Setup":"I got banned from my secret cooking club for spilling the beans",
+		"Punchline":"",
+		},
+		{
+		"Setup":"The patron saint of panhandlers is Saint Nickel-less",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Two of my neighbors started dating",
+		"Punchline":"It's a lawn-distance relationship",
+		},
+		{
+		"Setup":"I got viking letters tattooed all over my body",
+		"Punchline":"Now my skin is completely runed",
+		},
+		{
+		"Setup":"I avoid frostbite survivors",
+		"Punchline":"I'm lack-toes intolerant",
+		},
+		{
+		"Setup":"You won't get away with stealing my glasses",
+		"Punchline":"I'll find you--I have contacts",
+		},
+		{
+		"Setup":"Once I find out who took my guillotine, heads are gonna roll",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Farming rabbits is a hare-raising experience",
+		"Punchline":"",
+		},
+		{
+		"Setup":"It turns out shepherds don't like being referred to as \"ewe-people\"",
+		"Punchline":"",
+		},
+		{
+		"Setup":"Oceanographers are always knowledgeable about current events",
+		"Punchline":"",
+		},
+		{
+		"Setup":"He said he was going to push be off a cliff",
+		"Punchline":"But it was a bluff",
+		},
+		{
+		"Setup":"CDs may not be cool anymore",
+		"Punchline":"But records will always be groovy",
+		},
+		{
+		"Setup":"I know a flashy guy who is half man and half horse",
+		"Punchline":"He loves to be the centaur of attention",
+		},
+		{
+		"Setup":"When fence builders go on strike...",
+		"Punchline":"Do they stop picketing?",
+		},
+		{
+		"Setup":"One time I met a guy who couldn't get angry",
+		"Punchline":"He was a nomad",
+		},
 	]
 }
